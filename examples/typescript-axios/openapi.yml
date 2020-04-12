@@ -1,0 +1,28 @@
+openapi: 3.0.3
+info:
+  title: Sample Pet Store App
+  version: 1.0.0
+  description: This is a sample server for a pet store.
+  termsOfService: http://example.com/terms/
+  contact:
+    name: API Support
+    email: support@example.com
+    url: http://example.com/support
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+externalDocs:
+  description: Find out more
+  url: http://example.com
+servers:
+  - url: http://{lang}.example.com
+    description: server
+    variables:
+      lang:
+        default: ja
+        enum: [ja, en]
+paths: {}
+components:
+  schemas:
+    test:
+      type: object

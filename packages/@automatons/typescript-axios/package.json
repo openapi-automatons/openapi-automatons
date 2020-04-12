@@ -1,0 +1,31 @@
+{
+  "name": "@automatons/typescript-axios",
+  "version": "0.0.1",
+  "repository": "git@github.com:tanmen/openapi-automatons.git",
+  "author": "tanmen <yt.prog@gmail.com>",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "type": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prebuild": "node scripts/prebuild.js",
+    "build": "tsc",
+    "test": "jest"
+  },
+  "dependencies": {
+    "handlebars": "^4.7.6",
+    "handlebars-helpers": "^0.10.0"
+  },
+  "devDependencies": {
+    "@automatons/tools": "^0.0.1",
+    "@types/fs-extra": "^8.1.0",
+    "@types/handlebars": "^4.1.0",
+    "@types/handlebars-helpers": "^0.5.2",
+    "@types/jest": "^25.2.1",
+    "@types/node": "^13.11.1",
+    "jest": "^25.3.0",
+    "ts-jest": "^25.3.1"
+  }
+}

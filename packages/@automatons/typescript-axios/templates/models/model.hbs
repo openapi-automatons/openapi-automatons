@@ -1,0 +1,40 @@
+import * as Yup from "yup";
+{{#each imports}}
+import {{name}} from "{{path}}";
+{{/each}}
+
+{{> models/comment}}
+export type {{name}} = {{#eq type 'object'}}{{> models/object}}
+{{else eq type 'string'}}{{> models/string}}
+{{/eq}};
+
+export const validator = Yup.object<{{name}}>({
+{{#each properties}}
+  {{name}}: Yup.{{type}}()
+  {{#if required}}
+    .required()
+  {{/if}}
+  {{#if nullable}}
+    .nullable(true)
+  {{/if}}
+  {{#if max}}
+    .max({{max}})
+  {{/if}}
+  {{#if min}}
+    .min({{min}})
+  {{/if}}
+  {{#if integer}}
+    .integer()
+  {{/if}}
+  {{#if enums}}
+    .oneOf([
+    {{#each enums}}
+      {{this}}
+    {{/each}}
+    ])
+  {{/if}}
+  {{#if pattern}}
+    .matches({{pattern}})
+  {{/if}}
+{{/each}}
+});

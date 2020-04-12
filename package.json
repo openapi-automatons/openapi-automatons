@@ -1,0 +1,20 @@
+{
+  "name": "openapi-automatons-project",
+  "version": "0.0.1",
+  "repository": "git@github.com:tanmen/openapi-automatons.git",
+  "author": "tanmen <yt.prog@gmail.com>",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "build": "lerna run --stream build",
+    "postbuild": "lerna link",
+    "test": "lerna run --stream --parallel test"
+  },
+  "workspaces": [
+    "packages/**/*",
+    "examples/**/*"
+  ],
+  "devDependencies": {
+    "lerna": "^3.20.2"
+  }
+}

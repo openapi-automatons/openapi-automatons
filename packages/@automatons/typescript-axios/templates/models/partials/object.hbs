@@ -1,0 +1,5 @@
+{
+{{#each properties}}
+  {{name}}{{#unless required}}?{{/unless}}: {{type}}{{#if nullable}} | null{{/if}};
+{{/each}}
+}
