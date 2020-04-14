@@ -1,5 +1,6 @@
-import {Openapi} from './openapi';
-export * from './openapi';
+import {Openapi} from './types';
+
+export * from './types';
 export * as utils from './utils';
 
 export type Automaton = (openapi: Openapi,
@@ -9,6 +10,7 @@ export type Setting = {
   openapi: string;
   automatons: AutomatonSetting[]
 }
+
 export type AutomatonSetting = {
   automaton: string;
   outDir: string;

@@ -1,0 +1,6 @@
+{{#if enum}}
+  {{~#each enum}}{{#if @first}}{{this}}{{else}} | {{this}}{{/if}}{{/each ~}}
+{{~ else ~}}
+  number
+{{~/if}}
+{{> models/nullable}}

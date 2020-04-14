@@ -8,7 +8,8 @@
   "scripts": {
     "build": "lerna run --stream build",
     "postbuild": "lerna link",
-    "test": "lerna run --stream --parallel test"
+    "test": "lerna run --stream --parallel test",
+    "test:coverage": "lerna run --stream --parallel test -- --coverage"
   },
   "workspaces": [
     "packages/**/*",

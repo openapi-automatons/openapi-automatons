@@ -1,18 +1,18 @@
 /**
- * {{name}}
+ * {{title}}
+{{#if description}}
+ * @description {{description}}
+{{/if}}
 {{#if deprecated}}
  * @deprecated
 {{/if}}
-{{#if description}}
- * @description
+{{#if readOnly}}
+ * @readonly
 {{/if}}
-{{#if default}}
- * @default
+{{#if defaultValue}}
+ * @default {{defaultValue}}
 {{/if}}
 {{#if example}}
  * @example
-{{/if}}
-{{#if enums}}
- * @enums
 {{/if}}
  */

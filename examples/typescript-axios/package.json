@@ -5,17 +5,16 @@
   "author": "tanmen <yt.prog@gmail.com>",
   "private": true,
   "scripts": {
-    "generate": "automatons",
-    "test": "jest"
-  },
-  "dependencies": {
-    "@automatons/typescript-axios": "^0.0.1",
-    "openapi-automatons": "^0.0.1"
+    "generate": "openapi-automatons",
+    "test": "openapi-automatons && jest"
   },
   "devDependencies": {
     "@types/jest": "^25.2.1",
     "@types/node": "^13.11.1",
     "jest": "^25.3.0",
-    "ts-jest": "^25.3.1"
+    "ts-jest": "^25.3.1",
+    "typescript": "^3.8.3",
+    "@automatons/typescript-axios": "^0.0.1",
+    "openapi-automatons": "^0.0.1"
   }
 }

@@ -1,5 +1,5 @@
-{{#if enums}}
-{{#each enums}}{{#if @first}}{{this}}{{else}} | {{this}}{{/if}}{{/each}}
-{{else}}
-string{{#if nullable}} | null{{/if}}
-{{/if}}
+{{~#if enum}}
+    {{~#each enum}}{{~#if @first}}"{{this}}"{{~else}} | "{{this}}"{{~/if}}{{~/each}}{{~> models/nullable}}
+{{~else~}}
+    string{{> models/nullable}}
+{{~/if}}

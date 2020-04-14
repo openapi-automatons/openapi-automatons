@@ -10,7 +10,7 @@
     "dist"
   ],
   "bin": {
-    "automatons": "dist/bin/generate.js"
+    "openapi-automatons": "dist/bin/generate.js"
   },
   "scripts": {
     "prebuild": "node scripts/prebuild.js",

@@ -1,5 +1,13 @@
+{{#noop}}
+{{#if properties ~}}
 {
 {{#each properties}}
-  {{name}}{{#unless required}}?{{/unless}}: {{type}}{{#if nullable}} | null{{/if}};
+  {{> models/comment title=name}}
+  {{name}}{{#unless required}}?{{/unless}}: {{> models/type schema}};
 {{/each}}
 }
+{{~ else ~}}
+object
+{{~/if}}
+{{> models/nullable}}
+{{~/noop}}

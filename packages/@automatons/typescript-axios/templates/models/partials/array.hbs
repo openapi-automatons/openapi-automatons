@@ -1,0 +1,6 @@
+{{#if items ~}}
+    Array<{{#with items}}{{> models/type}}{{/with}}>
+{{~ else ~}}
+    any[]
+{{~/if}}
+{{~> models/nullable}}

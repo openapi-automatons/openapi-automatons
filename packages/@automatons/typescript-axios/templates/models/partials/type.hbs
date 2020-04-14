@@ -1,0 +1,17 @@
+{{#eq type 'model'}}
+    {{~ model ~}}
+{{else eq type 'object'}}
+    {{~> models/object}}
+{{else eq type 'allOf'}}
+    {{~> models/allOf}}
+{{else eq type 'oneOf'}}
+    {{~> models/oneOf}}
+{{else eq type 'array'}}
+    {{~> models/array}}
+{{else eq type 'string'}}
+    {{~> models/string}}
+{{else eq type 'number'}}
+    {{~> models/number}}
+{{else}}
+    {{~ type}}
+{{/eq}}

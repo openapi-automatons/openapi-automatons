@@ -1,12 +1,13 @@
 {
   "extends": "../../../tsconfig",
   "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
-    "moduleResolution": "node",
     "rootDir": "src",
-    "outDir": "dist",
-    "declaration": true
+    "outDir": "dist"
   },
-  "exclude" : ["src/**/*.spec.ts", "src/**/*.test.ts", "src/**/__mocks__/**/*"]
+  "exclude": [
+    "dist",
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts",
+    "src/**/__mocks__/**/*"
+  ]
 }
