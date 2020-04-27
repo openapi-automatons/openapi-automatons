@@ -1,33 +1,15 @@
 import * as Yup from "yup";
-import { {{name}} } from "../models";
-
-export const {{name}}Validator = Yup.object<{{name}}>({
-{{#each properties}}
-    {{name}}: Yup.{{type}}()
-    {{#if required}}
-        .required()
-    {{/if}}
-    {{#if nullable}}
-        .nullable(true)
-    {{/if}}
-    {{#if max}}
-        .max({{max}})
-    {{/if}}
-    {{#if min}}
-        .min({{min}})
-    {{/if}}
-    {{#if integer}}
-        .integer()
-    {{/if}}
-    {{#if enums}}
-        .oneOf([
-        {{#each enums}}
-            {{this}}
-        {{/each}}
-        ])
-    {{/if}}
-    {{#if pattern}}
-        .matches({{pattern}})
-    {{/if}}
+{{#each imports~}}
+    import { {{title}}Validator } from "./{{filename}}";
 {{/each}}
-});
+{{#eq schema/type 'object'}}
+import { {{title}} } from "../models";
+{{else eq schema/type 'allOf'}}
+import { {{title}} } from "../models";
+{{else eq schema/type 'oneOf'}}
+import { {{title}} } from "../models";
+{{else eq schema/type 'array'}}
+import { {{title}} } from "../models";
+{{/eq}}
+
+export const {{title}}Validator = {{> validators/type schema title=title}};

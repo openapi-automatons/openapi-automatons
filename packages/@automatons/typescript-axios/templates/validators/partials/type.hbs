@@ -1,0 +1,17 @@
+{{#eq type 'model'}}
+    {{~ model ~}}Validator
+{{else eq type 'object'}}
+    {{~> validators/object}}
+{{else eq type 'allOf'}}
+    {{~> validators/allOf}}
+{{else eq type 'oneOf'}}
+    {{~> validators/oneOf}}
+{{else eq type 'array'}}
+    {{~> validators/array}}
+{{else eq type 'string'}}
+    {{~> validators/string}}
+{{else eq type 'number'}}
+    {{~> validators/number}}
+{{else}}
+    {{~ type}}
+{{/eq}}
