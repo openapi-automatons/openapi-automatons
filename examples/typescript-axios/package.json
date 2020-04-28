@@ -6,15 +6,18 @@
   "private": true,
   "scripts": {
     "generate": "openapi-automatons",
-    "test": "openapi-automatons && jest"
+    "test": "openapi-automatons && tsc && jest"
   },
   "devDependencies": {
+    "@automatons/typescript-axios": "^0.0.1",
     "@types/jest": "^25.2.1",
     "@types/node": "^13.11.1",
     "jest": "^25.3.0",
+    "openapi-automatons": "^0.0.1",
     "ts-jest": "^25.3.1",
-    "typescript": "^3.8.3",
-    "@automatons/typescript-axios": "^0.0.1",
-    "openapi-automatons": "^0.0.1"
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "yup": "^0.28.4"
   }
 }
