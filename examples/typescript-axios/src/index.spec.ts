@@ -1,6 +1,4 @@
-import {Dog} from "./apis";
-
 it('should be validate', () => {
-  const dog: Dog = {hoeru: 'test'};
+  const dog = {hoeru: 'test'};
   console.log(dog);
 });

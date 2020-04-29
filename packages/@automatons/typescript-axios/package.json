@@ -23,8 +23,7 @@
     "prettier": "^2.0.4"
   },
   "peerDependencies": {
-    "openapi-automatons": "^0.0.1",
-    "yup": "^0.28.3"
+    "openapi-automatons": "^0.0.1"
   },
   "devDependencies": {
     "@automatons/tools": "^0.0.1",
