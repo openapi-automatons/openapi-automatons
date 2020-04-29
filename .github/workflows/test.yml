@@ -25,4 +25,15 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           name: ${{ matrix.packages }}
           file: ./${{ matrix.packages }}/coverage/clover.xml
+  notify:
+    needs: test
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: homoluctus/slatify@master
+        with:
+          type: ${{ needs.test.result }}
+          job_name: ${{ github.workflow }}
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
 
