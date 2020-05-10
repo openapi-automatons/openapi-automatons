@@ -60,6 +60,85 @@ export interface OpenapiSecurity {
 }
 
 export interface OpenapiPath {
+  get?: OpenapiPathOperation;
+  put?: OpenapiPathOperation;
+  post?: OpenapiPathOperation;
+  delete?: OpenapiPathOperation;
+  options?: OpenapiPathOperation;
+  head?: OpenapiPathOperation;
+  patch?: OpenapiPathOperation;
+  trace?: OpenapiPathOperation;
+  servers?: OpenapiServer[];
+  parameters?: OpenapiParameter[];
+}
+
+// TODO style
+export interface OpenapiParameter {
+  name: string;
+  in: 'query' | 'header' | 'path' | 'cookie';
+  description?: string;
+  required?: boolean;
+  deprecated?: string;
+  allowEmptyValue?: boolean;
+}
+
+export interface OpenapiPathOperation extends OpenapiPathCommon {
+  operationId: string;
+  tags?: string[];
+  externalDocs?: OpenapiExternalDocument;
+  parameters?: OpenapiParameter[];
+  requestBody?: OpenapiPathRequestBody | OpenapiReference;
+  responses: OpenapiMap<OpenapiPathResponse | OpenapiReference>;
+  callbacks: OpenapiMap<OpenapiMap<OpenapiPathOperation>>;
+  deprecated?: boolean;
+  security?: OpenapiMap<string[]>;
+  servers?: OpenapiServer[];
+}
+
+export interface OpenapiPathRequestBody {
+  content: OpenapiMap<OpenapiPathResponseMedia>;
+  description?: string;
+  required?: boolean;
+}
+
+export type OpenapiPathResponse = {
+  description: string;
+  headers?: OpenapiMap<OpenapiPathResponseHeader | OpenapiReference>;
+  content?: OpenapiMap<OpenapiPathResponseMedia>;
+  links?: OpenapiMap<OpenapiPathResponseLink | OpenapiReference>;
+};
+
+export interface OpenapiPathResponseHeader {
+  description?: string;
+  schema?: OpenapiSchema;
+}
+
+export interface OpenapiPathResponseMedia {
+  schema?: OpenapiSchema;
+  example?: any;
+  encoding?: OpenapiMap<OpenapiPathResponseMediaEncoding>
+}
+
+export interface OpenapiPathResponseMediaEncoding {
+  contentType?: string;
+  headers?: OpenapiMap<OpenapiPathResponseHeader | OpenapiReference>;
+  style?: string;
+  explode?: boolean;
+  allowReserved?: boolean;
+}
+
+export interface OpenapiPathResponseLink {
+  operationRef?: string;
+  operationId?: string;
+  parameters?: OpenapiMap<any>;
+  requestBody?: any;
+  description?: string;
+  server?: OpenapiServer;
+}
+
+export interface OpenapiPathCommon {
+  summary?: string;
+  description?: string;
 }
 
 export interface OpenapiComponents {
@@ -82,7 +161,9 @@ export type OpenapiSchema = OpenapiSchemaString
   | OpenapiSchemaArray
   | OpenapiSchemaAllOf
   | OpenapiSchemaOneOf
-  | OpenapiReference;
+  | OpenapiSchemaReference;
+
+export type OpenapiSchemaReference = OpenapiReference & OpenapiSchemaCommon;
 
 export interface OpenapiSchemaString extends OpenapiSchemaCommon {
   type: 'string';

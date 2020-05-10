@@ -1,0 +1,20 @@
+import { AxiosResponse } from "axios";
+import { AbstractApi } from "./abstractApi";
+import { Config } from "../config";
+{{#each imports~}}
+  import { {{title}} } from "../models";
+{{/each}}
+
+{{> comment}}
+export class {{title}}Api extends AbstractApi {
+  constructor(config: Config) {
+    super(config);
+  }
+  {{#each paths}}
+
+  {{> comment title=name async=true}}
+  {{name}}(): Promise<AxiosResponse{{#if model}}<{{model/title}}>{{/if}}> {
+    return this.axios.{{method}}("{{path}}")
+  }
+  {{/each}}
+}

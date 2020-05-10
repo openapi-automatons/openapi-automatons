@@ -1,0 +1,12 @@
+import Axios, { AxiosInstance } from "axios";
+import { Config } from "../config";
+
+const BASE_AXIOS = Axios.create();
+
+export class AbstractApi {
+  protected axios: AxiosInstance = BASE_AXIOS;
+
+  constructor({axios}: Config) {
+    if (axios) this.axios = axios;
+  }
+}

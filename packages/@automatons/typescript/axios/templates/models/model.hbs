@@ -1,0 +1,6 @@
+{{#each imports~}}
+    import { {{title}} } from "./{{filename}}";
+{{/each}}
+
+{{> comment}}
+export type {{title}} = {{> models/type schema}};
