@@ -1,12 +1,12 @@
 import {Openapi} from "@automatons/tools";
-import {ApiParser} from "./parsers/api";
-import ModelParser from "./parsers/model";
-import {Model, Api} from "./types";
+import {parseApi} from "./parsers/api";
+import {parseModel} from "./parsers/model";
+import {Api, Model} from "./types";
 
 const parser = (openapi: Openapi): { models: Model[], apis: Api[] } => {
-  const {models, map} = new ModelParser(openapi).parse();
-  const apis = new ApiParser(openapi, map).parse();
-  return {models, apis};
+  const models = parseModel(openapi);
+  const {apis, models: apiModels} = parseApi(openapi);
+  return {models: [...models, ...apiModels], apis};
 }
 
 export default parser;

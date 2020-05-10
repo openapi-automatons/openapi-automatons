@@ -6,15 +6,15 @@ import { Config } from "../config";
 {{/each}}
 
 {{> comment}}
-export class {{title}}Api extends AbstractApi {
+export class {{title}} extends AbstractApi {
   constructor(config: Config) {
     super(config);
   }
   {{#each paths}}
-
   {{> comment title=name async=true}}
-  {{name}}(): Promise<AxiosResponse{{#if model}}<{{model/title}}>{{/if}}> {
-    return this.axios.{{method}}("{{path}}")
+  {{name}}({{#each parameters}}{{name}}: {{> models/type schema}}{{#unless @last}},{{/unless}}{{/each}}): Promise<AxiosResponse{{#if schema}}<{{> models/type schema}}>{{/if}}> {
+    const path = {{> apis/path}};
+    return this.axios.{{method}}(path)
   }
   {{/each}}
 }

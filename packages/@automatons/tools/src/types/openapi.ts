@@ -72,15 +72,44 @@ export interface OpenapiPath {
   parameters?: OpenapiParameter[];
 }
 
-// TODO style
-export interface OpenapiParameter {
+export type OpenapiParameter = OpenapiParameterPath
+  | OpenapiParameterQuery
+  | OpenapiParameterHeader
+  | OpenapiParameterCookie;
+
+export type OpenapiParameterCommon = {
   name: string;
-  in: 'query' | 'header' | 'path' | 'cookie';
   description?: string;
-  required?: boolean;
   deprecated?: string;
-  allowEmptyValue?: boolean;
-}
+  explode?: boolean;
+  example?: any;
+  examples?: OpenapiMap<OpenapiExample>;
+} & ({ content: OpenapiMap<OpenapiPathMedia> } | { schema: OpenapiSchema });
+
+export type OpenapiParameterPath = {
+  in: 'path';
+  style: 'simple' | 'label' | 'matrix';
+  required: true;
+} & OpenapiParameterCommon;
+
+export type OpenapiParameterQuery = {
+  in: 'query';
+  style: 'form' | 'spaceDelimited' | 'pipeDelimited' | 'deepObject';
+  required?: boolean;
+  allowReserved?: boolean;
+} & OpenapiParameterCommon;
+
+export type OpenapiParameterHeader = {
+  in: 'header';
+  style: 'simple';
+  required?: boolean;
+} & OpenapiParameterCommon;
+
+export type OpenapiParameterCookie = {
+  in: 'cookie';
+  style: 'form';
+  required?: boolean;
+} & OpenapiParameterCommon;
 
 export interface OpenapiPathOperation extends OpenapiPathCommon {
   operationId: string;
@@ -89,14 +118,14 @@ export interface OpenapiPathOperation extends OpenapiPathCommon {
   parameters?: OpenapiParameter[];
   requestBody?: OpenapiPathRequestBody | OpenapiReference;
   responses: OpenapiMap<OpenapiPathResponse | OpenapiReference>;
-  callbacks: OpenapiMap<OpenapiMap<OpenapiPathOperation>>;
+  callbacks?: OpenapiMap<OpenapiMap<OpenapiPathOperation>>;
   deprecated?: boolean;
   security?: OpenapiMap<string[]>;
   servers?: OpenapiServer[];
 }
 
 export interface OpenapiPathRequestBody {
-  content: OpenapiMap<OpenapiPathResponseMedia>;
+  content: OpenapiMap<OpenapiPathMedia>;
   description?: string;
   required?: boolean;
 }
@@ -104,7 +133,7 @@ export interface OpenapiPathRequestBody {
 export type OpenapiPathResponse = {
   description: string;
   headers?: OpenapiMap<OpenapiPathResponseHeader | OpenapiReference>;
-  content?: OpenapiMap<OpenapiPathResponseMedia>;
+  content?: OpenapiMap<OpenapiPathMedia>;
   links?: OpenapiMap<OpenapiPathResponseLink | OpenapiReference>;
 };
 
@@ -113,10 +142,16 @@ export interface OpenapiPathResponseHeader {
   schema?: OpenapiSchema;
 }
 
-export interface OpenapiPathResponseMedia {
+export type OpenapiPathMedia = {
   schema?: OpenapiSchema;
-  example?: any;
   encoding?: OpenapiMap<OpenapiPathResponseMediaEncoding>
+} & ({ example?: any; } | { examples?: OpenapiMap<OpenapiExample> })
+
+export type OpenapiExample = {
+  summary?: string;
+  description?: string;
+  value?: any;
+  externalValue?: string;
 }
 
 export interface OpenapiPathResponseMediaEncoding {

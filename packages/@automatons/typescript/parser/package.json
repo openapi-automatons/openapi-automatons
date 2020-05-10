@@ -12,7 +12,7 @@
   "scripts": {
     "prebuild": "node scripts/prebuild.js",
     "build": "tsc",
-    "test": "node_modules/.bin/jest"
+    "test": "jest"
   },
   "dependencies": {
     "change-case": "^4.1.1",

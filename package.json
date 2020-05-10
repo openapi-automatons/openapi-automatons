@@ -8,6 +8,7 @@
   "scripts": {
     "build": "lerna run --stream build",
     "postbuild": "lerna link",
+    "pretest": "yarn build",
     "test": "lerna run --stream --parallel test",
     "test:coverage": "lerna run --stream --parallel test -- --coverage"
   },

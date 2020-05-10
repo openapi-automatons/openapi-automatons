@@ -12,8 +12,8 @@
   "scripts": {
     "prebuild": "node scripts/prebuild.js",
     "build": "tsc",
-    "test": "node_modules/.bin/jest",
-    "lint": "node_modules/.bin/eslint src/index.ts"
+    "test": "jest",
+    "lint": "eslint src/index.ts"
   },
   "dependencies": {
     "@automatons/typescript-parser": "^0.0.1",

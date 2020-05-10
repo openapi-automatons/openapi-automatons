@@ -1,11 +1,11 @@
 import {Openapi, OpenapiSchema} from "@automatons/tools";
-import ModelParser from "./model";
+import {parseModel} from "./model";
 
 describe('model parser', () => {
   it('should be throw not found', () => {
     const openapi = createOpenapi(createSchema('$ref', undefined, 'Test'))
     expect(() => {
-      new ModelParser(openapi).parse();
+      parseModel(openapi);
     }).toThrow('Not found Reference');
   });
 
@@ -223,7 +223,7 @@ describe('model parser', () => {
     const openapi = createOpenapi(createSchema(parent, type
       ? createSchema(type, children
         ? createSchema(children) : undefined, children) : undefined, type));
-    const {models} = new ModelParser(openapi).parse();
+    const models = parseModel(openapi);
     expect(models.map(({title}) => title)).toHaveLength(8 + names.length);
     expect(models.map(({schema: {type}}) => type))
       .toEqual(['string', 'number', 'number', 'array', 'object', 'allOf', 'oneOf', 'model', ...names]);

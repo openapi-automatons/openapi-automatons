@@ -9,4 +9,47 @@ export class AbstractApi {
   constructor({axios}: Config) {
     if (axios) this.axios = axios;
   }
+
+  protected parameterValue(
+    name: string,
+    value: string | number | Array<string | number> | { [key: string]: string | number },
+    style: 'simple' | 'label' | 'matrix',
+    explode: boolean) {
+    if (style === 'simple') {
+      if (!explode) {
+        return value instanceof Object
+          ? Array.isArray(value)
+            ? value.join(',') : Object.entries(value).map(prop => prop.join(',')).flat().join(',')
+          : String(value);
+      }
+      return value instanceof Object
+        ? Array.isArray(value)
+          ? value.join(',') : Object.entries(value).map(([key, value]) => `${key}=${value}`).flat().join(',')
+        : String(value);
+    } else if(style === 'label') {
+      if (!explode) {
+        return `.${ value instanceof Object
+          ? Array.isArray(value)
+            ? value.join(',') : Object.entries(value).map(prop => prop.join(',')).flat().join(',')
+          : String(value) }`;
+      }
+      return value instanceof Object
+        ? Array.isArray(value)
+          ? value.join(',') : Object.entries(value).map(([key, value]) => `${key}=${value}`).flat().join(',')
+        : String(value);
+    } else if(style === 'matrix') {
+      if (!explode) {
+        return `;${name}=${ value instanceof Object
+          ? Array.isArray(value)
+            ? value.join(',') : Object.entries(value).map(prop => prop.join(',')).flat().join(',')
+          : String(value) }`;
+      }
+      return `;${ value instanceof Object
+        ? Array.isArray(value)
+          ? value.map(item => `${name}=${item}`).join(';')
+          : Object.entries(value).map(([key, value]) => `${key}=${value}`).flat().join(';')
+        : `${name}=${String(value)}` }`;
+    }
+    throw new Error(`Unsupported style: ${style}`)
+  }
 }
