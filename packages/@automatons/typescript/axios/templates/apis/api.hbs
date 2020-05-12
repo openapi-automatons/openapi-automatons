@@ -1,8 +1,12 @@
-import { AxiosResponse } from "axios";
+import { AxiosResponse, AxiosRequestConfig } from "axios";
 import { AbstractApi } from "./abstractApi";
 import { Config } from "../config";
 {{#each imports~}}
   import { {{title}} } from "../models";
+{{/each}}
+
+{{#each servers}}
+type {{name}}Server = { name: "{{name}}"{{#if values}}, values: { {{#each values}}{{name}}: {{#if enums}}{{#each enums}}'{{this}}'{{#unless @last}} | {{/unless}}{{/each}}{{else}}string{{/if}} {{/each}} } {{/if}} }
 {{/each}}
 
 {{> comment}}
@@ -12,9 +16,10 @@ export class {{title}} extends AbstractApi {
   }
   {{#each paths}}
   {{> comment title=name async=true}}
-  {{name}}({{#each parameters}}{{name}}: {{> models/type schema}}{{#unless @last}},{{/unless}}{{/each}}): Promise<AxiosResponse{{#if schema}}<{{> models/type schema}}>{{/if}}> {
+  {{name}}({{#each parameters}}{{name}}: {{> models/type schema}},{{/each}}{{> apis/server servers}} config?: AxiosRequestConfig): Promise<AxiosResponse{{#if schema}}<{{> models/type schema}}>{{/if}}> {
+    console.log(server);
     const path = {{> apis/path}};
-    return this.axios.{{method}}(path)
+    return this.axios.{{method}}(path, config)
   }
   {{/each}}
 }

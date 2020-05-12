@@ -11,7 +11,14 @@ info:
   license:
     name: MIT
 servers:
-  - url: https://github.com/tanmen/openapi-automatons
+  - url: https://{lang}.example.com/tanmen/openapi-automatons
+    x-name: test
+    variables:
+      lang:
+        enum:
+          - ja
+          - en
+        default: en
 paths:
   /pets:
     get:

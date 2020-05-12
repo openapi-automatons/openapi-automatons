@@ -7,6 +7,7 @@ describe('api parser', () => {
     expect(apis).toEqual([{
       title: 'DefaultApi',
       filename: 'defaultApi',
+      servers: [],
       imports: [],
       paths: [
         {
@@ -24,7 +25,8 @@ describe('api parser', () => {
             nullable: undefined,
             readOnly: undefined,
             writeOnly: undefined,
-          }
+          },
+          servers: []
         }
       ]
     }])

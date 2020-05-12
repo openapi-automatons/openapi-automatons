@@ -19,6 +19,7 @@ export const registerPartials = () => Promise.all([
   register('models/type'),
   register('comment'),
   register('apis/path'),
+  register('apis/server'),
 ]);
 
 export const generate = async (openapi: Openapi, outDir: string) => {

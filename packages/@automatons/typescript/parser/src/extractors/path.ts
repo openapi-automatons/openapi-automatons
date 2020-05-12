@@ -12,13 +12,14 @@ import {
   OpenapiReference
 } from "@automatons/tools/dist";
 import {camelCase, pascalCase} from "change-case";
-import {Model, Path, PathParameter} from "../types";
+import {Model, Path, PathParameter, Server} from "../types";
 import {isRef} from "../utils/openapi";
 import {hasSchema, isPathParam} from "../utils/parameter";
 import {extractSchema} from "./schema";
+import {convertServer} from "../converters/server";
 
 type PathContext = { path: string, openapi: Openapi };
-type PathReturn = { tags: string[], path: Path, models: Model[], imports: Model[] };
+type PathReturn = { tags: string[], path: Path, models: Model[], imports: Model[], servers: Server[] };
 export const extractPath = (schema: OpenapiPath, {path, openapi}: PathContext): PathReturn[] => {
   const params = schema.parameters ? extractParameters(schema.parameters, {path, openapi}) : undefined;
 
@@ -27,26 +28,30 @@ export const extractPath = (schema: OpenapiPath, {path, openapi}: PathContext): 
     .filter<{ method: Method, operation: OpenapiPathOperation }>(
       (operation): operation is { method: Method, operation: OpenapiPathOperation } => !!operation.operation)
     .map(({method, operation}) => {
+      const servers = (operation.servers || schema.servers || openapi.servers || [])
+        .map(convertServer);
       const methodParams = operation.parameters ? extractParameters(operation.parameters, {path, openapi}) : undefined;
       const response = operation.responses[extractStatus(operation.responses)];
       if (!isRef(response)) { // TODO ref
         const content = response.content;
         if (content) {
-          const responseSchema = content[extractMediaType(content)].schema;
-          if (responseSchema) {
-            const {schema, models, imports} = extractSchema([...path.split('/'), method, 'Response'].join(' '),
-              responseSchema, openapi);
+          const responseOSchema = content[extractMediaType(content)].schema;
+          if (responseOSchema) {
+            const {schema: responseSchema, models, imports} = extractSchema([...path.split('/'), method, 'Response'].join(' '),
+              responseOSchema, openapi);
             return {
               tags: operation.tags ?? ['default'],
               path: {
                 path,
                 name: camelCase(operation.operationId ?? [method, ...path.split('/')].join(' ')),
                 method,
+                servers,
                 parameters: [...params?.parameters ?? [], ...methodParams?.parameters ?? []],
-                schema
+                schema: responseSchema
               },
               models: [...models, ...params?.models ?? [], ...methodParams?.models ?? []],
-              imports: [...imports ?? [], ...params?.imports ?? [], ...methodParams?.imports ?? []]
+              imports: [...imports ?? [], ...params?.imports ?? [], ...methodParams?.imports ?? []],
+              servers
             }
           }
         }
@@ -56,10 +61,12 @@ export const extractPath = (schema: OpenapiPath, {path, openapi}: PathContext): 
             path,
             name: camelCase(operation.operationId ?? [method, ...path.split('/')].join(' ')),
             method,
+            servers,
             parameters: [...params?.parameters ?? [], ...methodParams?.parameters ?? []],
           },
           models: [],
-          imports:[]
+          imports:[],
+          servers
         }
       }
       throw new Error(`Unsupported path\n${JSON.stringify(schema, undefined, 2)}`);
