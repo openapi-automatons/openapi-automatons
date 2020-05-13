@@ -1,5 +1,5 @@
 import MockAdapter from "axios-mock-adapter";
-import {PetApi} from "./apis/apis";
+import {PetApi} from "../apis";
 import axios from "axios";
 
 beforeAll(() => {
