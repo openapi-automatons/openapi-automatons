@@ -20,7 +20,7 @@ export class {{title}} extends AbstractApi {
     if ('{{name}}' === name) {
       return '{{url}}'
         {{#each values}}
-            .replace('{ {{~name~}} }', this.parameterValue('{{name}}', values.{{name}}, 'simple', false))
+            .replace('{ {{~name~}} }', this.template('{{name}}', values.{{name}}, 'simple', false))
         {{~/each}};
     }
   {{/each}}

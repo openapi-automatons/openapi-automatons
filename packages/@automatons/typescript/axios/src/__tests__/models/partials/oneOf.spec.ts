@@ -1,12 +1,12 @@
 import {readFile} from "fs-extra";
 import {compile} from "handlebars";
 import path from "path";
-import {registerPartials} from "../../../generator";
 import paths from "../../../paths";
 import {OneOfSchema} from "@automatons/typescript-parser";
+import {setup} from "../../../generator/setup";
 
 describe('oneOf', () => {
-  beforeAll(() => registerPartials());
+  beforeAll(() => setup());
 
   it.each<[OneOfSchema, string]>([
     [{type: 'oneOf', schemas: [{type: 'string'}]}, '(string)'],

@@ -1,12 +1,12 @@
 import {readFile} from "fs-extra";
 import {compile} from "handlebars";
 import path from "path";
-import {registerPartials} from "../../../generator";
 import paths from "../../../paths";
 import {NumberSchema} from "@automatons/typescript-parser/dist";
+import {setup} from "../../../generator/setup";
 
 describe('number', () => {
-  beforeAll(() => registerPartials());
+  beforeAll(() => setup());
 
   it.each<[NumberSchema, string]>([
     [{type: 'number'}, 'number'],

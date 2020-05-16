@@ -1,30 +1,12 @@
 import {Openapi} from "@automatons/tools";
 import parser from "@automatons/typescript-parser";
-import HB from 'handlebars';
-
-import helpers from 'handlebars-helpers';
-import {register} from "./register";
 import {write} from "./writer";
+import {setup} from "./setup";
 
-helpers({handlebars: HB});
-
-export const registerPartials = () => Promise.all([
-  register('models/allOf'),
-  register('models/array'),
-  register('models/nullable'),
-  register('models/number'),
-  register('models/object'),
-  register('models/oneOf'),
-  register('models/string'),
-  register('models/type'),
-  register('comment'),
-  register('apis/path'),
-  register('apis/server'),
-]);
 
 export const generate = async (openapi: Openapi, outDir: string) => {
   const promises: Promise<void>[] = [];
-  await registerPartials();
+  await setup();
 
   const {models, apis} = parser(openapi);
   if (models.length) {

@@ -1,12 +1,12 @@
 import {readFile} from "fs-extra";
 import {compile} from "handlebars";
 import path from "path";
-import {registerPartials} from "../../../generator";
 import paths from "../../../paths";
 import {ObjectSchema} from "@automatons/typescript-parser/dist";
+import {setup} from "../../../generator/setup";
 
 describe('object', () => {
-  beforeAll(() => registerPartials());
+  beforeAll(() => setup());
 
   it.each<[ObjectSchema, string]>([
     [{type: 'object'}, 'object'],

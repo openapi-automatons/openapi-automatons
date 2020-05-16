@@ -1,13 +1,13 @@
 import {readFile} from "fs-extra";
 import {compile} from "handlebars";
 import path from "path";
-import {registerPartials} from "../../../generator";
 import paths from "../../../paths";
 import {ArraySchema, Schema} from "@automatons/typescript-parser";
+import {setup} from "../../../generator/setup";
 
 
 describe('array', () => {
-  beforeAll(() => registerPartials());
+  beforeAll(() => setup());
 
   it.each <[ArraySchema, string]>([
     [{type: 'array'}, 'any[]'],

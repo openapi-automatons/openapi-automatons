@@ -1,4 +1,4 @@
 "{{path}}"
 {{#each parameters}}
-  .replace("{ {{~name~}} }", this.parameterValue('{{name}}', {{name}}, '{{#unless style}}simple{{else}}{{style}}{{/unless}}', {{#unless explode}}false{{else}}{{explode}}{{/unless}}))
+  .replace("{ {{~name~}} }", this.template('{{name}}', {{name}}, '{{#unless style}}simple{{else}}{{style}}{{/unless}}', {{#unless explode}}false{{else}}{{explode}}{{/unless}}))
 {{~/each}}

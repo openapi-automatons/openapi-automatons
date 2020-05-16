@@ -24,11 +24,13 @@ export interface SchemaCommon {
 
 export interface StringSchema extends SchemaCommon {
   type: 'string';
+  format?: 'date' | 'date-time' | 'password' | 'byte' | 'binary' | 'url' | string;
   enum?: string[];
 }
 
 export interface NumberSchema extends SchemaCommon {
   type: 'number';
+  format?: 'int32' | 'int64' | 'float' | 'double' | string;
   enum?: number[];
 }
 

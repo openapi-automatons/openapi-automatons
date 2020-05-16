@@ -1,12 +1,12 @@
-import {registerPartials} from "../../../generator";
 import {AllOfSchema} from "@automatons/typescript-parser/dist";
 import {readFile} from "fs-extra";
 import path from "path";
 import paths from "../../../paths";
 import {compile} from "handlebars";
+import {setup} from "../../../generator/setup";
 
 describe('allOf', () => {
-  beforeAll(() => registerPartials());
+  beforeAll(() => setup());
 
   it.each<[AllOfSchema, string]>([
     [{type: 'allOf', schemas: [{type: 'string'}]}, '(string)'],

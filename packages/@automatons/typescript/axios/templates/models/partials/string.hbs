@@ -1,5 +1,10 @@
 {{~#if enum}}
-    {{~#each enum}}{{~#if @first}}"{{this}}"{{~else}} | "{{this}}"{{~/if}}{{~/each}}{{~> models/nullable}}
+  {{~#each enum}}{{~#if @first}}"{{this}}"{{~else}} | "{{this}}"{{~/if}}{{~/each}}
+{{~else or (eq format 'date') (eq format 'date-time')~}}
+  Date
+{{~else eq format 'url'~}}
+  URL
 {{~else~}}
-    string{{> models/nullable}}
+  string
 {{~/if}}
+{{> models/nullable}}
