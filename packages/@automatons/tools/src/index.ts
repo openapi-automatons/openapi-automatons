@@ -2,7 +2,6 @@ import {Openapi} from './types';
 
 export * from './values';
 export * from './types';
-export * as utils from './utils';
 
 export type Automaton = (openapi: Openapi,
                          outDir: string,

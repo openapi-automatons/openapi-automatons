@@ -19,8 +19,8 @@
     "@types/fs-extra": "^8.1.0",
     "@types/jest": "^25.2.1",
     "@types/node": "^13.11.1",
-    "jest": "^25.3.0",
-    "ts-jest": "^25.3.1",
+    "jest": "^26.0.1",
+    "ts-jest": "^26.0.0",
     "typescript": "^3.8.3"
   },
   "dependencies": {

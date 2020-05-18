@@ -15,14 +15,14 @@
     "test": "jest"
   },
   "dependencies": {
-    "change-case": "^4.1.1",
-    "deepmerge": "^4.2.2"
+    "change-case": "^4.1.1"
   },
-  "peerDependencies": {},
   "devDependencies": {
     "@automatons/tools": "^0.0.1",
     "@types/jest": "^25.2.1",
     "@types/node": "^13.13.0",
-    "jest": "^25.4.0"
+    "jest": "^26.0.1",
+    "ts-jest": "^26.0.0",
+    "typescript": "^3.9.2"
   }
 }

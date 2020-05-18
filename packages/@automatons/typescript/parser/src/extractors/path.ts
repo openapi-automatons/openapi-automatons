@@ -4,17 +4,16 @@ import {
   Openapi,
   OpenapiMap,
   OpenapiParameter,
-  OpenapiParameterPath,
   OpenapiPath,
   OpenapiPathMedia,
   OpenapiPathOperation,
   OpenapiPathResponse,
   OpenapiReference
-} from "@automatons/tools/dist";
+} from "@automatons/tools";
 import {camelCase, pascalCase} from "change-case";
-import {Model, Path, PathParameter, Server} from "../types";
+import {Model, Path, PathParameter, QueryParameter, Server} from "../types";
 import {isRef} from "../utils/openapi";
-import {hasSchema, isPathParam} from "../utils/parameter";
+import {hasSchema, isPathParam, isQueryParam} from "../utils/parameter";
 import {extractSchema} from "./schema";
 import {convertServer} from "../converters/server";
 
@@ -47,6 +46,7 @@ export const extractPath = (schema: OpenapiPath, {path, openapi}: PathContext): 
                 method,
                 servers,
                 parameters: [...params?.parameters ?? [], ...methodParams?.parameters ?? []],
+                queries: [...params?.queries ?? [], ...methodParams?.queries ?? []],
                 schema: responseSchema
               },
               models: [...models, ...params?.models ?? [], ...methodParams?.models ?? []],
@@ -63,9 +63,10 @@ export const extractPath = (schema: OpenapiPath, {path, openapi}: PathContext): 
             method,
             servers,
             parameters: [...params?.parameters ?? [], ...methodParams?.parameters ?? []],
+            queries: [...params?.queries ?? [], ...methodParams?.queries ?? []],
           },
           models: [],
-          imports:[],
+          imports: [],
           servers
         }
       }
@@ -83,31 +84,45 @@ export const extractPath = (schema: OpenapiPath, {path, openapi}: PathContext): 
  * @return {{parameters: PathParameter[]; models: Model[]; imports?: Model[]}}
  */
 export const extractParameters = (schema: OpenapiParameter[], {path, openapi}: PathContext):
-  { parameters: PathParameter[], models: Model[], imports?: Model[] } =>
+  { parameters: PathParameter[], queries: QueryParameter[], models: Model[], imports?: Model[] } =>
   schema
-    .filter<OpenapiParameterPath>(isPathParam)
     .map(param => {
       const paramSchema = hasSchema(param) ? param.schema : param.content[extractMediaType(param.content)].schema;
       if (!paramSchema) return;
       const {schema, models, imports} = extractSchema(pascalCase([path, 'parameter', param.name].join(' ')),
         paramSchema, openapi);
-      return {
-        parameter: {
-          name: param.name,
-          schema,
-          style: param.style,
-          explode: param.explode
-        },
-        models,
-        imports
+      if (isPathParam(param)) {
+        return {
+          parameter: {
+            name: param.name,
+            schema,
+            style: param.style,
+            explode: param.explode
+          },
+          models,
+          imports
+        }
+      } else if (isQueryParam(param)) {
+        return {
+          query: {
+            name: param.name,
+            schema,
+            style: param.style,
+            explode: param.explode
+          },
+          models,
+          imports
+        }
       }
+      return;
     })
-    .reduce<{ parameters: PathParameter[], models: Model[], imports: Model[] }>((pre, cur) => cur ? ({
-        parameters: [...pre.parameters, cur.parameter],
+    .reduce<{ parameters: PathParameter[], queries: QueryParameter[], models: Model[], imports: Model[] }>((pre, cur) => cur ? ({
+        parameters: cur.parameter ? [...pre.parameters, cur.parameter] : pre.parameters,
+        queries: cur.query ? [...pre.queries, cur.query] : pre.queries,
         models: [...pre.models, ...cur.models],
         imports: [...pre.imports, ...cur.imports ?? []]
       })
-      : pre, {parameters: [], models: [], imports: []})
+      : pre, {parameters: [], queries: [], models: [], imports: []})
 
 export const extractMediaType = (schema: OpenapiMap<OpenapiPathMedia>): keyof OpenapiMap<OpenapiPathMedia> => {
   return schema.hasOwnProperty('application/json') ?

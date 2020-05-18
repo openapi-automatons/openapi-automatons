@@ -1,5 +1,6 @@
 import Axios, { AxiosInstance } from "axios";
 import { Config } from "../config";
+import { ParsedUrlQueryInput } from "querystring";
 
 const DateFormat = /^\d{4}-\d{2}-\d{2}([tT]\d{2}:\d{2}:\d{2}(Z|[+-]\d{2}:\d{2})|Z)?$/;
 const reviver = (_key: string, value: any) =>
@@ -11,9 +12,11 @@ const BASE_AXIOS = Axios.create({
 
 export class AbstractApi {
   protected axios: AxiosInstance = BASE_AXIOS;
+  protected token: Config['token'];
 
-  constructor({axios}: Config) {
+  constructor({axios, token}: Config) {
     if (axios) this.axios = axios;
+    this.token = token;
   }
 
   protected template(
@@ -57,5 +60,73 @@ export class AbstractApi {
         : `${name}=${String(value)}` }`;
     }
     throw new Error(`Unsupported style: ${style}`)
+  }
+
+  protected query(
+    name: string,
+    value: undefined | string | number | Array<string | number> | { [key: string]: string | number },
+    style: 'form' | 'spaceDelimited' | 'pipeDelimited' | 'deepObject',
+    explode: boolean): ParsedUrlQueryInput {
+		if (value === undefined) return {};
+    switch(style) {
+      case 'form':
+        return this.templateForm(name, value, explode);
+      case 'spaceDelimited':
+        return this.templateSpaceDelimited(name, value);
+      case 'pipeDelimited':
+        return this.templatePipeDelimited(name, value);
+      case 'deepObject':
+        return this.templateDeepObject(name, value);
+      default:
+        throw new Error(`Unsupported style: ${style}`);
+    }
+  }
+
+  private templateForm(name: string,
+    value: string | number | Array<string | number> | { [key: string]: string | number },
+    explode: boolean) {
+    if (Array.isArray(value)) {
+      if (explode) {
+        return {[name]: value.map(String)}
+      } else {
+        return {[name]: value.join(',')}
+      }
+    } else if (value instanceof Object) {
+      if (explode) {
+        return value;
+      } else {
+        return {[name]: Object.entries(value).map((prop: [string, any]) => prop.join(',')).join(',')}
+      }
+    } else {
+      return {[name]: value};
+    }
+  }
+
+  private templateSpaceDelimited(name: string,
+    value: string | number | Array<string | number> | { [key: string]: string | number }){
+    if (Array.isArray(value)) {
+      return {[name]: value.join(' ')}
+    } else if (value instanceof Object) {
+      return {[name]: Object.entries(value).map((prop: [string, any]) => prop.join(' ')).join(' ')}
+    }
+    throw new Error(`Unsupported value: ${name}`);
+  }
+
+  private templatePipeDelimited(name: string,
+    value: string | number | Array<string | number> | { [key: string]: string | number }){
+    if (Array.isArray(value)) {
+      return {[name]: value.join('|')}
+    } else if (value instanceof Object) {
+      return {[name]: Object.entries(value).map((prop: [string, any]) => prop.join('|')).join('|')}
+    }
+    throw new Error(`Unsupported value: ${name}`);
+  }
+
+  private templateDeepObject(name: string,
+    value: string | number | Array<string | number> | { [key: string]: string | number }){
+    if (!Array.isArray(value) && value instanceof Object) {
+      return Object.keys(value).reduce((pre, cur) => ({...pre, [`${name}[${cur}]`]: value[cur]}), {});
+    }
+    throw new Error(`Unsupported value: ${name}`);
   }
 }

@@ -101,6 +101,11 @@ paths:
           schema:
             type: integer
             format: int64
+        - name: name
+          in: query
+          description: pet name
+          schema:
+            type: string
       responses:
         '200':
           description: pet response

@@ -14,7 +14,7 @@ export interface Path {
   path: string;
   servers: Server[];
   parameters?: PathParameter[];
-  queries?: [];
+  queries?: QueryParameter[];
   headers?: [];
   schema?: Schema;
 }
@@ -35,5 +35,12 @@ export type PathParameter = {
   name: string;
   schema: Schema;
   style: 'simple' | 'label' | 'matrix';
+  explode?: boolean;
+};
+
+export type QueryParameter = {
+  name: string;
+  schema: Schema;
+  style: 'form' | 'spaceDelimited' | 'pipeDelimited' | 'deepObject';
   explode?: boolean;
 };
