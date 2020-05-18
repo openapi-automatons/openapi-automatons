@@ -46,6 +46,14 @@ paths:
           schema:
             type: integer
             format: int32
+        - name: csrf
+          in: header
+          schema:
+            type: string
+        - name: cookie_csrf
+          in: cookie
+          schema:
+            type: string
       responses:
         '200':
           description: pet response

@@ -15,7 +15,8 @@ export interface Path {
   servers: Server[];
   parameters?: PathParameter[];
   queries?: QueryParameter[];
-  headers?: [];
+  headers?: HeaderParameter[];
+  cookies?: CookieParameter[];
   schema?: Schema;
 }
 
@@ -42,5 +43,22 @@ export type QueryParameter = {
   name: string;
   schema: Schema;
   style: 'form' | 'spaceDelimited' | 'pipeDelimited' | 'deepObject';
+  required?: boolean;
+  explode?: boolean;
+};
+
+export type HeaderParameter = {
+  name: string;
+  schema: Schema;
+  style: 'simple';
+  required?: boolean;
+  explode?: boolean;
+};
+
+export type CookieParameter = {
+  name: string;
+  schema: Schema;
+  style: 'form';
+  required?: boolean;
   explode?: boolean;
 };

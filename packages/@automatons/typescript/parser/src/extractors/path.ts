@@ -11,9 +11,9 @@ import {
   OpenapiReference
 } from "@automatons/tools";
 import {camelCase, pascalCase} from "change-case";
-import {Model, Path, PathParameter, QueryParameter, Server} from "../types";
+import {CookieParameter, HeaderParameter, Model, Path, PathParameter, QueryParameter, Server} from "../types";
 import {isRef} from "../utils/openapi";
-import {hasSchema, isPathParam, isQueryParam} from "../utils/parameter";
+import {hasSchema, isCookieParam, isHeaderParam, isPathParam, isQueryParam} from "../utils/parameter";
 import {extractSchema} from "./schema";
 import {convertServer} from "../converters/server";
 
@@ -46,7 +46,9 @@ export const extractPath = (schema: OpenapiPath, {path, openapi}: PathContext): 
                 method,
                 servers,
                 parameters: [...params?.parameters ?? [], ...methodParams?.parameters ?? []],
-                queries: [...params?.queries ?? [], ...methodParams?.queries ?? []],
+                queries: [...params?.queries ?? [], ...methodParams?.queries ?? []].sort(parameterCompare),
+                headers: [...params?.headers ?? [], ...methodParams?.headers ?? []].sort(parameterCompare),
+                cookies: [...params?.cookies ?? [], ...methodParams?.cookies ?? []].sort(parameterCompare),
                 schema: responseSchema
               },
               models: [...models, ...params?.models ?? [], ...methodParams?.models ?? []],
@@ -63,7 +65,9 @@ export const extractPath = (schema: OpenapiPath, {path, openapi}: PathContext): 
             method,
             servers,
             parameters: [...params?.parameters ?? [], ...methodParams?.parameters ?? []],
-            queries: [...params?.queries ?? [], ...methodParams?.queries ?? []],
+            queries: [...params?.queries ?? [], ...methodParams?.queries ?? []].sort(parameterCompare),
+            headers: [...params?.headers ?? [], ...methodParams?.headers ?? []].sort(parameterCompare),
+            cookies: [...params?.cookies ?? [], ...methodParams?.cookies ?? []].sort(parameterCompare),
           },
           models: [],
           imports: [],
@@ -73,6 +77,16 @@ export const extractPath = (schema: OpenapiPath, {path, openapi}: PathContext): 
       throw new Error(`Unsupported path\n${JSON.stringify(schema, undefined, 2)}`);
     })
 }
+
+type ParameterResult = {
+  parameters: PathParameter[],
+  queries: QueryParameter[],
+  headers: HeaderParameter[],
+  cookies: CookieParameter[],
+  models: Model[],
+  imports: Model[]
+};
+
 /**
  *
  * @todo query
@@ -84,7 +98,7 @@ export const extractPath = (schema: OpenapiPath, {path, openapi}: PathContext): 
  * @return {{parameters: PathParameter[]; models: Model[]; imports?: Model[]}}
  */
 export const extractParameters = (schema: OpenapiParameter[], {path, openapi}: PathContext):
-  { parameters: PathParameter[], queries: QueryParameter[], models: Model[], imports?: Model[] } =>
+  ParameterResult =>
   schema
     .map(param => {
       const paramSchema = hasSchema(param) ? param.schema : param.content[extractMediaType(param.content)].schema;
@@ -108,6 +122,31 @@ export const extractParameters = (schema: OpenapiParameter[], {path, openapi}: P
             name: param.name,
             schema,
             style: param.style,
+            required: param.required,
+            explode: param.explode
+          },
+          models,
+          imports
+        }
+      } else if (isHeaderParam(param)) {
+        return {
+          header: {
+            name: param.name,
+            schema,
+            style: param.style,
+            required: param.required,
+            explode: param.explode
+          },
+          models,
+          imports
+        }
+      } else if (isCookieParam(param)) {
+        return {
+          cookie: {
+            name: param.name,
+            schema,
+            style: param.style,
+            required: param.required,
             explode: param.explode
           },
           models,
@@ -116,13 +155,15 @@ export const extractParameters = (schema: OpenapiParameter[], {path, openapi}: P
       }
       return;
     })
-    .reduce<{ parameters: PathParameter[], queries: QueryParameter[], models: Model[], imports: Model[] }>((pre, cur) => cur ? ({
+    .reduce<ParameterResult>((pre, cur) => cur ? ({
         parameters: cur.parameter ? [...pre.parameters, cur.parameter] : pre.parameters,
         queries: cur.query ? [...pre.queries, cur.query] : pre.queries,
+        headers: cur.header ? [...pre.headers, cur.header] : pre.headers,
+        cookies: cur.cookie ? [...pre.cookies, cur.cookie] : pre.cookies,
         models: [...pre.models, ...cur.models],
         imports: [...pre.imports, ...cur.imports ?? []]
       })
-      : pre, {parameters: [], queries: [], models: [], imports: []})
+      : pre, {parameters: [], queries: [], headers: [], cookies: [], models: [], imports: []})
 
 export const extractMediaType = (schema: OpenapiMap<OpenapiPathMedia>): keyof OpenapiMap<OpenapiPathMedia> => {
   return schema.hasOwnProperty('application/json') ?
@@ -140,3 +181,7 @@ export const extractStatus = (schema: OpenapiMap<OpenapiPathResponse | OpenapiRe
     .filter(status => Number(status) >= 200 && Number(status) < 300)
     .sort()[0] ?? statuses[0];
 }
+
+const parameterCompare = (a: QueryParameter | HeaderParameter | CookieParameter,
+                          b: QueryParameter | HeaderParameter | CookieParameter) =>
+  a.required === true && b.required === true ? 0 : b.required === true ? 1 : -1;
