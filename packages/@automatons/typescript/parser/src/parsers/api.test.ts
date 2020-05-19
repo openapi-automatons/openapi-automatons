@@ -14,9 +14,13 @@ describe('api parser', () => {
           method: 'get',
           name: 'getTests',
           parameters: [],
+          queries: [],
+          headers: [],
+          cookies: [],
           path: 'tests',
           schema: {
             type: 'string',
+            format: undefined,
             defaultValue: undefined,
             deprecated: undefined,
             description: undefined,
