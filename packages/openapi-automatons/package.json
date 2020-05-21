@@ -33,6 +33,6 @@
     "@types/yup": "^0.26.33",
     "jest": "^26.0.1",
     "ts-jest": "^26.0.0",
-    "typescript": "^3.8.3"
+    "typescript": "^3.9.3"
   }
 }
