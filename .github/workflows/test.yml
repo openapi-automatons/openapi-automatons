@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        packages: [examples/typescript-axios, packages/@automatons/tools, packages/@automatons/typescript/axios, packages/@automatons/typescript/parser, packages/openapi-automatons]
+        packages: [examples/typescript/axios, packages/@automatons/tools, packages/@automatons/typescript/axios, packages/@automatons/typescript/parser, packages/openapi-automatons]
         node-version: [12.x, 14.x]
     steps:
       - uses: actions/checkout@v2
