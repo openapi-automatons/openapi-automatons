@@ -18,6 +18,7 @@ export interface Path {
   headers?: HeaderParameter[];
   cookies?: CookieParameter[];
   schema?: Schema;
+  security?: Security[];
 }
 
 export type Server = {
@@ -61,4 +62,35 @@ export type CookieParameter = {
   style: 'form';
   required?: boolean;
   explode?: boolean;
+};
+
+export type Security = ApiKeySecurity | HttpSecurity | Oauth2Security | OpenIdConnectSecurity;
+
+export type ApiKeySecurity = {
+  name: string;
+  type: 'apiKey';
+  key: string;
+  in: "query" | "header" | "cookie";
+  description?: string;
+};
+
+export type HttpSecurity = {
+  name: string;
+  type: 'http';
+  schema: 'basic' | 'bearer';
+  description?: string;
+};
+
+// TODO
+export type Oauth2Security = {
+  name: string;
+  type: 'oauth2';
+  description?: string;
+};
+
+// TODO
+export type OpenIdConnectSecurity = {
+  name: string;
+  type: 'openIdConnect';
+  description?: string;
 };
