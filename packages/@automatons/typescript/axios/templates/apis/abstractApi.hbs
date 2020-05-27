@@ -13,10 +13,12 @@ const BASE_AXIOS = Axios.create({
 export class AbstractApi {
   protected axios: AxiosInstance = BASE_AXIOS;
   protected token: Config['token'];
+	protected security: Config["security"];
 
-  constructor({axios, token}: Config) {
+  constructor({axios, token, security}: Config) {
     if (axios) this.axios = axios;
     this.token = token;
+		this.security = security;
   }
 
   protected template(

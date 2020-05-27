@@ -18,7 +18,7 @@ export interface Path {
   headers?: HeaderParameter[];
   cookies?: CookieParameter[];
   schema?: Schema;
-  security?: Security[];
+  securities?: Security[];
 }
 
 export type Server = {
@@ -85,6 +85,7 @@ export type HttpSecurity = {
 export type Oauth2Security = {
   name: string;
   type: 'oauth2';
+  scopes: string[];
   description?: string;
 };
 

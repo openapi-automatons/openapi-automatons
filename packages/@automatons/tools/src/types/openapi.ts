@@ -121,7 +121,7 @@ export interface OpenapiPathOperation extends OpenapiPathCommon {
   responses: OpenapiMap<OpenapiPathResponse | OpenapiReference>;
   callbacks?: OpenapiMap<OpenapiMap<OpenapiPathOperation>>;
   deprecated?: boolean;
-  security?: OpenapiMap<string[]>;
+  security?: OpenapiMap<string[]>[];
   servers?: OpenapiServer[];
 }
 
@@ -184,7 +184,7 @@ export interface OpenapiComponents {
   examples?: {};
   requestBodies?: {};
   headers?: {};
-  securitySchemes?: {};
+  securitySchemes?: OpenapiMap<OpenapiSecuritySchema>;
   links?: {};
   callbacks?: {};
 }
@@ -281,4 +281,54 @@ export interface OpenapiSchemaCommon {
   externalDocs?: OpenapiExternalDocument;
   deprecated?: boolean;
   examples?: any;
+}
+
+export type OpenapiSecuritySchema = OpenapiSecurityApiKeySchema
+  | OpenapiSecurityHttpSchema
+  | OpenapiSecurityHttpBearerSchema
+  | OpenapiSecurityOAuth2Schema
+  | OpenapiSecurityOpenIdConnectSchema;
+
+export interface OpenapiSecurityApiKeySchema {
+  type: 'apiKey';
+  description?: string;
+  name: string;
+  in: 'query' | 'header' | 'cookie';
+}
+
+export interface OpenapiSecurityHttpSchema {
+  type: 'http';
+  description?: string;
+  schema: 'basic'; // TODO more type support
+}
+
+export interface OpenapiSecurityHttpBearerSchema {
+  type: 'http';
+  description?: string;
+  schema: 'bearer';
+  bearerFormat?: string;
+}
+
+export interface OpenapiSecurityOAuth2Schema {
+  type: 'oauth2';
+  description?: string;
+  flow: {
+    implicit?: OpenapiSecurityOAuthFlow;
+    password?: OpenapiSecurityOAuthFlow;
+    clientCredentials?: OpenapiSecurityOAuthFlow;
+    authorizationCode?: OpenapiSecurityOAuthFlow;
+  };
+}
+
+export interface OpenapiSecurityOAuthFlow {
+  authorizationUrl: string;
+  tokenUrl: string;
+  refreshUrl?: string;
+  scopes: OpenapiMap<string>;
+}
+
+export interface OpenapiSecurityOpenIdConnectSchema {
+  type: 'openIdConnect';
+  description?: string;
+  openIdConnectUrl: string;
 }

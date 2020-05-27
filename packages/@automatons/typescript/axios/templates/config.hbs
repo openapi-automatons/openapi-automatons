@@ -3,4 +3,5 @@ import { AxiosInstance } from "axios";
 export type Config = {
   axios?: AxiosInstance;
   token?: string | Promise<string> | (() => string | Promise<string>);
+	security?: any;
 }

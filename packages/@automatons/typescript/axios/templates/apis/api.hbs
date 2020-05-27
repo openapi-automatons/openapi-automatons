@@ -1,7 +1,6 @@
 import { AxiosResponse, AxiosRequestConfig } from "axios";
 import { AbstractApi } from "./abstractApi";
 import { Config } from "../config";
-import url from "url";
 {{#each imports~}}
   import { {{title}} } from "../models";
 {{/each}}
@@ -33,15 +32,39 @@ export class {{title}} extends AbstractApi {
   {{> comment title=name async=true}}
   {{name}}({{> apis/argument}}): Promise<AxiosResponse{{#if schema}}<{{> models/type schema}}>{{/if}}> {
     const baseURL = config?.baseURL ? config?.baseURL : this.server(server)
-    const pathname = {{> apis/path}};
-    {{#if queries}}
-    const query = {
+    const path = {{> apis/path}};
+    const params = {
+      ...config?.params,
       {{#each queries}}
       ...this.query("{{name}}", {{name}}, '{{#unless style}}form{{else}}{{style}}{{/unless}}', {{#unless explode}}false{{else}}{{explode}}{{/unless}}),
       {{/each}}
+      {{#each securities}}
+	      {{#and (eq type 'apiKey') (eq in 'query')}}
+	      {{key}}: this.security?.{{name}},
+	      {{/and}}
+      {{/each}}
 	  };
-    {{/if}}
-    return this.axios.{{method}}(url.format({ pathname{{#if queries}}, query{{/if}} }), {...config{{#or (not (isEmpty headers)) (not (isEmpty cookies))}}, headers: {...config?.headers{{#if headers}}, ...headers{{/if}}{{#if cookies}}, Cookie: cookies{{/if}} }{{/or}}, baseURL})
+    const _headers = {
+      ...config?.headers,
+      {{#if headers}} ...headers,{{/if}}
+      {{#each securities}}
+	      {{#and (eq type 'apiKey') (eq in 'header')}}
+      {{key}}: this.security?.{{name}},
+	      {{/and}}
+      {{/each}}
+      {{#if cookies}}
+	      Cookie: {
+	        ...cookies,
+	      {{#each securities}}
+		      {{#and (eq type 'apiKey') (eq in 'cookie')}}
+		      {{key}}: this.security?.{{name}},
+		      {{/and}}
+	      {{/each}}
+	      },
+      {{/if}}
+
+    };
+    return this.axios.{{method}}(path, {...config, params, headers: _headers, baseURL})
   }
   {{/each}}
 }

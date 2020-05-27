@@ -11,7 +11,7 @@ import {
   OpenapiReference
 } from "@automatons/tools";
 import {camelCase, pascalCase} from "change-case";
-import {CookieParameter, HeaderParameter, Model, Path, PathParameter, QueryParameter, Server} from "../types";
+import {CookieParameter, HeaderParameter, Model, Path, PathParameter, QueryParameter, Security, Server} from "../types";
 import {isRef} from "../utils/openapi";
 import {hasSchema, isCookieParam, isHeaderParam, isPathParam, isQueryParam} from "../utils/parameter";
 import {extractSchema} from "./schema";
@@ -19,9 +19,29 @@ import {convertServer} from "../converters/server";
 
 type PathContext = { path: string, openapi: Openapi };
 type PathReturn = { tags: string[], path: Path, models: Model[], imports: Model[], servers: Server[] };
+
+function convertSecurities(operation: OpenapiPathOperation, openapi: Openapi): Security[] | undefined {
+  return operation.security &&
+    operation.security.map(value =>
+      Object.entries(value)
+      .map<Security | undefined>(([name, scopes]): Security | undefined => {
+        const security = openapi.components?.securitySchemes?.[name];
+        switch (security?.type) {
+          case 'oauth2':
+            return {...security, name, scopes};
+          case 'apiKey':
+            return {...security, name, key: security.name}
+          case 'http':
+          case 'openIdConnect':
+            return {...security, name}
+          default:
+            return undefined;
+        }
+      }).filter<Security>((value): value is Security => value !== undefined)).flat();
+}
+
 export const extractPath = (schema: OpenapiPath, {path, openapi}: PathContext): PathReturn[] => {
   const params = schema.parameters ? extractParameters(schema.parameters, {path, openapi}) : undefined;
-
   return HTTP_METHODS
     .map<{ method: Method, operation: OpenapiPath | undefined }>(method => ({method, operation: schema[method]}))
     .filter<{ method: Method, operation: OpenapiPathOperation }>(
@@ -31,6 +51,7 @@ export const extractPath = (schema: OpenapiPath, {path, openapi}: PathContext): 
         .map(convertServer);
       const methodParams = operation.parameters ? extractParameters(operation.parameters, {path, openapi}) : undefined;
       const response = operation.responses[extractStatus(operation.responses)];
+      const securities = convertSecurities(operation, openapi)
       if (!isRef(response)) { // TODO ref
         const content = response.content;
         if (content) {
@@ -49,7 +70,8 @@ export const extractPath = (schema: OpenapiPath, {path, openapi}: PathContext): 
                 queries: [...params?.queries ?? [], ...methodParams?.queries ?? []].sort(parameterCompare),
                 headers: [...params?.headers ?? [], ...methodParams?.headers ?? []].sort(parameterCompare),
                 cookies: [...params?.cookies ?? [], ...methodParams?.cookies ?? []].sort(parameterCompare),
-                schema: responseSchema
+                schema: responseSchema,
+                securities
               },
               models: [...models, ...params?.models ?? [], ...methodParams?.models ?? []],
               imports: [...imports ?? [], ...params?.imports ?? [], ...methodParams?.imports ?? []],
@@ -68,6 +90,7 @@ export const extractPath = (schema: OpenapiPath, {path, openapi}: PathContext): 
             queries: [...params?.queries ?? [], ...methodParams?.queries ?? []].sort(parameterCompare),
             headers: [...params?.headers ?? [], ...methodParams?.headers ?? []].sort(parameterCompare),
             cookies: [...params?.cookies ?? [], ...methodParams?.cookies ?? []].sort(parameterCompare),
+            securities
           },
           models: [],
           imports: [],
