@@ -9,8 +9,7 @@
     "build": "lerna run --stream build",
     "postbuild": "lerna link",
     "pretest": "yarn build",
-    "postinstall": "typesync ./package.json && yarn install --ignore-scripts",
-    "test": "lerna run --stream --parallel test",
+    "test": "jest",
     "test:coverage": "lerna run --stream --parallel test -- --coverage"
   },
   "workspaces": [

@@ -1,5 +1,5 @@
 import Axios, { AxiosInstance } from "axios";
-import { Config } from "../config";
+import { Config, Security } from "../config";
 import { ParsedUrlQueryInput } from "querystring";
 
 const DateFormat = /^\d{4}-\d{2}-\d{2}([tT]\d{2}:\d{2}:\d{2}(Z|[+-]\d{2}:\d{2})|Z)?$/;
@@ -13,13 +13,24 @@ const BASE_AXIOS = Axios.create({
 export class AbstractApi {
   protected axios: AxiosInstance = BASE_AXIOS;
   protected token: Config['token'];
-	protected security: Config["security"];
+
+	readonly #security?: Security;
 
   constructor({axios, token, security}: Config) {
     if (axios) this.axios = axios;
     this.token = token;
-		this.security = security;
+		this.#security = security;
   }
+
+	protected async security(key: keyof Security): Promise<string> {
+		const security = this.#security?.[key];
+		if (security === undefined) {
+			throw new Error("Unauthorized user request.");
+		} else if (security instanceof Function) {
+			return security();
+		}
+		return security;
+	}
 
   protected template(
     name: string,

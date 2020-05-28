@@ -8,7 +8,7 @@ export const generate = async (openapi: Openapi, outDir: string) => {
   const promises: Promise<void>[] = [];
   await setup();
 
-  const {models, apis} = parser(openapi);
+  const {models, apis, securities} = parser(openapi);
   if (models.length) {
     promises.push(write('models/index.hbs', [outDir, 'models', 'index.ts'], models))
     const modelPromises = models
@@ -26,7 +26,7 @@ export const generate = async (openapi: Openapi, outDir: string) => {
 
   promises.push(
     write('index.hbs', [outDir, 'index.ts'], {api: apis.length, model: models.length}),
-    write('config.hbs', [outDir, 'config.ts'])
+    write('config.hbs', [outDir, 'config.ts'], {securities})
   );
   return Promise.all(promises)
 };

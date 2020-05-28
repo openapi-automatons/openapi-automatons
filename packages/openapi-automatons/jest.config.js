@@ -1,5 +1,6 @@
 module.exports = {
   clearMocks: true,
+  displayName: 'openapi-automatons',
   roots: [
     "<rootDir>/src"
   ],

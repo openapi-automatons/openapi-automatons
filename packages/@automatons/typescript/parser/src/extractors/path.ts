@@ -16,9 +16,12 @@ import {isRef} from "../utils/openapi";
 import {hasSchema, isCookieParam, isHeaderParam, isPathParam, isQueryParam} from "../utils/parameter";
 import {extractSchema} from "./schema";
 import {convertServer} from "../converters/server";
+import {convertSecurity} from "../converters/security";
 
 type PathContext = { path: string, openapi: Openapi };
 type PathReturn = { tags: string[], path: Path, models: Model[], imports: Model[], servers: Server[] };
+
+
 
 function convertSecurities(operation: OpenapiPathOperation, openapi: Openapi): Security[] | undefined {
   return operation.security &&
@@ -26,17 +29,7 @@ function convertSecurities(operation: OpenapiPathOperation, openapi: Openapi): S
       Object.entries(value)
       .map<Security | undefined>(([name, scopes]): Security | undefined => {
         const security = openapi.components?.securitySchemes?.[name];
-        switch (security?.type) {
-          case 'oauth2':
-            return {...security, name, scopes};
-          case 'apiKey':
-            return {...security, name, key: security.name}
-          case 'http':
-          case 'openIdConnect':
-            return {...security, name}
-          default:
-            return undefined;
-        }
+        return security ? convertSecurity(name, security, scopes) : undefined;
       }).filter<Security>((value): value is Security => value !== undefined)).flat();
 }
 

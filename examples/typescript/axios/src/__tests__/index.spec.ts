@@ -10,7 +10,7 @@ beforeAll(() => {
 });
 
 it('should be call',async () => {
-  const PetAPI = new PetApi({axios});
+  const PetAPI = new PetApi({axios, security: {apiKey: 'test'}});
   await expect(PetAPI.findPets())
     .resolves.toHaveProperty('data',[{id: 0, foods:['Peanuts']}])
   await expect(PetAPI.findPetById(0, 'ore'))

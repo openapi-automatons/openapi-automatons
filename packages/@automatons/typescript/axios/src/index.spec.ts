@@ -14,7 +14,7 @@ it('should generate.', async () => {
   expect(report.warningCount).toBe(0);
 });
 
-afterEach(async () => {
+afterAll(async () => {
   await remove(paths.tmp);
 });
 

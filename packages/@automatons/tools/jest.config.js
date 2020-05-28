@@ -1,5 +1,6 @@
 module.exports = {
   clearMocks: true,
+  displayName: '@automatons/tools',
   roots: [
     "<rootDir>/src"
   ],

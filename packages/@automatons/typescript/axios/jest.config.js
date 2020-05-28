@@ -1,5 +1,6 @@
 module.exports = {
   clearMocks: true,
+  displayName: '@automatons/typescript-axios',
   roots: [
     "<rootDir>/src"
   ],
