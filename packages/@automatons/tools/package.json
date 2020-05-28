@@ -15,7 +15,6 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@types/cli-progress": "^3.4.2",
     "@types/fs-extra": "^8.1.0",
     "@types/jest": "^25.2.1",
     "@types/node": "^13.11.1",
