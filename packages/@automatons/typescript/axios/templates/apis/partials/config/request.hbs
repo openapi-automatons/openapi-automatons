@@ -1,0 +1,8 @@
+public async {{name}}({{> apis/config/arguments}}): Promise<AxiosRequestConfig> {
+	return {
+		...config,
+		baseURL: {{> apis/config/request/baseURL title=title }},
+		params: {{> apis/config/request/params }},
+		headers: {{> apis/config/request/headers }}
+	};
+}

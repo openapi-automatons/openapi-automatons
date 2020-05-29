@@ -1,0 +1,19 @@
+{
+	...config?.headers,
+	{{#if headers}}...headers,{{/if}}
+	{{#each securities}}
+		{{#and (eq type 'apiKey') (eq in 'header')}}
+	{{key}}: await this.security("{{name}}"),
+		{{/and}}
+	{{/each}}
+	{{#if cookies}}
+	Cookie: {
+	...cookies,
+	{{#each securities}}
+		{{#and (eq type 'apiKey') (eq in 'cookie')}}
+	{{key}}: await this.security("{{name}}"),
+		{{/and}}
+	{{/each}}
+	},
+{{/if}}
+}

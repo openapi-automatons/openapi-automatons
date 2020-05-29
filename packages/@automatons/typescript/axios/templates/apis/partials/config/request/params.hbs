@@ -1,0 +1,11 @@
+{
+	...config?.params,
+{{#each queries}}
+	...utils.query("{{name}}", {{name}}, '{{#unless style}}form{{else}}{{style}}{{/unless}}', {{#unless explode}}false{{else}}{{explode}}{{/unless}}),
+{{/each}}
+{{#each securities}}
+	{{#and (eq type 'apiKey') (eq in 'query')}}
+	{{key}}: await this.security("{{name}}"),
+	{{/and}}
+{{/each}}
+}

@@ -1,0 +1,12 @@
+class {{title}}Config extends AbstractConfig {
+	constructor(security?: Security) {
+		super(security);
+	}
+
+	{{> apis/config/server }}
+
+{{#each paths}}
+
+	{{> apis/config/request title=../title }}
+{{/each}}
+}

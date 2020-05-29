@@ -1,6 +1,7 @@
 import { AxiosResponse, AxiosRequestConfig } from "axios";
-import { AbstractApi } from "./abstractApi";
-import { Config } from "../config";
+import { AbstractApi, AbstractConfig } from "./abstractApi";
+import { Config, Security } from "../config";
+import utils from "../utils";
 {{#each imports~}}
   import { {{title}} } from "../models";
 {{/each}}
@@ -9,62 +10,6 @@ import { Config } from "../config";
 type {{name}}Server = { name: "{{name}}"{{#if values}}, values: { {{#each values}}{{name}}: {{#if enums}}{{#each enums}}'{{this}}'{{#unless @last}} | {{/unless}}{{/each}}{{else}}string{{/if}} {{/each}} } {{/if}} }
 {{/each}}
 
-{{> comment}}
-export class {{title}} extends AbstractApi {
-  constructor(config: Config) {
-    super(config);
-  }
+{{> apis/class }}
 
-  private server({name, values}: {{#each servers}}{{name}}Server{{#unless @last}} | {{/unless}}{{/each}}) {
-  {{#each servers}}
-    if ('{{name}}' === name) {
-      return '{{url}}'
-        {{#each values}}
-            .replace('{ {{~name~}} }', this.template('{{name}}', values.{{name}}, 'simple', false))
-        {{~/each}};
-    }
-  {{/each}}
-    throw new Error('Undefined server. please define server.');
-  }
-
-  {{#each paths}}
-
-  {{> comment title=name async=true}}
-  public async {{name}}({{> apis/argument}}): Promise<AxiosResponse{{#if schema}}<{{> models/type schema}}>{{/if}}> {
-    const baseURL = config?.baseURL ? config?.baseURL : this.server(server)
-    const path = {{> apis/path}};
-    const params = {
-      ...config?.params,
-      {{#each queries}}
-      ...this.query("{{name}}", {{name}}, '{{#unless style}}form{{else}}{{style}}{{/unless}}', {{#unless explode}}false{{else}}{{explode}}{{/unless}}),
-      {{/each}}
-      {{#each securities}}
-	      {{#and (eq type 'apiKey') (eq in 'query')}}
-	      {{key}}: await this.security("{{name}}"),
-	      {{/and}}
-      {{/each}}
-	  };
-    const _headers = {
-      ...config?.headers,
-      {{#if headers}} ...headers,{{/if}}
-      {{#each securities}}
-	      {{#and (eq type 'apiKey') (eq in 'header')}}
-      {{key}}: await this.security("{{name}}"),
-	      {{/and}}
-      {{/each}}
-      {{#if cookies}}
-	      Cookie: {
-	        ...cookies,
-	      {{#each securities}}
-		      {{#and (eq type 'apiKey') (eq in 'cookie')}}
-		      {{key}}: await this.security("{{name}}"),
-		      {{/and}}
-	      {{/each}}
-	      },
-      {{/if}}
-
-    };
-    return this.axios.{{method}}(path, {...config, params, headers: _headers, baseURL})
-  }
-  {{/each}}
-}
+{{> apis/config }}

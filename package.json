@@ -9,6 +9,7 @@
     "build": "lerna run --stream build",
     "postbuild": "lerna link",
     "pretest": "yarn build",
+    "postinstall": "typesync && yarn install --ignore-scripts",
     "test": "jest",
     "test:coverage": "lerna run --stream --parallel test -- --coverage"
   },
@@ -26,6 +27,6 @@
     "lerna": "^3.20.2",
     "semantic-release": "^17.0.7",
     "typescript": "^3.9.3",
-    "typesync": "^0.6.1"
+    "typesync": "^0.7.0"
   }
 }

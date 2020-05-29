@@ -1,0 +1,6 @@
+{{> comment title=name async=true}}
+public async {{name}}({{> apis/class/arguments}}): Promise<AxiosResponse{{#if schema}}<{{> models/type schema}}>{{/if}}> {
+	const path = {{> apis/class/path}};
+	const requestConfig = await this.#config.{{name}}({{> apis/class/variables }});
+	return this.axios.{{method}}(path, requestConfig)
+}

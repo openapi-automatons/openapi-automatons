@@ -1,0 +1,11 @@
+private static server({name, values}: {{#each servers}}{{name}}Server{{#unless @last}} | {{/unless}}{{/each}}) {
+	{{#each servers}}
+	if ('{{name}}' === name) {
+		return '{{url}}'
+		{{#each values}}
+			.replace('{ {{~name~}} }', utils.template('{{name}}', values.{{name}}, 'simple', false))
+		{{~/each}};
+	}
+	{{/each}}
+	throw new Error('Undefined server. please define server.');
+}

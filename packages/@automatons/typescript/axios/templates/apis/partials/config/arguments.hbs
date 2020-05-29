@@ -1,4 +1,3 @@
-{{~#each parameters}}{{name}}: {{> models/type schema}},{{/each}}
 {{~#each queries}}{{name}}{{#unless required}}?{{/unless}}: {{> models/type schema}},{{/each}}
 {{~#if headers}}headers: {
 	{{#each headers}}
@@ -12,4 +11,4 @@
 {{/each}}
 }{{#if (every cookies 'required' false)}} = {}{{/if}},
 {{/if}}
-{{~> apis/server servers}} config?: AxiosRequestConfig
+{{~> apis/arguments/server servers}} config?: AxiosRequestConfig

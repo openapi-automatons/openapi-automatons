@@ -26,7 +26,9 @@ export const generate = async (openapi: Openapi, outDir: string) => {
 
   promises.push(
     write('index.hbs', [outDir, 'index.ts'], {api: apis.length, model: models.length}),
-    write('config.hbs', [outDir, 'config.ts'], {securities})
+    write('config.hbs', [outDir, 'config.ts'], {securities}),
+    write('utils/index.hbs', [outDir, 'utils', 'index.ts']),
+    write('utils/template.hbs', [outDir, 'utils', 'template.ts'])
   );
   return Promise.all(promises)
 };
