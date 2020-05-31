@@ -33,7 +33,7 @@ jobs:
       - uses: homoluctus/slatify@master
         with:
           type: ${{ needs.test.result }}
-          job_name: ${{ github.workflow }}
+          job_name: Test
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
 
