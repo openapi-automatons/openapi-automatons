@@ -1,20 +1,6 @@
-export const template =
-  (
-    name: string,
-    value: string | number | Array<string | number> | { [key: string]: string | number },
-    style: 'simple' | 'label' | 'matrix',
-    explode: boolean) => {
-    if (style === 'simple') {
-      return templateSimple(explode, value);
-    } else if (style === 'label') {
-      return templateLabel(explode, value);
-    } else if (style === 'matrix') {
-      return templateMatrix(explode, name, value);
-    }
-    throw new Error(`Unsupported style: ${style}`)
-  }
+import {ParsedUrlQueryInput} from 'querystring';
 
-const templateSimple = (explode: boolean, value: string | number | Array<string | number> | { [p: string]: string | number }) => {
+const templateSimple = (explode: boolean, value: string | number | Array<string | number> | { [p: string]: string | number }): string => {
   if (!explode) {
     return value instanceof Object
       ? Array.isArray(value)
@@ -27,7 +13,7 @@ const templateSimple = (explode: boolean, value: string | number | Array<string 
     : String(value);
 }
 
-const templateLabel = (explode: boolean, value: string | number | Array<string | number> | { [p: string]: string | number }) => {
+const templateLabel = (explode: boolean, value: string | number | Array<string | number> | { [p: string]: string | number }): string => {
   if (!explode) {
     return `.${value instanceof Object
       ? Array.isArray(value)
@@ -40,7 +26,7 @@ const templateLabel = (explode: boolean, value: string | number | Array<string |
     : String(value);
 }
 
-const templateMatrix = (explode: boolean, name: string, value: string | number | Array<string | number> | { [p: string]: string | number }) => {
+const templateMatrix = (explode: boolean, name: string, value: string | number | Array<string | number> | { [p: string]: string | number }): string => {
   if (!explode) {
     return `;${name}=${value instanceof Object
       ? Array.isArray(value)
@@ -54,13 +40,80 @@ const templateMatrix = (explode: boolean, name: string, value: string | number |
     : `${name}=${String(value)}`}`;
 }
 
+export const template =
+  (
+    name: string,
+    value: string | number | Array<string | number> | { [key: string]: string | number },
+    style: 'simple' | 'label' | 'matrix',
+    explode: boolean): string => {
+    if (style === 'simple') {
+      return templateSimple(explode, value);
+    } else if (style === 'label') {
+      return templateLabel(explode, value);
+    } else if (style === 'matrix') {
+      return templateMatrix(explode, name, value);
+    }
+    throw new Error(`Unsupported style: ${style}`)
+  }
+
+const queryForm =
+  (name: string,
+   value: string | number | Array<string | number> | { [key: string]: string | number },
+   explode: boolean): ParsedUrlQueryInput => {
+    if (Array.isArray(value)) {
+      if (explode) {
+        return {[name]: value.map(String)}
+      } else {
+        return {[name]: value.join(',')}
+      }
+    } else if (value instanceof Object) {
+      if (explode) {
+        return value;
+      } else {
+        return {[name]: Object.entries(value).map((prop: [string, string | number]) => prop.join(',')).join(',')}
+      }
+    } else {
+      return {[name]: value};
+    }
+  }
+
+const querySpaceDelimited =
+  (name: string,
+   value: string | number | Array<string | number> | { [key: string]: string | number }): ParsedUrlQueryInput => {
+    if (Array.isArray(value)) {
+      return {[name]: value.join(' ')}
+    } else if (value instanceof Object) {
+      return {[name]: Object.entries(value).map((prop: [string, string | number]) => prop.join(' ')).join(' ')}
+    }
+    throw new Error(`Unsupported value: ${name}`);
+  }
+
+const queryPipeDelimited =
+  (name: string,
+   value: string | number | Array<string | number> | { [key: string]: string | number }): ParsedUrlQueryInput => {
+    if (Array.isArray(value)) {
+      return {[name]: value.join('|')}
+    } else if (value instanceof Object) {
+      return {[name]: Object.entries(value).map((prop: [string, string | number]) => prop.join('|')).join('|')}
+    }
+    throw new Error(`Unsupported value: ${name}`);
+  }
+
+const queryDeepObject =
+  (name: string,
+   value: string | number | Array<string | number> | { [key: string]: string | number }): ParsedUrlQueryInput => {
+    if (!Array.isArray(value) && value instanceof Object) {
+      return Object.keys(value).reduce((pre, cur) => ({...pre, [`${name}[${cur}]`]: value[cur]}), {});
+    }
+    throw new Error(`Unsupported value: ${name}`);
+  }
 
 export const query =
   (
     name: string,
     value: undefined | string | number | Array<string | number> | { [key: string]: string | number },
     style: 'form' | 'spaceDelimited' | 'pipeDelimited' | 'deepObject',
-    explode: boolean) => {
+    explode: boolean): ParsedUrlQueryInput => {
     if (value === undefined) return {};
     switch (style) {
       case 'form':
@@ -74,56 +127,4 @@ export const query =
       default:
         throw new Error(`Unsupported style: ${style}`);
     }
-  }
-
-const queryForm =
-  (name: string,
-   value: string | number | Array<string | number> | { [key: string]: string | number },
-   explode: boolean) => {
-    if (Array.isArray(value)) {
-      if (explode) {
-        return {[name]: value.map(String)}
-      } else {
-        return {[name]: value.join(',')}
-      }
-    } else if (value instanceof Object) {
-      if (explode) {
-        return value;
-      } else {
-        return {[name]: Object.entries(value).map((prop: [string, any]) => prop.join(',')).join(',')}
-      }
-    } else {
-      return {[name]: value};
-    }
-  }
-
-const querySpaceDelimited =
-  (name: string,
-   value: string | number | Array<string | number> | { [key: string]: string | number }) => {
-    if (Array.isArray(value)) {
-      return {[name]: value.join(' ')}
-    } else if (value instanceof Object) {
-      return {[name]: Object.entries(value).map((prop: [string, any]) => prop.join(' ')).join(' ')}
-    }
-    throw new Error(`Unsupported value: ${name}`);
-  }
-
-const queryPipeDelimited =
-  (name: string,
-   value: string | number | Array<string | number> | { [key: string]: string | number }) => {
-    if (Array.isArray(value)) {
-      return {[name]: value.join('|')}
-    } else if (value instanceof Object) {
-      return {[name]: Object.entries(value).map((prop: [string, any]) => prop.join('|')).join('|')}
-    }
-    throw new Error(`Unsupported value: ${name}`);
-  }
-
-const queryDeepObject =
-  (name: string,
-   value: string | number | Array<string | number> | { [key: string]: string | number }) => {
-    if (!Array.isArray(value) && value instanceof Object) {
-      return Object.keys(value).reduce((pre, cur) => ({...pre, [`${name}[${cur}]`]: value[cur]}), {});
-    }
-    throw new Error(`Unsupported value: ${name}`);
   }

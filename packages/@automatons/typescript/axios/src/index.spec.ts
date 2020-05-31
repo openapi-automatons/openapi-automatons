@@ -9,7 +9,14 @@ it('should generate.', async () => {
 
   await generatorTypescriptAxios(minimumOpenapi, paths.tmp, undefined);
   const report = linter.executeOnFiles(['**/*']);
-  console.log(report);
+
+  report.results
+    .filter(result => result.errorCount !== 0 || result.warningCount !== 0)
+    .forEach(result => {
+      const {messages, source} = result;
+      console.log({messages: messages.map(message => message.message).join("\n"), source});
+    })
+
   expect(report.errorCount).toBe(0);
   expect(report.warningCount).toBe(0);
 });
