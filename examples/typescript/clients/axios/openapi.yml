@@ -141,7 +141,7 @@ paths:
             type: integer
             format: int64
       responses:
-        '204':
+        204:
           description: pet deleted
         default:
           description: unexpected error
@@ -149,6 +149,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+  /securities/apiKey:
+    get:
+      tags:
+        - security
+      operationId: apiKey
+      security:
+        - apiKey: []
+      responses:
+        204:
+          description: apiKey
 components:
   securitySchemes:
     apiKey:
