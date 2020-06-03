@@ -1,6 +1,7 @@
 {{> comment}}
 export class {{title}} extends AbstractApi {
-	readonly #config: {{title}}Config
+	readonly #config: {{title}}Config;
+
 	constructor(config: Config) {
 		super(config);
 		this.#config = new {{title}}Config(config.security);

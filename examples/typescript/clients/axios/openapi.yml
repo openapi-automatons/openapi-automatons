@@ -159,6 +159,15 @@ paths:
       responses:
         204:
           description: apiKey
+  /securities/oauth2:
+    get:
+      tags: [security]
+      operationId: oauth2
+      security:
+        - oauth2: [pet:write]
+      responses:
+        204:
+          description: oauth2
 components:
   securitySchemes:
     apiKey:
@@ -166,6 +175,13 @@ components:
       in: header
       name: Header
       description: ApiKey header
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: http://example.com
+          scopes:
+            pet:write: pet write
   schemas:
     PetModel:
       allOf:

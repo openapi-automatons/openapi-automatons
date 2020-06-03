@@ -1,8 +1,16 @@
 public async {{name}}({{> apis/config/arguments}}): Promise<AxiosRequestConfig> {
+	const params = {{> apis/config/request/params }};
+
+	const _cookies = { ...config?.headers?.Cookie };
+	{{> apis/config/request/cookies }}
+
+	const _headers = { ...config?.headers, Cookie: _cookies };
+	{{> apis/config/request/headers }}
+
 	return {
 		...config,
 		baseURL: {{> apis/config/request/baseURL title=title }},
-		params: {{> apis/config/request/params }},
-		headers: {{> apis/config/request/headers }}
+		params,
+		headers: _headers
 	};
 }

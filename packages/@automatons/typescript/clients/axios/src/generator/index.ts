@@ -2,6 +2,7 @@ import {Openapi} from "@automatons/tools";
 import parser from "@automatons/typescript-parser";
 import {write} from "./writer";
 import {setup} from "./setup";
+import {extractApiMeta} from "../extractors/api";
 
 
 export const generate = async (openapi: Openapi, outDir: string) => {
@@ -21,14 +22,15 @@ export const generate = async (openapi: Openapi, outDir: string) => {
       write('apis/index.hbs', [outDir, 'apis', 'index.ts'], apis),
       write('apis/abstractApi.hbs', [outDir, 'apis', 'abstractApi.ts']),
     );
-    promises.push(...apis.map(api => write('apis/api.hbs', [outDir, 'apis', `${api.filename}.ts`], api)));
+    promises.push(...apis.map(api => write('apis/api.hbs', [outDir, 'apis', `${api.filename}.ts`], {api, meta: extractApiMeta(api)})));
   }
 
   promises.push(
     write('index.hbs', [outDir, 'index.ts'], {api: apis.length, model: models.length}),
     write('config.hbs', [outDir, 'config.ts'], {securities}),
     write('utils/index.hbs', [outDir, 'utils', 'index.ts']),
-    write('utils/template.hbs', [outDir, 'utils', 'template.ts'])
+    write('utils/template.hbs', [outDir, 'utils', 'template.ts']),
+    write('utils/query.hbs', [outDir, 'utils', 'query.ts'])
   );
   return Promise.all(promises)
 };

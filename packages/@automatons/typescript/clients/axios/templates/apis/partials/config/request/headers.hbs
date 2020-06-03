@@ -1,19 +1,14 @@
-{
-	...config?.headers,
-	{{#if headers}}...headers,{{/if}}
-	{{#each securities}}
-		{{#and (eq type 'apiKey') (eq in 'header')}}
-	{{key}}: await this.security("{{name}}"),
-		{{/and}}
-	{{/each}}
-	{{#if cookies}}
-	Cookie: {
-	...cookies,
-	{{#each securities}}
-		{{#and (eq type 'apiKey') (eq in 'cookie')}}
-	{{key}}: await this.security("{{name}}"),
-		{{/and}}
-	{{/each}}
-	},
-{{/if}}
+{{~#each headers}}
+if (headers.{{name}}) {
+	_headers['{{name}}'] =  template('{{name}}', headers.{{name}}, 'simple', {{#if explode}}true{{else}}false{{/if}});
 }
+{{/each}}
+{{~#each securities}}
+	{{#and (eq type 'apiKey') (eq in 'header')~}}
+		_headers['{{key}}'] = await this.security("{{name}}");
+	{{else eq type 'oauth2'}}
+		_headers['Authorization'] = `Bearer ${await this.security("{{name}}")}`;
+	{{else eq type 'openIdConnect'}}
+		_headers['Authorization'] = `Bearer ${await this.security("{{name}}")}`;
+	{{/and}}
+{{/each}}

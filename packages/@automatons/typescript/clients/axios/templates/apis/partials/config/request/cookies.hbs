@@ -1,0 +1,10 @@
+{{~#each cookies}}
+	if (cookies.{{name}}) {
+	_cookies['{{name}}'] =  query('{{name}}', cookies.{{name}}, 'form', {{#if explode}}true{{else}}false{{/if}});
+	}
+{{/each}}
+{{~#each securities}}
+	{{#and (eq type 'apiKey') (eq in 'cookie')~}}
+		_cookies['{{key}}'] = await this.security("{{name}}");
+	{{/and}}
+{{/each}}

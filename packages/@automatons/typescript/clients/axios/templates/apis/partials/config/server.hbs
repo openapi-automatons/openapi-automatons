@@ -1,9 +1,9 @@
-private static server({name, values}: {{#each servers}}{{name}}Server{{#unless @last}} | {{/unless}}{{/each}}) {
+private static server(server: {{#each servers}}{{name}}Server{{#unless @last}} | {{/unless}}{{/each}}) {
 	{{#each servers}}
-	if ('{{name}}' === name) {
+	if ('{{name}}' === server.name) {
 		return '{{url}}'
 		{{#each values}}
-			.replace('{ {{~name~}} }', utils.template('{{name}}', values.{{name}}, 'simple', false))
+			.replace('{ {{~name~}} }', template('{{name}}', server.values.{{name}}, 'simple', false))
 		{{~/each}};
 	}
 	{{/each}}
