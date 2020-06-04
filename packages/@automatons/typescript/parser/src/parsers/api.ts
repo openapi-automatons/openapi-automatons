@@ -1,13 +1,12 @@
-import {Openapi} from "@automatons/tools";
 import {camelCase, pascalCase} from "change-case";
 import {convertMap} from "../converters/map";
 import {extractPath} from "../extractors/path";
-import {Api, Model, Path, Server} from "../types";
+import {Api, Context, Model, Path, Server} from "../types";
 import {uniq} from "../utils/uniq";
 
-export const parseApi = (openapi: Openapi): { apis: Api[], models: Model[] } =>
+export const parseApi = ({openapi, settings}: Context): { apis: Api[], models: Model[] } =>
   convertMap(openapi.paths)
-    .map(({key, schema}) => extractPath(schema, {path: key, openapi}))
+    .map(({key, schema}) => extractPath(schema, {path: key, openapi, settings}))
     .flat()
     .reduce<{ apis: Api[], models: Model[] }>((pre, cur) => {
       let apis = pre.apis;

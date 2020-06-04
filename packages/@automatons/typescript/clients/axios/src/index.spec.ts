@@ -7,7 +7,7 @@ import paths from "./paths";
 it('should generate.', async () => {
   const linter = new CLIEngine({cwd: paths.tmp, rules: {quotes: [2, "double"]}});
 
-  await generatorTypescriptAxios(minimumOpenapi, paths.tmp, undefined);
+  await generatorTypescriptAxios(minimumOpenapi, {path: '', openapiPath: '', outDir: paths.tmp}, undefined);
   const report = linter.executeOnFiles(['**/*']);
 
   report.results

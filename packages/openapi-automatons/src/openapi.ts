@@ -1,5 +1,5 @@
 import fs from 'fs-extra';
-import Yaml from 'js-yaml';
+import {safeLoad} from 'js-yaml';
 import {Openapi} from "@automatons/tools";
 import path from "path";
 
@@ -11,7 +11,7 @@ export const readOpenapi = (openapiPath: string) =>
           return JSON.parse(data);
         case '.yml':
         case '.yaml':
-          return Yaml.safeLoad(data);
+          return safeLoad(data);
         default:
           throw new Error('Unsupported file extension');
       }

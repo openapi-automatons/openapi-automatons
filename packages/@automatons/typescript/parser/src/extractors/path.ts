@@ -8,7 +8,8 @@ import {
   OpenapiPathMedia,
   OpenapiPathOperation,
   OpenapiPathResponse,
-  OpenapiReference
+  OpenapiReference,
+  AutomatonSettings
 } from "@automatons/tools";
 import {camelCase, pascalCase} from "change-case";
 import {
@@ -29,7 +30,7 @@ import {convertServer} from "../converters/server";
 import {convertSecurity} from "../converters/security";
 import deepEqual from "deep-equal";
 
-type PathContext = { path: string, openapi: Openapi };
+type PathContext = { path: string, openapi: Openapi, settings: AutomatonSettings };
 type PathReturn = { tags: string[], path: Path, models: Model[], imports: Model[], servers: Server[] };
 
 
@@ -43,8 +44,8 @@ function convertSecurities(operation: OpenapiPathOperation, openapi: Openapi): S
         }).filter<Security>((value): value is Security => value !== undefined)).flat();
 }
 
-export const extractPath = (schema: OpenapiPath, {path, openapi}: PathContext): PathReturn[] => {
-  const params = schema.parameters ? extractParameters(schema.parameters, {path, openapi}) : undefined;
+export const extractPath = (schema: OpenapiPath, {path, openapi, settings}: PathContext): PathReturn[] => {
+  const params = schema.parameters ? extractParameters(schema.parameters, {path, openapi, settings}) : undefined;
   return HTTP_METHODS
     .map<{ method: Method, operation: OpenapiPath | undefined }>(method => ({method, operation: schema[method]}))
     .filter<{ method: Method, operation: OpenapiPathOperation }>(
@@ -52,7 +53,7 @@ export const extractPath = (schema: OpenapiPath, {path, openapi}: PathContext): 
     .map(({method, operation}) => {
       const servers = (operation.servers || schema.servers || openapi.servers || [])
         .map(convertServer);
-      const methodParams = operation.parameters ? extractParameters(operation.parameters, {path, openapi}) : undefined;
+      const methodParams = operation.parameters ? extractParameters(operation.parameters, {path, openapi, settings}) : undefined;
       const response = operation.responses[extractStatus(operation.responses)];
       const securities = convertSecurities(operation, openapi)
       const requestBody = operation.requestBody;

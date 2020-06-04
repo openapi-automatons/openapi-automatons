@@ -6,3 +6,18 @@
 ## What OpenapiAutomatons
 This library is a generator using openapi file.
 
+## Get Started
+```shell script
+yarn add -D openapi-automatons @automatons/typescript-axios
+```
+
+create file in your package.json dir
+```json:automatons.json
+{
+  "openapi": "openapi.yml",
+  "automatons": [{
+    "automaton": "@automatons/typescript-axios",
+    "outDir": "src/clients"
+  }]
+}
+```

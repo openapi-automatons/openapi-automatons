@@ -3,11 +3,9 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
-      <excludeFolder url="file://$MODULE_DIR$/examples/typescript-axios/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/typescript/clients/axios/dist" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@automatons/tools/dist" />
-      <excludeFolder url="file://$MODULE_DIR$/packages/@automatons/typescript-axios/dist" />
-      <excludeFolder url="file://$MODULE_DIR$/packages/@automatons/typescript-parser/dist" />
-      <excludeFolder url="file://$MODULE_DIR$/packages/@automatons/typescript/axios/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/@automatons/typescript/clients/axios/dist" />
       <excludeFolder url="file://$MODULE_DIR$/packages/@automatons/typescript/parser/dist" />
       <excludeFolder url="file://$MODULE_DIR$/packages/openapi-automatons/dist" />
       <excludeFolder url="file://$MODULE_DIR$/temp" />

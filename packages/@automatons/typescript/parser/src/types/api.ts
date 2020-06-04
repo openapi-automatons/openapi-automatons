@@ -103,7 +103,6 @@ export type HttpSecurity = {
   description?: string;
 };
 
-// TODO
 export type Oauth2Security = {
   name: string;
   type: 'oauth2';
@@ -111,7 +110,6 @@ export type Oauth2Security = {
   description?: string;
 };
 
-// TODO
 export type OpenIdConnectSecurity = {
   name: string;
   type: 'openIdConnect';
