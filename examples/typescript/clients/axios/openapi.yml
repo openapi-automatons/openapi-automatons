@@ -84,6 +84,12 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/Pet'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PetModel'
+          application/text:
+            schema:
+              $ref: '#/components/schemas/Pet'
       responses:
         '200':
           description: pet response

@@ -30,7 +30,8 @@ export const generate = async (openapi: Openapi, outDir: string) => {
     write('config.hbs', [outDir, 'config.ts'], {securities}),
     write('utils/index.hbs', [outDir, 'utils', 'index.ts']),
     write('utils/template.hbs', [outDir, 'utils', 'template.ts']),
-    write('utils/query.hbs', [outDir, 'utils', 'query.ts'])
+    write('utils/query.hbs', [outDir, 'utils', 'query.ts']),
+    write('utils/formData.hbs', [outDir, 'utils', 'formData.ts'])
   );
   return Promise.all(promises)
 };

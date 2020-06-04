@@ -4,8 +4,10 @@ public async {{name}}({{> apis/config/arguments}}): Promise<AxiosRequestConfig> 
 	const _cookies = { ...config?.headers?.Cookie };
 	{{> apis/config/request/cookies }}
 
-	const _headers = { ...config?.headers, Cookie: _cookies };
+	const _headers = { ...config?.headers, 'Content-Type': headers['Content-Type'], Cookie: _cookies };
 	{{> apis/config/request/headers }}
+
+	// TODO auth
 
 	return {
 		...config,

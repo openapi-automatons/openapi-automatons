@@ -11,26 +11,36 @@ import {
   OpenapiReference
 } from "@automatons/tools";
 import {camelCase, pascalCase} from "change-case";
-import {CookieParameter, HeaderParameter, Model, Path, PathParameter, QueryParameter, Security, Server} from "../types";
+import {
+  CookieParameter,
+  Form,
+  HeaderParameter,
+  Model,
+  Path,
+  PathParameter,
+  QueryParameter,
+  Security,
+  Server
+} from "../types";
 import {isRef} from "../utils/openapi";
 import {hasSchema, isCookieParam, isHeaderParam, isPathParam, isQueryParam} from "../utils/parameter";
-import {extractSchema} from "./schema";
+import {extractSchema, ExtractSchemaResult} from "./schema";
 import {convertServer} from "../converters/server";
 import {convertSecurity} from "../converters/security";
+import deepEqual from "deep-equal";
 
 type PathContext = { path: string, openapi: Openapi };
 type PathReturn = { tags: string[], path: Path, models: Model[], imports: Model[], servers: Server[] };
-
 
 
 function convertSecurities(operation: OpenapiPathOperation, openapi: Openapi): Security[] | undefined {
   return operation.security &&
     operation.security.map(value =>
       Object.entries(value)
-      .map<Security | undefined>(([name, scopes]): Security | undefined => {
-        const security = openapi.components?.securitySchemes?.[name];
-        return security ? convertSecurity(name, security, scopes) : undefined;
-      }).filter<Security>((value): value is Security => value !== undefined)).flat();
+        .map<Security | undefined>(([name, scopes]): Security | undefined => {
+          const security = openapi.components?.securitySchemes?.[name];
+          return security ? convertSecurity(name, security, scopes) : undefined;
+        }).filter<Security>((value): value is Security => value !== undefined)).flat();
 }
 
 export const extractPath = (schema: OpenapiPath, {path, openapi}: PathContext): PathReturn[] => {
@@ -45,6 +55,24 @@ export const extractPath = (schema: OpenapiPath, {path, openapi}: PathContext): 
       const methodParams = operation.parameters ? extractParameters(operation.parameters, {path, openapi}) : undefined;
       const response = operation.responses[extractStatus(operation.responses)];
       const securities = convertSecurities(operation, openapi)
+      const requestBody = operation.requestBody;
+      let bodies: { forms: Form[], models: Model[], imports: Model[] } = {forms: [], models: [], imports: []};
+      if (requestBody && !isRef(requestBody)) {// TODO ref
+        bodies = Object.entries(requestBody.content)
+          .map<{ key: string, required?: boolean, extract: ExtractSchemaResult | undefined }>(([key, value]) => ({
+            key,
+            required: requestBody.required,
+            extract: value.schema && extractSchema([...path.split('/'), method, ...key.split('/'), 'Request'].join(' '), value.schema, openapi)
+          }))
+          .filter<{ key: string, required?: boolean, extract: ExtractSchemaResult }>((res): res is { key: string, required: boolean, extract: ExtractSchemaResult } => res.extract !== undefined)
+          .map<{ form:Form, models: Model[], imports?: Model[] }>(({key, required, extract}) =>
+            ({form: {types: [key], required, schema: extract.schema}, models: extract.models, imports: extract.imports}))
+          .reduce<{ forms: Form[], models: Model[], imports: Model[] }>((pre, cur) => ({
+            forms: pre.forms.some(form => deepEqual(form.schema, cur.form.schema)) ? pre.forms.map(form => deepEqual(form.schema, cur.form.schema) ? {...form, types: [...form.types, ...cur.form.types]} : form) : [...pre.forms, cur.form],
+            models: [...pre.models, ...cur.models],
+            imports: [...pre.imports, ...cur.imports ?? []]
+          }), {...bodies})
+      }
       if (!isRef(response)) { // TODO ref
         const content = response.content;
         if (content) {
@@ -59,6 +87,7 @@ export const extractPath = (schema: OpenapiPath, {path, openapi}: PathContext): 
                 name: camelCase(operation.operationId ?? [method, ...path.split('/')].join(' ')),
                 method,
                 servers,
+                forms: bodies.forms,
                 parameters: [...params?.parameters ?? [], ...methodParams?.parameters ?? []],
                 queries: [...params?.queries ?? [], ...methodParams?.queries ?? []].sort(parameterCompare),
                 headers: [...params?.headers ?? [], ...methodParams?.headers ?? []].sort(parameterCompare),
@@ -66,8 +95,8 @@ export const extractPath = (schema: OpenapiPath, {path, openapi}: PathContext): 
                 schema: responseSchema,
                 securities
               },
-              models: [...models, ...params?.models ?? [], ...methodParams?.models ?? []],
-              imports: [...imports ?? [], ...params?.imports ?? [], ...methodParams?.imports ?? []],
+              models: [...models, ...params?.models ?? [], ...methodParams?.models ?? [], ...bodies.models],
+              imports: [...imports ?? [], ...params?.imports ?? [], ...methodParams?.imports ?? [], ...bodies.imports],
               servers
             }
           }

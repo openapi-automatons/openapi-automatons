@@ -13,6 +13,7 @@ describe('api parser', () => {
         {
           method: 'get',
           name: 'getTests',
+          forms: [],
           parameters: [],
           queries: [],
           headers: [],

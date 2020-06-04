@@ -2,8 +2,8 @@ import { AxiosResponse, AxiosRequestConfig } from "axios";
 import { AbstractApi, AbstractConfig } from "./abstractApi";
 import { Config, Security } from "../config";
 {{#with meta}}
-	{{#or hasTemplate hasQuery ~}}
-		import { {{#if hasTemplate}}template{{#if hasQuery}},{{/if}}{{/if}} {{#if hasQuery}}query{{/if}}  } from "../utils";
+	{{#or hasTemplate hasQuery hasFormData ~}}
+		import { {{#if hasTemplate}}template{{#or hasQuery hasFormData}},{{/or}}{{/if}} {{#if hasQuery}}query{{#if hasFormData}},{{/if}}{{/if}} {{#if hasFormData}}formData{{/if}}  } from "../utils";
 	{{/or}}
 {{/with}}
 {{#each api/imports~}}

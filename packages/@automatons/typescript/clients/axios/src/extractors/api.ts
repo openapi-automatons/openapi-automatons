@@ -1,4 +1,6 @@
-import {Api} from "@automatons/typescript-parser";
+import {Api, Path, AffectPath} from "@automatons/typescript-parser";
+
+const isAffectPath = (path: Path): path is AffectPath => ['post', 'patch', 'put'].includes(path.method);
 
 export const extractApiMeta = (api: Api) => {
   const hasTemplate = api.servers.some(server => server.values?.length)
@@ -6,5 +8,6 @@ export const extractApiMeta = (api: Api) => {
     || api.paths.some(path => path.headers?.length);
   const hasQuery = api.paths.some(path => path.queries?.length)
     || api.paths.some(path => path.cookies?.length);
-  return {hasQuery, hasTemplate};
+  const hasFormData = api.paths.some(path => isAffectPath(path) ? path.forms?.length : false);
+  return {hasQuery, hasTemplate, hasFormData};
 };

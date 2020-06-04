@@ -1,11 +1,12 @@
 {{~#each parameters}}{{name}}: {{> models/type schema}},{{/each}}
 {{~#each queries}}{{name}}{{#unless required}}?{{/unless}}: {{> models/type schema}},{{/each}}
-{{~#if headers}}headers: {
+{{~#if forms}}form: {{#each forms}}{{#unless @first}} | {{/unless}}{{> models/type schema}}{{/each}},{{/if}}
+headers: {
+	'Content-Type': {{#if forms}}{{#each forms}}{{#unless @first}} | {{/unless}}{{#each types}}{{#unless @first}} | {{/unless}}'{{this}}'{{/each}}{{/each}}{{else}}'application/json'{{/if}},
 	{{#each headers}}
 	{{name}}{{#unless required}}?{{/unless}}: {{> models/type schema}},
 	{{/each}}
-}{{#if (every headers 'required' false)}} = {}{{/if}},
-{{/if}}
+}{{#if (every headers 'required' false)}} = { 'Content-Type': 'application/json' }{{/if}},
 {{~#if cookies}}cookies: {
 {{~#each cookies}}
 	{{name}}{{#unless required}}?{{/unless}}: {{> models/type schema}},

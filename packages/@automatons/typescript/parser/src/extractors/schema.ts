@@ -28,9 +28,12 @@ import {
   isSchemaString
 } from "../utils/schema";
 import {extractModel} from "./model";
+
+export type ExtractSchemaResult = { schema: Schema, models: Model[], imports?: Model[] };
+
 // TODO title openapi => context
 export const extractSchema = (title: string, schema: OpenapiSchema,
-                              openapi: Openapi): { schema: Schema, models: Model[], imports?: Model[] } => {
+                              openapi: Openapi): ExtractSchemaResult => {
   if (isSchemaString(schema)) {
     return extractStringSchema(title, schema);
   } else if (isSchemaNumber(schema) || isSchemaInteger(schema)) {

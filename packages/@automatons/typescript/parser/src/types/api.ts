@@ -8,7 +8,9 @@ export interface Api {
   paths: Path[]
 }
 
-export interface Path {
+export type Path = ReceivePath | AffectPath;
+
+export type ReceivePath = {
   name: string;
   method: 'get' | 'head' | 'post' | 'put' | 'delete' | 'connect' | 'options' | 'trace' | 'patch';
   path: string;
@@ -20,6 +22,26 @@ export interface Path {
   schema?: Schema;
   securities?: Security[];
 }
+
+export type AffectPath = {
+  name: string;
+  method: 'post' | 'put' | 'patch';
+  path: string;
+  servers: Server[];
+  forms?: Form[];
+  parameters?: PathParameter[];
+  queries?: QueryParameter[];
+  headers?: HeaderParameter[];
+  cookies?: CookieParameter[];
+  schema?: Schema;
+  securities?: Security[];
+}
+
+export type Form = {
+  types: string[];
+  required?: boolean;
+  schema: Schema;
+};
 
 export type Server = {
   name: string;

@@ -1,0 +1,16 @@
+{{~#each parameters}}{{name}}: {{> models/type schema}},{{/each}}
+{{~#each queries}}{{name}}{{#unless required}}?{{/unless}}: {{> models/type schema}},{{/each}}
+form: {{> models/type form/schema}},
+headers{{#filter form/types 'application/json'}}?{{/filter}}: {
+	'Content-Type': {{#each form/types}}{{#unless @first}} | {{/unless}}'{{this}}'{{/each}},
+	{{#each headers}}
+	{{name}}{{#unless required}}?{{/unless}}: {{> models/type schema}},
+	{{/each}}
+},
+{{~#if cookies}}cookies: {
+{{~#each cookies}}
+	{{name}}{{#unless required}}?{{/unless}}: {{> models/type schema}},
+{{/each}}
+},
+{{/if}}
+{{~> apis/arguments/server_interface servers}} config?: AxiosRequestConfig

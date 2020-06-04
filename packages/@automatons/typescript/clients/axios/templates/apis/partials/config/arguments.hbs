@@ -1,10 +1,10 @@
 {{~#each queries}}{{name}}{{#unless required}}?{{/unless}}: {{> models/type schema}},{{/each}}
-{{~#if headers}}headers: {
+headers: {
+	'Content-Type': string,
 	{{#each headers}}
 	{{name}}{{#unless required}}?{{/unless}}: {{> models/type schema}},
 	{{/each}}
-}{{#if (every headers 'required' false)}} = {}{{/if}},
-{{/if}}
+}{{#if (every headers 'required' false)}} = { 'Content-Type': 'application/json' }{{/if}},
 {{~#if cookies}}cookies: {
 {{~#each cookies}}
 	{{name}}{{#unless required}}?{{/unless}}: {{> models/type schema}},
