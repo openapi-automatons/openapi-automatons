@@ -2,8 +2,8 @@ import {Openapi} from "@automatons/tools";
 import {parseApi} from "./api";
 
 describe('api parser', () => {
-  it('should be parse api', () => {
-    const {apis} = parseApi(createOpenapi());
+  it('should be parse api', async () => {
+    const {apis} = await parseApi({openapi: createOpenapi(), settings: {path: "./", openapiPath: './', outDir: './'}});
     expect(apis).toEqual([{
       title: 'DefaultApi',
       filename: 'defaultApi',
@@ -13,7 +13,6 @@ describe('api parser', () => {
         {
           method: 'get',
           name: 'getTests',
-          forms: [],
           parameters: [],
           queries: [],
           headers: [],

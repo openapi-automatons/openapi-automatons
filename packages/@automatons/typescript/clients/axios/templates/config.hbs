@@ -1,9 +1,9 @@
 import { AxiosInstance } from "axios";
 
 export type Security = {
-	{{#each securities}}
+{{#each securities}}
 	{{name}}: string | Promise<string> | (() => string | Promise<string>);
-	{{/each}}
+{{/each}}
 };
 
 export type Config = {

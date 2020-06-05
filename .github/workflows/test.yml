@@ -19,6 +19,8 @@ jobs:
         working-directory: ./${{ matrix.packages }}
         env:
           CI: true
+      - run: yarn depcheck
+        working-directory: ./${{ matrix.packages }}
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         with:

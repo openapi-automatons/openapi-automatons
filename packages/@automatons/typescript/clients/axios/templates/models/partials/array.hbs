@@ -1,6 +1,6 @@
 {{#if items ~}}
-    Array<{{#with items}}{{> models/type}}{{/with}}>
+	Array<{{#with items}}{{> models/type}}{{/with}}>
 {{~ else ~}}
-    any[]
+	any[]
 {{~/if}}
 {{~> models/nullable}}

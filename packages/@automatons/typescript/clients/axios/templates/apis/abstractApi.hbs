@@ -18,7 +18,7 @@ export class AbstractConfig {
 
 	protected async security(key: keyof Security): Promise<string> {
 		const security = this.#security?.[key];
-		if (security === undefined) {
+		if (!security) {
 			throw new Error("Unauthorized user request.");
 		} else if (security instanceof Function) {
 			return security();

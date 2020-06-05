@@ -1,4 +1,4 @@
-import {Api, Path, AffectPath} from "@automatons/typescript-parser";
+import {AffectPath, Api, Path} from "@automatons/typescript-parser";
 
 const isAffectPath = (path: Path): path is AffectPath => ['post', 'patch', 'put'].includes(path.method);
 

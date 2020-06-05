@@ -5,5 +5,9 @@
     "outDir": "dist"
   },
   "exclude": [
-    "dist", "src/**/*.spec.ts", "src/**/*.test.ts", "src/**/__mocks__/**/*"]
+    "dist",
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts",
+    "src/**/__mocks__/**/*"
+  ]
 }

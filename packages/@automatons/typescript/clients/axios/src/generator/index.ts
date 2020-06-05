@@ -1,4 +1,4 @@
-import {Openapi, AutomatonSettings} from "@automatons/tools";
+import {AutomatonSettings, Openapi} from "@automatons/tools";
 import parser from "@automatons/typescript-parser";
 import {write} from "./writer";
 import {setup} from "./setup";
@@ -10,7 +10,7 @@ export const generate = async (openapi: Openapi, settings: AutomatonSettings) =>
   const promises: Promise<void>[] = [];
   await setup();
 
-  const {models, apis, securities} = parser(openapi, settings);
+  const {models, apis, securities} = await parser(openapi, settings);
   if (models.length) {
     promises.push(write('models/index.hbs', [outDir, 'models', 'index.ts'], models))
     const modelPromises = models
@@ -23,7 +23,10 @@ export const generate = async (openapi: Openapi, settings: AutomatonSettings) =>
       write('apis/index.hbs', [outDir, 'apis', 'index.ts'], apis),
       write('apis/abstractApi.hbs', [outDir, 'apis', 'abstractApi.ts']),
     );
-    promises.push(...apis.map(api => write('apis/api.hbs', [outDir, 'apis', `${api.filename}.ts`], {api, meta: extractApiMeta(api)})));
+    promises.push(...apis.map(api => write('apis/api.hbs', [outDir, 'apis', `${api.filename}.ts`], {
+      api,
+      meta: extractApiMeta(api)
+    })));
   }
 
   promises.push(

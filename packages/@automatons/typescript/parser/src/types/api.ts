@@ -10,9 +10,11 @@ export interface Api {
 
 export type Path = ReceivePath | AffectPath;
 
+export type ReceiveMethod = 'get' | 'head' | 'delete' | 'options' | 'trace';
+
 export type ReceivePath = {
   name: string;
-  method: 'get' | 'head' | 'post' | 'put' | 'delete' | 'connect' | 'options' | 'trace' | 'patch';
+  method: ReceiveMethod;
   path: string;
   servers: Server[];
   parameters?: PathParameter[];
@@ -23,9 +25,11 @@ export type ReceivePath = {
   securities?: Security[];
 }
 
+export type AffectMethod = 'post' | 'put' | 'patch';
+
 export type AffectPath = {
   name: string;
-  method: 'post' | 'put' | 'patch';
+  method: AffectMethod;
   path: string;
   servers: Server[];
   forms?: Form[];

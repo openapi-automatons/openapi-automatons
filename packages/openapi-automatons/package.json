@@ -15,21 +15,21 @@
   "scripts": {
     "prebuild": "node scripts/prebuild.js",
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "depcheck": "depcheck"
   },
   "dependencies": {
-    "cli-progress": "^3.6.0",
-    "js-yaml": "^3.13.1",
+    "fs-extra": "^9.0.1",
     "yup": "^0.28.3"
   },
   "devDependencies": {
     "@automatons/tools": "^0.0.1",
-    "@automatons/typescript-axios": "^0.0.1",
-    "@types/cli-progress": "^3.4.2",
+    "@types/fs-extra": "^9.0.1",
     "@types/jest": "^25.2.1",
     "@types/js-yaml": "^3.12.3",
     "@types/node": "^13.11.1",
     "@types/yup": "^0.26.33",
+    "depcheck": "^0.9.2",
     "jest": "^26.0.1",
     "ts-jest": "^26.0.0",
     "typescript": "^3.9.3"

@@ -1,7 +1,7 @@
 import {OpenapiServer} from "@automatons/tools/dist";
 import {Server} from "../types";
 import {convertMap} from "./map";
-import { pascalCase } from "change-case";
+import {pascalCase} from "change-case";
 
 export const convertServer = (schema: OpenapiServer): Server => ({
   name: pascalCase(schema['x-name']),

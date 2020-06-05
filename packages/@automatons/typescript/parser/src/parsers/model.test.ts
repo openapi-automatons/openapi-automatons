@@ -2,11 +2,10 @@ import {Openapi, OpenapiSchema} from "@automatons/tools";
 import {parseModel} from "./model";
 
 describe('model parser', () => {
-  it('should be throw not found', () => {
+  it('should be throw not found', async () => {
     const openapi = createOpenapi(createSchema('$ref', undefined, 'Test'))
-    expect(() => {
-      parseModel(openapi);
-    }).toThrow('Not found Reference');
+    return expect(parseModel({openapi, settings: {path: "./", openapiPath: './', outDir: './'}}))
+      .rejects.toThrowError('Invalid ref path #/components/schemas/Test')
   });
 
   it.each<[string, string | undefined, string | undefined, string[]]>([
@@ -219,11 +218,11 @@ describe('model parser', () => {
     ['$ref', 'allOf', undefined, ['model']],
     ['$ref', 'oneOf', undefined, ['model']],
     ['$ref', '$ref', undefined, ['model']],
-  ])('should be parse %s > %s > %s', (parent, type, children, names) => {
+  ])('should be parse %s > %s > %s', async (parent, type, children, names) => {
     const openapi = createOpenapi(createSchema(parent, type
       ? createSchema(type, children
         ? createSchema(children) : undefined, children) : undefined, type));
-    const models = parseModel(openapi);
+    const models = await parseModel({openapi, settings: { path: "./", openapiPath: './', outDir: './'}});
     expect(models.map(({title}) => title)).toHaveLength(8 + names.length);
     expect(models.map(({schema: {type}}) => type))
       .toEqual(['string', 'number', 'number', 'array', 'object', 'allOf', 'oneOf', 'model', ...names]);

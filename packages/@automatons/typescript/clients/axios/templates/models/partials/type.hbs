@@ -1,17 +1,17 @@
 {{#eq type 'model'}}
-    {{~ model ~}}
+	{{~ model ~}}
 {{else eq type 'object'}}
-    {{~> models/object}}
+	{{~> models/object}}
 {{else eq type 'allOf'}}
-    {{~> models/allOf}}
+	{{~> models/allOf}}
 {{else eq type 'oneOf'}}
-    {{~> models/oneOf}}
+	{{~> models/oneOf}}
 {{else eq type 'array'}}
-    {{~> models/array}}
+	{{~> models/array}}
 {{else eq type 'string'}}
-    {{~> models/string}}
+	{{~> models/string}}
 {{else eq type 'number'}}
-    {{~> models/number}}
+	{{~> models/number}}
 {{else}}
-    {{~ type}}
+	{{~ type}}
 {{/eq}}
