@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/tanmen/openapi-automatons/compare/v1.0.0...v1.0.1) (2020-06-14)
+
+
+### Bug Fixes
+
+* add document ([8fb010a](https://github.com/tanmen/openapi-automatons/commit/8fb010a3f9b38d977c5d3144f07ebb438e017bc7))
+
 # 1.0.0 (2020-06-14)
 
 
