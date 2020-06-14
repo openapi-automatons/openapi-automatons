@@ -21,7 +21,7 @@ export const generate = async (openapi: Openapi, settings: AutomatonSettings) =>
   if (apis.length) {
     promises.push(
       write('apis/index.hbs', [outDir, 'apis', 'index.ts'], apis),
-      write('apis/abstractApi.hbs', [outDir, 'apis', 'abstractApi.ts']),
+      write('apis/abstractApi.hbs', [outDir, 'apis', 'abstractApi.ts'], {securities}),
     );
     promises.push(...apis.map(api => write('apis/api.hbs', [outDir, 'apis', `${api.filename}.ts`], {
       api,

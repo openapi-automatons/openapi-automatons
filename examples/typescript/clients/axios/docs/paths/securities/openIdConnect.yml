@@ -1,0 +1,8 @@
+get:
+  tags: [security]
+  operationId: openIdConnect
+  security:
+    - openIdConnect: []
+  responses:
+    204:
+      description: oauth2

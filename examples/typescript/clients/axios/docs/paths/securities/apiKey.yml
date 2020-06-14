@@ -1,0 +1,8 @@
+get:
+  tags: [security]
+  operationId: apiKey
+  security:
+    - apiKey: []
+  responses:
+    204:
+      description: apiKey

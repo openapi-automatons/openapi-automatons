@@ -1,0 +1,8 @@
+get:
+  tags: [security]
+  operationId: http
+  security:
+    - http: []
+  responses:
+    204:
+      description: http

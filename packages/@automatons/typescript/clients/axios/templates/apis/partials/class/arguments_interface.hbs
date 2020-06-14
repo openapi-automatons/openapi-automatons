@@ -1,6 +1,11 @@
 {{~#each parameters}}{{name}}: {{> models/type schema}},{{/each}}
-{{~#each queries}}{{name}}{{#unless required}}?{{/unless}}: {{> models/type schema}},{{/each}}
 form: {{> models/type form/schema}},
+{{~#if queries}}queries: {
+{{~#each queries}}
+	{{name}}{{#unless required}}?{{/unless}}: {{> models/type schema}},
+{{/each}}
+},
+{{/if}}
 headers{{#filter form/types 'application/json'}}?{{/filter}}: {
 	'Content-Type': {{#each form/types}}{{#unless @first}} | {{/unless}}'{{this}}'{{/each}},
 	{{#each headers}}

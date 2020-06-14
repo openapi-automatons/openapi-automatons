@@ -61,6 +61,7 @@ export interface OpenapiSecurity {
 }
 
 export interface OpenapiPath {
+  '$ref'?: string;
   get?: OpenapiPathOperation;
   put?: OpenapiPathOperation;
   post?: OpenapiPathOperation;
@@ -76,7 +77,8 @@ export interface OpenapiPath {
 export type OpenapiParameter = OpenapiParameterPath
   | OpenapiParameterQuery
   | OpenapiParameterHeader
-  | OpenapiParameterCookie;
+  | OpenapiParameterCookie
+  | OpenapiReference;
 
 export type OpenapiParameterCommon = {
   name: string;
@@ -299,13 +301,13 @@ export interface OpenapiSecurityApiKeySchema {
 export interface OpenapiSecurityHttpSchema {
   type: 'http';
   description?: string;
-  schema: 'basic'; // TODO more type support
+  scheme: 'basic';
 }
 
 export interface OpenapiSecurityHttpBearerSchema {
   type: 'http';
   description?: string;
-  schema: 'bearer';
+  scheme: 'bearer';
   bearerFormat?: string;
 }
 

@@ -6,7 +6,8 @@ import {
   isHeaderParam,
   isPathParam,
   isQueryParam,
-  OpenapiParameter
+  OpenapiParameter,
+  referenceSchema
 } from "@automatons/tools/dist";
 import {ParameterResult, PathContext} from "./type";
 import {extractMediaType} from "./mediaType";
@@ -20,54 +21,56 @@ import {extractMediaType} from "./mediaType";
  */
 export const extractParameter = (schema: OpenapiParameter[], {path, ...context}: PathContext): Promise<ParameterResult> =>
   schema
+    .map(param => referenceSchema(param, context))
     .map(async param => {
-      const paramSchema = hasSchema(param) ? param.schema : param.content[extractMediaType(param.content)].schema;
+      const _param = await param;
+      const paramSchema = hasSchema(_param) ? _param.schema : _param.content[extractMediaType(_param.content)].schema;
       if (!paramSchema) return;
-      const {schema, models, imports} = await extractSchema(pascalCase([path, 'parameter', param.name].join(' ')),
+      const {schema, models, imports} = await extractSchema(pascalCase([path, 'parameter', _param.name].join(' ')),
         paramSchema, context);
-      if (isPathParam(param)) {
+      if (isPathParam(_param)) {
         return {
           parameter: {
-            name: param.name,
+            name: _param.name,
             schema,
-            style: param.style,
-            explode: param.explode
+            style: _param.style,
+            explode: _param.explode
           },
           models,
           imports
         }
-      } else if (isQueryParam(param)) {
+      } else if (isQueryParam(_param)) {
         return {
           query: {
-            name: param.name,
+            name: _param.name,
             schema,
-            style: param.style,
-            required: param.required,
-            explode: param.explode
+            style: _param.style,
+            required: _param.required,
+            explode: _param.explode
           },
           models,
           imports
         }
-      } else if (isHeaderParam(param)) {
+      } else if (isHeaderParam(_param)) {
         return {
           header: {
-            name: param.name,
+            name: _param.name,
             schema,
-            style: param.style,
-            required: param.required,
-            explode: param.explode
+            style: _param.style,
+            required: _param.required,
+            explode: _param.explode
           },
           models,
           imports
         }
-      } else if (isCookieParam(param)) {
+      } else if (isCookieParam(_param)) {
         return {
           cookie: {
-            name: param.name,
+            name: _param.name,
             schema,
-            style: param.style,
-            required: param.required,
-            explode: param.explode
+            style: _param.style,
+            required: _param.required,
+            explode: _param.explode
           },
           models,
           imports

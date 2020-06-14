@@ -16,7 +16,14 @@ export class AbstractConfig {
 		this.#security = security;
 	}
 
-	protected async security(key: keyof Security): Promise<string> {
+	{{#each securities}}
+	{{#and (eq type 'http') (eq scheme 'basic')}}
+	protected async security(key: "{{name}}"): Promise<{username: string; password: string;}>;
+	{{else}}
+	protected async security(key: "{{name}}"): Promise<string>;
+	{{/and}}
+	{{/each}}
+	protected async security(key: keyof Security): Promise<string | {username: string; password: string;}> {
 		const security = this.#security?.[key];
 		if (!security) {
 			throw new Error("Unauthorized user request.");

@@ -5,8 +5,8 @@
   "author": "tanmen <yt.prog@gmail.com>",
   "private": true,
   "scripts": {
-    "generate": "node_modules/.bin/openapi-automatons",
-    "test": "node_modules/.bin/openapi-automatons && tsc && jest",
+    "generate": "openapi-automatons",
+    "test": "openapi-automatons && tsc && jest",
     "depcheck": "depcheck"
   },
   "dependencies": {

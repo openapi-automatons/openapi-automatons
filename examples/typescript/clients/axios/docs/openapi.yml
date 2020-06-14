@@ -32,6 +32,11 @@ paths:
       security:
         - apiKey: []
       parameters:
+        - name: name
+          in: query
+          description: pet name
+          schema:
+            type: string
         - name: tags
           in: query
           description: tags to filter by
@@ -117,11 +122,6 @@ paths:
           schema:
             type: integer
             format: int64
-        - name: name
-          in: query
-          description: pet name
-          schema:
-            type: string
       responses:
         '200':
           description: pet response
@@ -155,27 +155,19 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+  /securities/http:
+    $ref: './paths/securities/http.yml'
   /securities/apiKey:
-    get:
-      tags:
-        - security
-      operationId: apiKey
-      security:
-        - apiKey: []
-      responses:
-        204:
-          description: apiKey
+    $ref: './paths/securities/apiKey.yml'
   /securities/oauth2:
-    get:
-      tags: [security]
-      operationId: oauth2
-      security:
-        - oauth2: [pet:write]
-      responses:
-        204:
-          description: oauth2
+    $ref: './paths/securities/oauth2.yml'
+  /securities/openIdConnect:
+    $ref: './paths/securities/openIdConnect.yml'
 components:
   securitySchemes:
+    http:
+      type: http
+      scheme: basic
     apiKey:
       type: apiKey
       in: header
@@ -188,6 +180,9 @@ components:
           authorizationUrl: http://example.com
           scopes:
             pet:write: pet write
+    openIdConnect:
+      type: openIdConnect
+      openIdConnectUrl: http://example.com
   schemas:
     PetModel:
       allOf:

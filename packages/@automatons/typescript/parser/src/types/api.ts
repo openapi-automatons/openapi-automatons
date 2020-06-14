@@ -103,7 +103,7 @@ export type ApiKeySecurity = {
 export type HttpSecurity = {
   name: string;
   type: 'http';
-  schema: 'basic' | 'bearer';
+  scheme: 'basic' | 'bearer';
   description?: string;
 };
 

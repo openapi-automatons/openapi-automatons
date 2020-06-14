@@ -1,7 +1,7 @@
 import {isRef} from "./openapi";
 import fetch from "node-fetch";
 import {AutomatonContext, OpenapiReference} from "../types";
-import {resolve, parse} from 'path';
+import {dirname, parse, resolve} from 'path';
 import {readFile} from 'fs-extra';
 import {parseFile} from "./parse";
 
@@ -12,24 +12,27 @@ export const referenceTitle = (schema: OpenapiReference): string => {
   if (paths.length) {
     return paths[paths.length - 1];
   } else if (url) {
-  return name;
+    return name;
   }
   throw new Error(`Invalid ref format: ${schema.$ref}\n  Can not extract name.`);
 }
 
-export const referenceSchema = async <T = unknown>(schema: (T | OpenapiReference), {openapi, settings: {openapiPath}}: AutomatonContext): Promise<T> => {
-  if (isRef(schema)) {
-    const [url, path] = schema.$ref.split('#');
-    const _openapi = url ? parseFile(await fetchOpenapi(url, openapiPath), url)
-      : openapi;
-    const paths = path.split('/').slice(1);
-    const extractSchema = paths.reduce((pre: any, cur) => pre?.[cur], _openapi) as T | undefined;
-    if (!extractSchema) {
+export const referenceSchema = async <T = unknown>(schema: (T | OpenapiReference) | (T & OpenapiReference), {openapi, settings: {openapiPath}}: AutomatonContext): Promise<T> => {
+  if (!isRef(schema)) return schema;
+  const [url, path] = schema.$ref.split('#');
+  const file = url ? parseFile<unknown>(await fetchOpenapi(url, openapiPath), url) : openapi;
+  if (!path) {
+    if (!file) {
       throw new Error(`Invalid ref path ${schema.$ref}`);
     }
-    return extractSchema;
+    return file as T;
   }
-  return schema;
+  const paths = path?.split('/').slice(1);
+  const extractSchema = paths?.reduce((pre: any, cur) => pre?.[cur], file) as T | undefined;
+  if (!extractSchema) {
+    throw new Error(`Invalid ref path ${schema.$ref}`);
+  }
+  return extractSchema;
 }
 
 const fetchOpenapi = async (url: string, openapiPath: string): Promise<string> =>
@@ -37,4 +40,4 @@ const fetchOpenapi = async (url: string, openapiPath: string): Promise<string> =
   || url.startsWith('https://')
   || url.startsWith('//')
     ? await fetch(url)
-      .then(res => res.text()) : readFile(resolve(openapiPath, url), {encoding: 'utf-8'})
+      .then(res => res.text()) : readFile(resolve(dirname(openapiPath), url), {encoding: 'utf-8'})

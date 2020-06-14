@@ -2,7 +2,7 @@ import path from "path";
 import {safeLoad} from "js-yaml";
 import {Openapi} from "../types";
 
-export const parseFile = (data: string, filePath: string): Openapi => {
+export const parseFile = <T = Openapi>(data: string, filePath: string): T => {
   switch (path.extname(filePath)) {
     case '.json':
       return JSON.parse(data);

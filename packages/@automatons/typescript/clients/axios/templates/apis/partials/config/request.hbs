@@ -1,5 +1,5 @@
 public async {{name}}({{> apis/config/arguments}}): Promise<AxiosRequestConfig> {
-	const params = {{> apis/config/request/params }};
+	const params = {{> apis/config/request/queries }};
 
 	const _cookies = { ...config?.headers?.Cookie };
 	{{> apis/config/request/cookies }}
@@ -7,10 +7,11 @@ public async {{name}}({{> apis/config/arguments}}): Promise<AxiosRequestConfig> 
 	const _headers = { ...config?.headers, 'Content-Type': headers['Content-Type'], Cookie: _cookies };
 	{{> apis/config/request/headers }}
 
-	// TODO auth
-
 	return {
 		...config,
+		{{#each securities}}
+		{{#and (eq type 'http') (eq scheme 'basic') }}auth: await this.security("{{name}}"),{{/and}}
+		{{~/each}}
 		baseURL: {{> apis/config/request/baseURL title=title }},
 		params,
 		headers: _headers

@@ -1,0 +1,8 @@
+get:
+  tags: [security]
+  operationId: oauth2
+  security:
+    - oauth2: [pet:write]
+  responses:
+    204:
+      description: oauth2
