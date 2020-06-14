@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/tanmen/openapi-automatons/compare/v1.0.3...v1.0.4) (2020-06-14)
+
+
+### Bug Fixes
+
+* include templates ([2447ca8](https://github.com/tanmen/openapi-automatons/commit/2447ca89db64bbadb993329663613e6957b3e51a))
+
 ## [1.0.3](https://github.com/tanmen/openapi-automatons/compare/v1.0.2...v1.0.3) (2020-06-14)
 
 
