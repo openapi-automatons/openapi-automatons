@@ -1,6 +1,6 @@
 {
   "name": "@automatons/typescript-parser",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "repository": "git@github.com:tanmen/openapi-automatons.git",
   "author": "tanmen <yt.prog@gmail.com>",
   "license": "MIT",
@@ -20,7 +20,7 @@
     "fs-extra": "^9.0.1"
   },
   "devDependencies": {
-    "@automatons/tools": "^0.0.1",
+    "@automatons/tools": "^1.0.0",
     "@types/deep-equal": "^1.0.1",
     "@types/fs-extra": "^9.0.1",
     "@types/jest": "^25.2.1",

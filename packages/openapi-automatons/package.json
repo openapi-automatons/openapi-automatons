@@ -1,6 +1,6 @@
 {
   "name": "openapi-automatons",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "repository": "git@github.com:tanmen/openapi-automatons.git",
   "author": "tanmen <yt.prog@gmail.com>",
   "license": "MIT",
@@ -23,7 +23,7 @@
     "yup": "^0.28.3"
   },
   "devDependencies": {
-    "@automatons/tools": "^0.0.1",
+    "@automatons/tools": "^1.0.0",
     "@types/fs-extra": "^9.0.1",
     "@types/jest": "^25.2.1",
     "@types/js-yaml": "^3.12.3",
