@@ -1,6 +1,6 @@
 {
   "name": "@automatons/typescript-axios",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": "git@github.com:tanmen/openapi-automatons.git",
   "author": "tanmen <yt.prog@gmail.com>",
   "license": "MIT",
@@ -17,7 +17,7 @@
     "depcheck": "depcheck"
   },
   "dependencies": {
-    "@automatons/typescript-parser": "^1.0.0",
+    "@automatons/typescript-parser": "^1.0.1",
     "fs-extra": "^9.0.0",
     "glob": "^7.1.6",
     "handlebars": "^4.7.6",
@@ -29,7 +29,7 @@
     "openapi-automatons": "^0.0.1"
   },
   "devDependencies": {
-    "@automatons/tools": "^1.0.0",
+    "@automatons/tools": "^1.0.1",
     "@types/eslint": "^6.8.0",
     "@types/eslint-plugin-prettier": "^3.1.0",
     "@types/fs-extra": "^8.1.0",
