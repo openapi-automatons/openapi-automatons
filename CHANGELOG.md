@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/tanmen/openapi-automatons/compare/v1.0.2...v1.0.3) (2020-06-14)
+
+
+### Bug Fixes
+
+* **@automatons/typescript-parser:** fix library dependency ([08e2dd5](https://github.com/tanmen/openapi-automatons/commit/08e2dd5107723ea2745e41be1ba93afcbfd6c274))
+
 ## [1.0.2](https://github.com/tanmen/openapi-automatons/compare/v1.0.1...v1.0.2) (2020-06-14)
 
 
