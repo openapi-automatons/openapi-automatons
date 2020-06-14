@@ -12,7 +12,9 @@
     "postinstall": "typesync && yarn check --integrity || yarn install --ignore-scripts",
     "test": "jest",
     "depcheck": "depcheck && lerna run --stream --parallel depcheck && yarn-deduplicate",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "predeploy": "yarn build",
+    "deploy": "lerna publish"
   },
   "workspaces": [
     "packages/**/*",
