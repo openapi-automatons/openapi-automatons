@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/tanmen/openapi-automatons/compare/v1.0.1...v1.0.2) (2020-06-14)
+
+
+### Bug Fixes
+
+* library dist ([6dddc56](https://github.com/tanmen/openapi-automatons/commit/6dddc567119e5e75e43688ad45acce4fcbc2014b))
+
 ## [1.0.1](https://github.com/tanmen/openapi-automatons/compare/v1.0.0...v1.0.1) (2020-06-14)
 
 
