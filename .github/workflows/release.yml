@@ -1,0 +1,33 @@
+name: release
+on:
+  push:
+    branches:
+      - master
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      node-version: 14.x
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ env.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ env.node-version }}
+          registry-url: 'https://registry.npmjs.org'
+      - run: yarn
+      - run: yarn semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  notify:
+    needs: release
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: homoluctus/slatify@master
+        with:
+          type: ${{ needs.release.result }}
+          job_name: Release
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+

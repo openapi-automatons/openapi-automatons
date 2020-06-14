@@ -11,7 +11,8 @@
     "pretest": "yarn build && lerna run --stream --parallel --scope '@examples/*' generate",
     "postinstall": "typesync && yarn check --integrity || yarn install --ignore-scripts",
     "test": "jest",
-    "depcheck": "depcheck && lerna run --stream --parallel depcheck && yarn-deduplicate"
+    "depcheck": "depcheck && lerna run --stream --parallel depcheck && yarn-deduplicate",
+    "semantic-release": "semantic-release"
   },
   "workspaces": [
     "packages/**/*",
