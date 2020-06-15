@@ -6,7 +6,7 @@ import {remove} from "fs-extra";
 const generator = async () => {
   const currentPath = process.cwd();
   const {openapi: openapiPath, automatons} = await readSetting(currentPath);
-  const openapi = await fetch(path.resolve(currentPath, openapiPath));
+  const openapi = await fetch(openapiPath, currentPath);
   return Promise.all(automatons.map(async automatonSetting => {
     console.log(automatonSetting.automaton)
     const {default: generator} = (await import(automatonSetting.automaton)) as { default: Automaton };
