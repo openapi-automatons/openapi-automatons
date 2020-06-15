@@ -1,3 +1,10 @@
+## [1.0.8](https://github.com/tanmen/openapi-automatons/compare/v1.0.7...v1.0.8) (2020-06-15)
+
+
+### Bug Fixes
+
+* Fixed wrong path when using filepath. ([b29f061](https://github.com/tanmen/openapi-automatons/commit/b29f061fcbfe0421934082b7517b10cd057c0573))
+
 ## [1.0.7](https://github.com/tanmen/openapi-automatons/compare/v1.0.6...v1.0.7) (2020-06-15)
 
 
