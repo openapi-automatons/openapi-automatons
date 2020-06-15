@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/tanmen/openapi-automatons/compare/v1.0.4...v1.0.5) (2020-06-15)
+
+
+### Bug Fixes
+
+* @automatons/tools dependency ([f37249d](https://github.com/tanmen/openapi-automatons/commit/f37249db256e9324b0a53b582d9b9593a0047220))
+
 ## [1.0.4](https://github.com/tanmen/openapi-automatons/compare/v1.0.3...v1.0.4) (2020-06-14)
 
 
