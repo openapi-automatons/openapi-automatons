@@ -1,9 +1,7 @@
 import {isRef} from "./openapi";
-import fetch from "node-fetch";
 import {AutomatonContext, OpenapiReference} from "../types";
-import {dirname, parse, resolve} from 'path';
-import {readFile} from 'fs-extra';
-import {parseFile} from "./parse";
+import {parse} from 'path';
+import {fetch} from "./fetch";
 
 export const referenceTitle = (schema: OpenapiReference): string => {
   const [url, path] = schema.$ref.split('#')
@@ -20,7 +18,7 @@ export const referenceTitle = (schema: OpenapiReference): string => {
 export const referenceSchema = async <T = unknown>(schema: (T | OpenapiReference) | (T & OpenapiReference), {openapi, settings: {openapiPath}}: AutomatonContext): Promise<T> => {
   if (!isRef(schema)) return schema;
   const [url, path] = schema.$ref.split('#');
-  const file = url ? parseFile<unknown>(await fetchOpenapi(url, openapiPath), url) : openapi;
+  const file = url ? await fetch<unknown>(url, openapiPath) : openapi;
   if (!path) {
     if (!file) {
       throw new Error(`Invalid ref path ${schema.$ref}`);
@@ -34,10 +32,3 @@ export const referenceSchema = async <T = unknown>(schema: (T | OpenapiReference
   }
   return extractSchema;
 }
-
-const fetchOpenapi = async (url: string, openapiPath: string): Promise<string> =>
-  url.startsWith('http://')
-  || url.startsWith('https://')
-  || url.startsWith('//')
-    ? await fetch(url)
-      .then(res => res.text()) : readFile(resolve(dirname(openapiPath), url), {encoding: 'utf-8'})

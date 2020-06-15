@@ -31,7 +31,7 @@
   },
   "peerDependencies": {
     "object-to-formdata": "^3.0.9",
-    "openapi-automatons": "^0.0.1"
+    "openapi-automatons": "^1.0.5"
   },
   "devDependencies": {
     "@types/eslint": "^6.8.0",
