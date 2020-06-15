@@ -11,7 +11,7 @@ export const fetch = async <T = Openapi>(url: string, openapiPath?: string): Pro
     : openapiPath
       ? isUrl(openapiPath)
         ? await nodeFetch(urlJoin(openapiPath, url)).then(res => res.text())
-        : readFile(resolve(dirname(openapiPath), url), {encoding: 'utf-8'})
+        : readFile(resolve(extname(openapiPath) ? dirname(openapiPath) : openapiPath, url), {encoding: 'utf-8'})
       : readFile(resolve(url), {encoding: 'utf-8'})), url)
 
 const urlJoin = (base: string, path: string) => {
