@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/tanmen/openapi-automatons/compare/v1.0.5...v1.0.6) (2020-06-15)
+
+
+### Bug Fixes
+
+* spported url path ([e327b38](https://github.com/tanmen/openapi-automatons/commit/e327b3823ce8de368707ac55d64183e66ec414f1))
+
 ## [1.0.5](https://github.com/tanmen/openapi-automatons/compare/v1.0.4...v1.0.5) (2020-06-15)
 
 
