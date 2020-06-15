@@ -1,8 +1,7 @@
 name: deploy
 on:
-  push:
-    tags:
-      - v**
+  release:
+    types: [published]
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -24,7 +23,7 @@ jobs:
         run: git checkout "$(echo ${{ github.ref }} | sed -E 's|refs/[a-zA-Z]+/||')"
         if: github.head_ref == ''
       - run: |
-          yarn deploy --yes --message 'chore: release new versions'
+          yarn deploy --yes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
