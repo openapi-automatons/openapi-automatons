@@ -1,0 +1,42 @@
+name: deploy
+on:
+  push:
+    tags:
+      - v**
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      node-version: 14.x
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ env.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ env.node-version }}
+          registry-url: 'https://registry.npmjs.org'
+          scope: automatons
+      - run: yarn
+      - name: Reattach HEAD to Head Ref
+        run: git checkout "$(echo ${{ github.head_ref }} | sed -E 's|refs/[a-zA-Z]+/||')"
+        if: github.head_ref != ''
+      - name: Reattach HEAD to Ref
+        run: git checkout "$(echo ${{ github.ref }} | sed -E 's|refs/[a-zA-Z]+/||')"
+        if: github.head_ref == ''
+      - run: |
+          yarn deploy --yes --message 'chore: release new versions'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+  notify:
+    needs: deploy
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: homoluctus/slatify@master
+        with:
+          type: ${{ needs.deploy.result }}
+          job_name: Deploy
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+
