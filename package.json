@@ -14,7 +14,7 @@
     "depcheck": "depcheck && lerna run --stream --parallel depcheck && yarn-deduplicate",
     "semantic-release": "semantic-release",
     "predeploy": "yarn build",
-    "deploy": "lerna publish --message 'chore: deploy new versions'"
+    "deploy": "lerna publish patch --message 'chore: deploy new versions'"
   },
   "workspaces": [
     "packages/**/*",
