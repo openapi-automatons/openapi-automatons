@@ -34,7 +34,7 @@ export interface OpenapiInfoLicense {
 
 export interface OpenapiServer {
   url: string;
-  'x-name': string;
+  'x-name'?: string;
   description?: string;
   variables?: OpenapiMap<OpenapiServerVariable>;
 }
