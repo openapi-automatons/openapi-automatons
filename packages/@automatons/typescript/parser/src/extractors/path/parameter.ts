@@ -24,7 +24,8 @@ export const extractParameter = (schema: OpenapiParameter[], {path, ...context}:
     .map(param => referenceSchema(param, context))
     .map(async param => {
       const _param = await param;
-      const paramSchema = hasSchema(_param) ? _param.schema : _param.content[extractMediaType(_param.content)].schema;
+      const paramSchema = hasSchema(_param) ? _param.schema : Object.keys(_param.content).length
+        ? _param.content[extractMediaType(_param.content)].schema : undefined;
       if (!paramSchema) return;
       const {schema, models, imports} = await extractSchema(pascalCase([path, 'parameter', _param.name].join(' ')),
         paramSchema, context);

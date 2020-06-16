@@ -8,9 +8,8 @@ export const extractResponse = async (schema: OpenapiMap<OpenapiPathResponse | O
   const status = extractStatus(schema);
   const response = await referenceSchema(schema[status], context);
   const content = response.content;
-  if (!content) return;
-  const mediaType = extractMediaType(content);
-  const resSchema = content[mediaType].schema;
+  if (!content || !Object.keys(content).length) return;
+  const resSchema = content[extractMediaType(content)].schema;
   if (!resSchema) return;
   return extractSchema([...context.path.split('/'), method, 'Response'].join(' '),
     resSchema, context);
