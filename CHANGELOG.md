@@ -1,3 +1,10 @@
+## [1.0.13](https://github.com/tanmen/openapi-automatons/compare/v1.0.12...v1.0.13) (2020-06-16)
+
+
+### Bug Fixes
+
+* pascal to camel ([ef3313f](https://github.com/tanmen/openapi-automatons/commit/ef3313f54c8cec1a5310c601c5c04d3e3a5cdb1a))
+
 ## [1.0.12](https://github.com/tanmen/openapi-automatons/compare/v1.0.11...v1.0.12) (2020-06-16)
 
 
