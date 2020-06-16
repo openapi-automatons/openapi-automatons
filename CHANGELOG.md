@@ -1,3 +1,11 @@
+## [1.0.9](https://github.com/tanmen/openapi-automatons/compare/v1.0.8...v1.0.9) (2020-06-16)
+
+
+### Bug Fixes
+
+* support no media content ([2eb99ec](https://github.com/tanmen/openapi-automatons/commit/2eb99eca0ca4c8030289116a2852d208ecf84e4c))
+* support not x-name server ([b255362](https://github.com/tanmen/openapi-automatons/commit/b255362d431d36d84f160630d128be0485dcc4d5))
+
 ## [1.0.8](https://github.com/tanmen/openapi-automatons/compare/v1.0.7...v1.0.8) (2020-06-15)
 
 
