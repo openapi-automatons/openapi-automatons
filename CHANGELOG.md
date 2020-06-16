@@ -1,3 +1,10 @@
+## [1.0.10](https://github.com/tanmen/openapi-automatons/compare/v1.0.9...v1.0.10) (2020-06-16)
+
+
+### Bug Fixes
+
+* add boolean type ([c21c5fc](https://github.com/tanmen/openapi-automatons/commit/c21c5fc258a6a714949fab86818f9ab370ed0ed0))
+
 ## [1.0.9](https://github.com/tanmen/openapi-automatons/compare/v1.0.8...v1.0.9) (2020-06-16)
 
 
