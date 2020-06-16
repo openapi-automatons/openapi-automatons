@@ -1,3 +1,10 @@
+## [1.0.12](https://github.com/tanmen/openapi-automatons/compare/v1.0.11...v1.0.12) (2020-06-16)
+
+
+### Bug Fixes
+
+* security schema error ([59e80e3](https://github.com/tanmen/openapi-automatons/commit/59e80e3002d1c9ae7633b543e1b2ae8a6c2e208c))
+
 ## [1.0.11](https://github.com/tanmen/openapi-automatons/compare/v1.0.10...v1.0.11) (2020-06-16)
 
 
