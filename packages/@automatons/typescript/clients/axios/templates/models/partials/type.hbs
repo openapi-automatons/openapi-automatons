@@ -8,6 +8,8 @@
 	{{~> models/oneOf}}
 {{else eq type 'array'}}
 	{{~> models/array}}
+{{else eq type 'boolean'}}
+	{{~> models/boolean}}
 {{else eq type 'string'}}
 	{{~> models/string}}
 {{else eq type 'number'}}
