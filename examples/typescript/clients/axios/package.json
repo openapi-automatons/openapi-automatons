@@ -1,6 +1,6 @@
 {
   "name": "@examples/typescript-axios",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "repository": "git@github.com:tanmen/openapi-automatons.git",
   "author": "tanmen <yt.prog@gmail.com>",
   "private": true,
@@ -14,7 +14,7 @@
     "object-to-formdata": "^3.0.9"
   },
   "devDependencies": {
-    "@automatons/typescript-axios": "^1.0.10",
+    "@automatons/typescript-axios": "^1.0.11",
     "@types/jest": "^25.2.1",
     "@types/react": "^16.9.35",
     "axios-mock-adapter": "^1.18.1",
