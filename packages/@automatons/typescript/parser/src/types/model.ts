@@ -3,7 +3,7 @@ interface MapArray {
   value: any;
 }
 
-export type Schema = StringSchema | NumberSchema | ArraySchema | ObjectSchema | AllOfSchema | OneOfSchema | ModelSchema;
+export type Schema = StringSchema | NumberSchema | BooleanSchema | ArraySchema | ObjectSchema | AllOfSchema | OneOfSchema | ModelSchema;
 
 export interface Model {
   title: string;
@@ -32,6 +32,10 @@ export interface NumberSchema extends SchemaCommon {
   type: 'number';
   format?: 'int32' | 'int64' | 'float' | 'double' | string;
   enum?: number[];
+}
+
+export interface BooleanSchema extends SchemaCommon {
+  type: 'boolean';
 }
 
 export interface ObjectSchema extends SchemaCommon {

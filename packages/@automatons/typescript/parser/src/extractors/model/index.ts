@@ -10,6 +10,7 @@ import {
   AutomatonContext,
   isSchemaAllOf,
   isSchemaArray,
+  isSchemaBoolean,
   isSchemaInteger,
   isSchemaNumber,
   isSchemaObject,
@@ -19,12 +20,15 @@ import {
   OpenapiSchema
 } from "@automatons/tools/dist";
 import {ExtractModel} from "./type";
+import {convertBoolean} from "../../converters/boolean";
 
 export const extractModel = async (title: string, schema: OpenapiSchema, context: AutomatonContext): Promise<ExtractModel> => {
   if (isSchemaString(schema)) {
     return {model: convertModel(title, convertString(schema)), insides: []};
   } else if (isSchemaNumber(schema) || isSchemaInteger(schema)) {
     return {model: convertModel(title, convertNumber(schema)), insides: []};
+  }else if (isSchemaBoolean(schema)) {
+    return {model: convertModel(title, convertBoolean(schema)), insides: []};
   } else if (isSchemaArray(schema)) {
     return extractArrayModel(title, schema, context);
   } else if (isSchemaObject(schema)) {

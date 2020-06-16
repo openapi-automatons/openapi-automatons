@@ -1,7 +1,7 @@
 import {
   OpenapiSchema,
   OpenapiSchemaAllOf,
-  OpenapiSchemaArray,
+  OpenapiSchemaArray, OpenapiSchemaBoolean,
   OpenapiSchemaInteger,
   OpenapiSchemaNumber,
   OpenapiSchemaObject,
@@ -16,6 +16,8 @@ export const isSchemaNumber =
   (type: OpenapiSchema): type is OpenapiSchemaNumber => (type as OpenapiSchemaNumber).type === 'number';
 export const isSchemaInteger =
   (type: OpenapiSchema): type is OpenapiSchemaInteger => (type as OpenapiSchemaInteger).type === 'integer';
+export const isSchemaBoolean =
+  (type: OpenapiSchema): type is OpenapiSchemaBoolean => (type as OpenapiSchemaBoolean).type === 'boolean';
 export const isSchemaObject =
   (type: OpenapiSchema): type is OpenapiSchemaObject => (type as OpenapiSchemaObject).type === 'object';
 export const isSchemaArray =

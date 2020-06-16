@@ -1,7 +1,7 @@
 import {
   AutomatonContext,
   isSchemaAllOf,
-  isSchemaArray,
+  isSchemaArray, isSchemaBoolean,
   isSchemaInteger,
   isSchemaNumber,
   isSchemaObject,
@@ -18,6 +18,7 @@ import {extractAllOfSchema} from "./allOf";
 import {extractOneOfSchema} from "./oneOf";
 import {extractRefSchema} from "./ref";
 import {extractStringSchema} from "./string";
+import {extractBooleanSchema} from "./boolean";
 
 export type ExtractSchemaResult = { schema: Schema, models: Model[], imports?: Model[] };
 
@@ -27,6 +28,8 @@ export const extractSchema = async (title: string, schema: OpenapiSchema,
     return extractStringSchema(title, schema);
   } else if (isSchemaNumber(schema) || isSchemaInteger(schema)) {
     return extractNumberSchema(title, schema);
+  }else if (isSchemaBoolean(schema)) {
+    return extractBooleanSchema(title, schema);
   } else if (isSchemaArray(schema)) {
     return extractArraySchema(title, schema, context);
   } else if (isSchemaObject(schema)) {
