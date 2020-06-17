@@ -7,12 +7,18 @@
 ## What OpenapiAutomatons
 This library is a generator using openapi file.
 
+## What code can generate?
+| name | language | type | example |
+| ---- | -------- | ---- | ------- |
+| @automatons/typescript-axios | typescript | client | [example](./examples/typescript/clients/axios "example") |
+
 ## Get Started
+1. Install library to your project
 ```shell script
 yarn add -D openapi-automatons @automatons/typescript-axios
 ```
 
-create a file in your package.json dir
+2. Create settings in your project root
 ```json:automatons.json
 {
   "openapi": "openapi.yml",
@@ -23,7 +29,7 @@ create a file in your package.json dir
 }
 ```
 
-add command your package.json
+3. Add generate command your package.json
 ```json:package.json
 {
   "scripts": {
@@ -31,3 +37,11 @@ add command your package.json
   }
 }
 ```
+
+## Automatons.json
+| property |     | type | required | description |
+| -------- | --- | ---- | -------- | ----------- |
+| openapi | | string | true | This is openapi path. It can be relative or absolute. Also, there is no problem with the url format.|
+| automatons | | array | true | This is the property that contains the module. |
+| automatons | automaton | string | true | This is the module name. You can embed your own module. It is also possible to include it with a relative path. |
+| automatons | outDir | string | true | This is the output directory of module. |
