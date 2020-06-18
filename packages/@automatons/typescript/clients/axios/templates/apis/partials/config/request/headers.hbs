@@ -6,7 +6,9 @@ if (headers.{{name}}) {
 {{~#each securities}}
 	{{#and (eq type 'apiKey') (eq in 'header')~}}
 		_headers['{{key}}'] = await this.security("{{name}}");
-	{{else or (eq type 'oauth2') (eq type 'openIdConnect') (and (eq type 'http') (eq schema 'bearer'))}}
+	{{else and (eq type 'http') (eq schema 'bearer')}}
 		_headers['Authorization'] = `Bearer ${await this.security("{{name}}")}`;
+	{{else or (eq type 'oauth2') (eq type 'openIdConnect')}}
+		_headers['Authorization'] = `Bearer ${await this.security("{{name}}", [{{#each scopes}}"{{this}}"{{#unless @last}}, {{/unless}}{{/each}}])}`;
 	{{/and}}
 {{/each}}

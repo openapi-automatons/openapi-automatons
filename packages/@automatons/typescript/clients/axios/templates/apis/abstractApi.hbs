@@ -19,16 +19,18 @@ export class AbstractConfig {
 	{{#each securities}}
 	{{#and (eq type 'http') (eq scheme 'basic')}}
 	protected async security(key: "{{name}}"): Promise<{username: string; password: string;}>;
+	{{else or (eq type 'oauth2') (eq type 'openIdConnect')}}
+	protected async security(key: "{{name}}", scopes: string[]): Promise<string>;
 	{{else}}
 	protected async security(key: "{{name}}"): Promise<string>;
 	{{/and}}
 	{{/each}}
-	protected async security(key: keyof Security): Promise<string | {username: string; password: string;}> {
+	protected async security(key: keyof Security, scopes?: string[]): Promise<string | {username: string; password: string;}> {
 		const security = this.#security?.[key];
 		if (!security) {
 			throw new Error("Unauthorized user request.");
 		} else if (security instanceof Function) {
-			return security();
+			return scopes ? security(scopes) : security();
 		}
 		return security;
 	}

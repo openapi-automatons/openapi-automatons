@@ -117,5 +117,6 @@ export type Oauth2Security = {
 export type OpenIdConnectSecurity = {
   name: string;
   type: 'openIdConnect';
+  scopes: string[];
   description?: string;
 };
