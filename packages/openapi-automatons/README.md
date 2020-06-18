@@ -10,7 +10,7 @@ This library is a generator using openapi file.
 ## What code can generate?
 | name | language | type | example |
 | ---- | -------- | ---- | ------- |
-| @automatons/typescript-axios | typescript | client | [example](https://github.com/tanmen/openapi-automatons/examples/typescript/clients/axios "example") |
+| @automatons/typescript-axios | typescript | client | [example](https://github.com/tanmen/openapi-automatons/tree/master/examples/typescript/clients/axios "example") |
 
 ## Get Started
 1. Install library to your project
