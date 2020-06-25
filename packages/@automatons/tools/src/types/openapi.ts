@@ -260,7 +260,13 @@ export interface OpenapiSchemaArray extends OpenapiSchemaCommon {
 }
 
 export interface OpenapiSchemaAllOf extends OpenapiSchemaCommon {
-  allOf: OpenapiSchema[]
+  allOf: OpenapiSchema[];
+  discriminator?: {
+    propertyName: string;
+    mapping?: {
+      [key: string]: string;
+    }
+  };
 }
 
 export interface OpenapiSchemaOneOf extends OpenapiSchemaCommon {
