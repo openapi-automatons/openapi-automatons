@@ -5,7 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        packages: [examples/typescript/clients/axios, packages/@automatons/tools, packages/@automatons/typescript/clients/axios, packages/@automatons/typescript/parser, packages/openapi-automatons]
         node-version: [12.x, 14.x]
     steps:
       - uses: actions/checkout@v2
@@ -15,24 +14,21 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: yarn
       - run: yarn build
-      - run: yarn test --coverage
-        working-directory: ./${{ matrix.packages }}
+      - run: yarn test --coverage --json --outputFile=result.json --testLocationInResults
         env:
           CI: true
+      - uses: tanmen/jest-reporter@master
+        if: always()
+        with:
+          action-name: jest report (${{ matrix.node-version }})
+          github-token: ${{ secrets.GITHUB_TOKEN }}
       - run: yarn depcheck
-        working-directory: ./${{ matrix.packages }}
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          name: ${{ matrix.packages }}
-          file: ./${{ matrix.packages }}/coverage/clover.xml
-  notify:
-    needs: test
-    if: always()
-    runs-on: ubuntu-latest
-    steps:
       - uses: homoluctus/slatify@master
+        if: always()
         with:
           type: ${{ needs.test.result }}
           job_name: Test
