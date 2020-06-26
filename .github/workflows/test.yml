@@ -27,6 +27,11 @@ jobs:
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+  notify:
+    needs: test
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
       - uses: homoluctus/slatify@master
         if: always()
         with:
@@ -34,4 +39,3 @@ jobs:
           job_name: Test
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-

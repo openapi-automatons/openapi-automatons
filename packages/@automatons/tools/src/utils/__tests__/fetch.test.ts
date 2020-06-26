@@ -1,7 +1,7 @@
 import {fetch} from "../fetch";
 import nodeFetch, {Response} from 'node-fetch';
 import {mocked} from "ts-jest/utils";
-import {resolve} from "url";
+import {resolve} from "path";
 
 jest.mock('node-fetch');
 
@@ -33,9 +33,9 @@ describe('fetch', () => {
   it('should be nested file', async () => {
     mockReadFile.mockResolvedValue('{"openapi": "3.0.3"}');
     expect(await fetch('./test.json', './openapi.json')).toEqual({openapi: '3.0.3'})
-    expect(mockReadFile).toBeCalledWith(resolve(__dirname, '../../test.json'), {encoding: 'utf-8'});
+    expect(mockReadFile).toBeCalledWith(resolve(process.cwd(), 'test.json'), {encoding: 'utf-8'});
     expect(await fetch('../test.json', './test/openapi.json')).toEqual({openapi: '3.0.3'})
-    expect(mockReadFile).toBeCalledWith(resolve(__dirname, '../../test.json'), {encoding: 'utf-8'});
+    expect(mockReadFile).toBeCalledWith(resolve(process.cwd(), 'test.json'), {encoding: 'utf-8'});
   });
 
   it('should be url nested file', async () => {
