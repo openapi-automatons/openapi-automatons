@@ -7,8 +7,7 @@
   },
   "exclude": [
     "dist",
-    "src/**/*.spec.ts",
-    "src/**/*.test.ts",
-    "src/**/__mocks__/**/*"
+    "src/**/*.(spec|test).ts",
+    "src/**/(__mocks__|__tests__)/**/*"
   ]
 }
