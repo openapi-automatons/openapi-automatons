@@ -18,7 +18,7 @@ export const referenceTitle = (schema: OpenapiReference): string => {
 export const referenceSchema = async <T = unknown>(schema: (T | OpenapiReference) | (T & OpenapiReference), {openapi, settings: {openapiPath}}: AutomatonContext): Promise<T> => {
   if (!isRef(schema)) return schema;
   const [url, path] = schema.$ref.split('#');
-  const file = url ? await fetch<unknown>(url, openapiPath) : openapi;
+  const file = url ? await fetch<T>(url, openapiPath) : openapi;
   if (!path) {
     if (!file) {
       throw new Error(`Invalid ref path ${schema.$ref}`);

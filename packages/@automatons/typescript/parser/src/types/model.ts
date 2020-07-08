@@ -40,6 +40,7 @@ export interface BooleanSchema extends SchemaCommon {
 
 export interface ObjectSchema extends SchemaCommon {
   type: 'object';
+  discriminate?: string;
   properties?: Property[];
   enum?: object[];
 }

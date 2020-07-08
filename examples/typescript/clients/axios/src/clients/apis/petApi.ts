@@ -23,7 +23,7 @@ export class PetApi extends AbstractApi {
    * @async
    */
   public async findPets(
-    queries: { limit?: number; tags?: Array<string>; name?: string } = {},
+    queries: { name?: string; tags?: Array<string>; limit?: number } = {},
     headers: {
       "Content-Type": "application/json";
       csrf?: string;
@@ -121,7 +121,7 @@ class PetApiConfig extends AbstractConfig {
   }
 
   public async findPets(
-    queries: { limit?: number; tags?: Array<string>; name?: string } = {},
+    queries: { name?: string; tags?: Array<string>; limit?: number } = {},
     headers: {
       "Content-Type": "application/json";
       csrf?: string;
@@ -132,9 +132,9 @@ class PetApiConfig extends AbstractConfig {
   ): Promise<AxiosRequestConfig> {
     const params = {
       ...config?.params,
-      ...query("limit", queries.limit, "form", false),
-      ...query("tags", queries.tags, "form", false),
       ...query("name", queries.name, "form", false),
+      ...query("tags", queries.tags, "form", false),
+      ...query("limit", queries.limit, "form", false),
     };
     const _cookies = { ...config?.headers?.Cookie };
     if (cookies.cookie_csrf) {

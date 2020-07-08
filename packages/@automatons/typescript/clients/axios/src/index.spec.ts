@@ -1,24 +1,22 @@
 import {Openapi} from '@automatons/tools';
-import {CLIEngine} from 'eslint';
+import {ESLint} from 'eslint';
 import {remove} from "fs-extra";
 import generatorTypescriptAxios from './index';
 import paths from "./paths";
 
 it('should generate.', async () => {
-  const linter = new CLIEngine({cwd: paths.tmp, rules: {quotes: [2, "double"]}});
+  const linter = new ESLint({cwd: paths.tmp});
 
   await generatorTypescriptAxios(minimumOpenapi, {path: '', openapiPath: '', outDir: paths.tmp}, undefined);
-  const report = linter.executeOnFiles(['**/*']);
+  const results = await linter.lintFiles(['**/*']);
 
-  report.results
+  results
     .filter(result => result.errorCount !== 0 || result.warningCount !== 0)
     .forEach(result => {
+      expect(result).toBeUndefined();
       const {messages, source} = result;
       console.log({messages: messages.map(message => message.message).join("\n"), source});
     })
-
-  expect(report.errorCount).toBe(0);
-  expect(report.warningCount).toBe(0);
 });
 
 afterAll(async () => {
