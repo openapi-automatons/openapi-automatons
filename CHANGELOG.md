@@ -1,3 +1,10 @@
+## [1.0.15](https://github.com/tanmen/openapi-automatons/compare/v1.0.14...v1.0.15) (2020-07-08)
+
+
+### Bug Fixes
+
+* **dependsbot:** update npm ([e46ca70](https://github.com/tanmen/openapi-automatons/commit/e46ca70c6d3690c20012ed0132133f7c5844b8c6))
+
 ## [1.0.14](https://github.com/tanmen/openapi-automatons/compare/v1.0.13...v1.0.14) (2020-06-18)
 
 
