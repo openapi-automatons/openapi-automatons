@@ -1,3 +1,10 @@
+## [1.0.16](https://github.com/tanmen/openapi-automatons/compare/v1.0.15...v1.0.16) (2020-07-29)
+
+
+### Bug Fixes
+
+* **security:** update libraries ([34363ea](https://github.com/tanmen/openapi-automatons/commit/34363eacedb254c23103d01c89cf44dd3c6afbe5))
+
 ## [1.0.15](https://github.com/tanmen/openapi-automatons/compare/v1.0.14...v1.0.15) (2020-07-08)
 
 
