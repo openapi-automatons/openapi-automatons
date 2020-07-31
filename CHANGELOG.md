@@ -1,3 +1,10 @@
+## [1.0.17](https://github.com/tanmen/openapi-automatons/compare/v1.0.16...v1.0.17) (2020-07-31)
+
+
+### Bug Fixes
+
+* **security:** dot-props ([a4694e4](https://github.com/tanmen/openapi-automatons/commit/a4694e4b7811b974548a0a0c6b92381f9ee5b90c))
+
 ## [1.0.16](https://github.com/tanmen/openapi-automatons/compare/v1.0.15...v1.0.16) (2020-07-29)
 
 
