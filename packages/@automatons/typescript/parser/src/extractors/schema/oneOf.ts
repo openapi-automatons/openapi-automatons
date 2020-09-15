@@ -4,11 +4,11 @@ import {extractModel} from "../model";
 import {convertModel} from "../../converters/model";
 
 export const extractOneOfSchema = async (title: string, schema: OpenapiSchemaOneOf, context: AutomatonContext) => {
-  const modelSchema = convertSchemaModel(schema.title ?? title, schema);
-  const {model, insides} = await extractModel(schema.title ?? title, schema, context);
+  const modelSchema = convertSchemaModel(title, schema);
+  const {model, insides} = await extractModel(title, schema, context);
   return {
     schema: modelSchema,
     models: [model, ...insides],
-    imports: [convertModel(schema.title ?? title, modelSchema)]
+    imports: [convertModel(title, modelSchema)]
   };
 }

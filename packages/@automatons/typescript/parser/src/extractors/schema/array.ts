@@ -18,8 +18,8 @@ export const extractArraySchema = async (title: string, schema: OpenapiSchemaArr
     imports.push(...(itemImports ?? []));
   }
   if (schema.title) {
-    const modelSchema = convertSchemaModel(schema.title ?? title, schema);
-    const model = convertModel(schema.title ?? title, convertArray(schema, itemSchema));
+    const modelSchema = convertSchemaModel(title, schema);
+    const model = convertModel(title, convertArray(schema, itemSchema));
     return {schema: modelSchema, models: [model, ...models], imports: [...models]};
   }
   return {
