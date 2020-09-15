@@ -4,3 +4,4 @@ export * from "./pet";
 export * from "./raccoon";
 export * from "./dog";
 export * from "./error";
+export * from "./header";

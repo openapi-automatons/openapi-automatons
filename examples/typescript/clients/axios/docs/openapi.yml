@@ -230,3 +230,8 @@ components:
           format: int32
         message:
           type: string
+    Header:
+      type: object
+      properties:
+        Content-Type:
+          type: string

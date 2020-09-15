@@ -3,7 +3,7 @@
 {
 {{#each properties}}
   {{> comment title=name}}
-  {{name}}{{#unless required}}?{{/unless}}: {{> models/type schema}};
+  {{#inArray name "-"}}"{{name}}"{{else}}{{name}}{{/inArray}}{{#unless required}}?{{/unless}}: {{> models/type schema}};
 {{/each}}
 }
 {{~ else ~}}
