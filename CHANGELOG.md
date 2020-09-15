@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/tanmen/openapi-automatons/compare/v1.0.17...v1.1.0) (2020-09-15)
+
+
+### Features
+
+* supports property names including '-' ([2b51c55](https://github.com/tanmen/openapi-automatons/commit/2b51c559c91bf33a8c5dad83516fb1a06d92e666))
+
 ## [1.0.17](https://github.com/tanmen/openapi-automatons/compare/v1.0.16...v1.0.17) (2020-07-31)
 
 
