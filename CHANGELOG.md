@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/tanmen/openapi-automatons/compare/v1.1.0...v1.1.1) (2020-09-15)
+
+
+### Bug Fixes
+
+* Changed the model name so that it does not use the title ([0092c11](https://github.com/tanmen/openapi-automatons/commit/0092c112c234e9766c52582afaa09f3ff9b50a1b))
+
 # [1.1.0](https://github.com/tanmen/openapi-automatons/compare/v1.0.17...v1.1.0) (2020-09-15)
 
 
