@@ -1,6 +1,6 @@
 {
   "name": "@automatons/typescript-axios",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "repository": "git@github.com:tanmen/openapi-automatons.git",
   "author": "tanmen <yt.prog@gmail.com>",
   "license": "MIT",
