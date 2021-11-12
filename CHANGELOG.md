@@ -1,3 +1,10 @@
+## [1.0.14](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.13...v1.0.14) (2021-11-12)
+
+
+### Bug Fixes
+
+* change structure ([cd07bbc](https://github.com/openapi-automatons/openapi-automatons/commit/cd07bbc18b8c8b2b7996491d336e38ce9901a718))
+
 # 1.0.0 (2021-11-12)
 
 
