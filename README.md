@@ -1,6 +1,6 @@
 # OpenapiAutomatons
-[![test](https://github.com/tanmen/openapi-automatons/workflows/test/badge.svg)](https://github.com/tanmen/openapi-automatons/actions?query=workflow%3Atest)
-[![codecov](https://codecov.io/gh/tanmen/openapi-automatons/branch/master/graph/badge.svg)](https://codecov.io/gh/tanmen/openapi-automatons)
+[![CI/CD](https://github.com/openapi-automatons/openapi-automatons/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/openapi-automatons/openapi-automatons/actions/workflows/ci-cd.yml)
+[![codecov](https://codecov.io/gh/openapi-automatons/openapi-automatons/branch/main/graph/badge.svg)](https://codecov.io/gh/openapi-automatons/openapi-automatons)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![npm downloads](https://img.shields.io/npm/dt/openapi-automatons)](https://www.npmjs.com/package/openapi-automatons)
 
@@ -10,7 +10,7 @@ This library is a generator using openapi file.
 ## What code can generate?
 | name | language | type | example |
 | ---- | -------- | ---- | ------- |
-| @automatons/typescript-axios | typescript | client | [example](https://github.com/tanmen/openapi-automatons/tree/master/examples/typescript/clients/axios "example") |
+| @automatons/typescript-axios | typescript | client | [example](https://github.com/openapi-automatons/openapi-automatons/tree/main/examples/typescript/clients/axios "example") |
 
 ## Get Started
 1. Install library to your project
