@@ -6,11 +6,11 @@ module.exports = {
     ["@semantic-release/changelog", {
       "changelogFile": "CHANGELOG.md",
     }],
-    ["@semantic-release/git", {
-      "assets": ["CHANGELOG.md"],
-    }],
     ['@semantic-release/npm', {
       "pkgRoot": "dist"
+    }],
+    ["@semantic-release/git", {
+      "assets": ["CHANGELOG.md"],
     }],
     '@semantic-release/github'
   ],
