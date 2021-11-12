@@ -1,0 +1,7 @@
+{
+  "openapi": "src/__tests__/examples/v3_0/petstore.json",
+  "automatons": [{
+    "automaton": "@automatons/client-typescript-axios",
+    "outDir": "src/apis"
+  }]
+}
