@@ -1,1 +1,1 @@
-ignores: ["@types/*"]
+ignores: ["@types/*", "@commitlint/*", "@semantic-release/*", "semantic-release", "husky", "lint-staged"]
