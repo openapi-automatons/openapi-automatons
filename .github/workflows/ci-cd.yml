@@ -100,6 +100,8 @@ jobs:
       - name: Install modules
         run: yarn install --frozen-lockfile
         if: steps.cache.outputs.cache-hit != 'true'
+      - name: Build
+        run: yarn build
       - name: Publish
         run: yarn semantic-release
         env:
