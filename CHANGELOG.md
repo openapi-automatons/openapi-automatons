@@ -1,3 +1,10 @@
+## [1.0.16](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.15...v1.0.16) (2021-11-13)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump @types/js-yaml from 3.12.7 to 4.0.4 ([#27](https://github.com/openapi-automatons/openapi-automatons/issues/27)) ([8d1def4](https://github.com/openapi-automatons/openapi-automatons/commit/8d1def441c1516452c5a5f8a94b1cb63372faed9))
+
 ## [1.0.15](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.14...v1.0.15) (2021-11-13)
 
 
