@@ -1,5 +1,12 @@
 version = 1
 
+[merge]
+method = "squash"
+
 [merge.automerge_dependencies]
 versions = ["major", "minor", "patch"]
 usernames = ["dependabot"]
+
+[approve]
+auto_approve_usernames = ["dependabot", "tanmen"]
+
