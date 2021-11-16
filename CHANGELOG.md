@@ -1,3 +1,11 @@
+## [1.0.19](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.18...v1.0.19) (2021-11-16)
+
+
+### Bug Fixes
+
+* **deps:** bump @automatons/tools from 1.0.11 to 1.0.14 ([#32](https://github.com/openapi-automatons/openapi-automatons/issues/32)) ([0b5bfa8](https://github.com/openapi-automatons/openapi-automatons/commit/0b5bfa8ea09449de30bb56092698cad4c392cc56))
+* **deps:** bump ora from 5.4.1 to 6.0.1 ([#33](https://github.com/openapi-automatons/openapi-automatons/issues/33)) ([6a8b746](https://github.com/openapi-automatons/openapi-automatons/commit/6a8b746343b90432d10596dab30923c2b406899f))
+
 ## [1.0.18](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.17...v1.0.18) (2021-11-15)
 
 
