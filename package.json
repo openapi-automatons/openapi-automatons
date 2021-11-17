@@ -13,7 +13,7 @@
   },
   "scripts": {
     "prebuild": "depcheck && node scripts/prebuild.js",
-    "build": "tsc && cp package.json README.md LICENSE dist",
+    "build": "tsc && cp README.md LICENSE dist && ln -s ../package.json dist/package.json",
     "test": "jest",
     "postinstall": "husky install && typesync && yarn check --integrity || yarn install --ignore-scripts && yarn-deduplicate",
     "prepublishOnly": "pinst --disable",
