@@ -17,8 +17,7 @@
     "test": "jest",
     "postinstall": "husky install && typesync && yarn check --integrity || yarn install --ignore-scripts && yarn-deduplicate",
     "prepublishOnly": "pinst --disable",
-    "postpublish": "pinst --enable",
-    "depcheck": "depcheck"
+    "postpublish": "pinst --enable"
   },
   "dependencies": {
     "@automatons/tools": "^1.0.14",
