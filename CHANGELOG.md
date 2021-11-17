@@ -1,3 +1,10 @@
+## [1.0.21](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.20...v1.0.21) (2021-11-17)
+
+
+### Bug Fixes
+
+* **release:** fix setting bug ([e8ee43e](https://github.com/openapi-automatons/openapi-automatons/commit/e8ee43eb9bc110680432b4cd8b5876fe8c278fe4))
+
 ## [1.0.20](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.19...v1.0.20) (2021-11-17)
 
 
