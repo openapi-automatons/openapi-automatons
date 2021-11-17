@@ -1,3 +1,10 @@
+## [1.0.20](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.19...v1.0.20) (2021-11-17)
+
+
+### Bug Fixes
+
+* **release:** release workflow ([740b304](https://github.com/openapi-automatons/openapi-automatons/commit/740b304dfa213fe7890cf2a974df1fbab4436924))
+
 ## [1.0.19](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.18...v1.0.19) (2021-11-16)
 
 
