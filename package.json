@@ -20,7 +20,7 @@
     "postpublish": "pinst --enable"
   },
   "dependencies": {
-    "@automatons/tools": "^1.0.14",
+    "@automatons/tools": "^1.0.16",
     "@automatons/validator": "^1.0.1",
     "chalk": "^4.1.2",
     "fs-extra": "^10.0.0",
