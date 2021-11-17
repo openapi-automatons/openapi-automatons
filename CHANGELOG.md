@@ -1,3 +1,11 @@
+## [1.0.22](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.21...v1.0.22) (2021-11-17)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump @commitlint/cli from 14.1.0 to 15.0.0 ([#35](https://github.com/openapi-automatons/openapi-automatons/issues/35)) ([91f40d3](https://github.com/openapi-automatons/openapi-automatons/commit/91f40d3b06f5d02b057e5054254beb000b2b08c7))
+* **deps:** bump @automatons/tools from 1.0.14 to 1.0.16 ([#34](https://github.com/openapi-automatons/openapi-automatons/issues/34)) ([3ab5f0f](https://github.com/openapi-automatons/openapi-automatons/commit/3ab5f0fd633a15089152a8327124b5b2c5e80cb6))
+
 ## [1.0.21](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.20...v1.0.21) (2021-11-17)
 
 
