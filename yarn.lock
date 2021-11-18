@@ -11,12 +11,12 @@
     js-yaml "^4.1.0"
     node-fetch "^2.6.0"
 
-"@automatons/validator@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@automatons/validator/-/validator-1.0.1.tgz#0166fc5f0fdd153eca4d6b213e54092e202d72e5"
-  integrity sha512-mF1OWNozDTuyGyhYFgdwzX+ZgCgYHkV7wxWNRzojWOi6yW66pFk5rBzjpFKzGdYCPBoBvzam0E032lvcqrCkEg==
+"@automatons/validator@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@automatons/validator/-/validator-1.0.5.tgz#6b454d21f9b0317e956d435586e73ce96e7c8419"
+  integrity sha512-hezrmAZYB5ENuK6Et1B1lJodio8UIMaEuf5iFreOJqBFl88bBWfLx90vr4uVn8yZhFvtvnp2f2F9EnMuCAisug==
   dependencies:
-    "@hyperjump/json-schema" "^0.18.2"
+    "@hyperjump/json-schema" "^0.18.3"
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.16.0":
   version "7.16.0"
@@ -488,10 +488,10 @@
   dependencies:
     just-curry-it "^3.2.1"
 
-"@hyperjump/json-schema-core@^0.22.0":
-  version "0.22.3"
-  resolved "https://registry.yarnpkg.com/@hyperjump/json-schema-core/-/json-schema-core-0.22.3.tgz#fa273e2db87b86511adf23c68f3b8396139216b6"
-  integrity sha512-URWky/mVyXiVMbG/cicjFN5U8tXHTsVWL8idEG02d1arYpsouQ/UZBUGXVHPRuo0q1xEH3cWzYXptqA8HKWnrQ==
+"@hyperjump/json-schema-core@^0.23.4":
+  version "0.23.4"
+  resolved "https://registry.yarnpkg.com/@hyperjump/json-schema-core/-/json-schema-core-0.23.4.tgz#baf863f0888eebbdc32edd6cac3f44cc21531dbc"
+  integrity sha512-rHORA3qPk2JKOJOgwgXzGkMnad0neoPiHK8tPrITNxCcVM+AwPkTK+ABogNhbFG4lipWVF4gB3XHJ2qxfQuSAw==
   dependencies:
     "@hyperjump/json-pointer" "^0.9.1"
     "@hyperjump/pact" "^0.2.0"
@@ -500,12 +500,12 @@
     pubsub-js "^1.9.1"
     url-resolve-browser "^1.2.0"
 
-"@hyperjump/json-schema@^0.18.2":
-  version "0.18.2"
-  resolved "https://registry.yarnpkg.com/@hyperjump/json-schema/-/json-schema-0.18.2.tgz#0d6470b32df3a47f263ffc5c574ed40946095ea3"
-  integrity sha512-QfwNguaP5XOcbJJVAkpmk4PvNSYm2W54fe48Jbbv28gDHQ+XYL70V0EssPTeQQnXMQcai3rovxuElmM/tpgYFw==
+"@hyperjump/json-schema@^0.18.3":
+  version "0.18.3"
+  resolved "https://registry.yarnpkg.com/@hyperjump/json-schema/-/json-schema-0.18.3.tgz#1f7989843dc8972a3d8107c0bf6d7b3acedaf052"
+  integrity sha512-HKrrsuJOlYdqpHEr/eRU99LCiAe8ZH4LUkQOQOMa/P8pNSgs4FQHMKy3sgkmgLSgdmQbRX2/hA+yn2Ts/gS0lA==
   dependencies:
-    "@hyperjump/json-schema-core" "^0.22.0"
+    "@hyperjump/json-schema-core" "^0.23.4"
     fastest-stable-stringify "^2.0.2"
 
 "@hyperjump/pact@^0.2.0":
