@@ -6,6 +6,9 @@ module.exports = {
     ["@semantic-release/changelog", {
       "changelogFile": "CHANGELOG.md",
     }],
+    ['@semantic-release/exec', {
+      "prepare": "rm package.json && cp dist/package.json ."
+    }],
     ['@semantic-release/npm', {
       "pkgRoot": "dist"
     }],
