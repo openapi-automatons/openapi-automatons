@@ -1,3 +1,10 @@
+## [1.0.29](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.28...v1.0.29) (2021-11-18)
+
+
+### Bug Fixes
+
+* fix script cycles ([9b63165](https://github.com/openapi-automatons/openapi-automatons/commit/9b63165983ae72166a5dd5bf42fd4906dffe76eb))
+
 ## [1.0.28](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.27...v1.0.28) (2021-11-18)
 
 
