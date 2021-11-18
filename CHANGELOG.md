@@ -1,3 +1,10 @@
+## [1.0.24](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.23...v1.0.24) (2021-11-18)
+
+
+### Bug Fixes
+
+* remove ln ([02c9b46](https://github.com/openapi-automatons/openapi-automatons/commit/02c9b46ff9359b06a414b4cd1a073761742115f0))
+
 ## [1.0.23](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.22...v1.0.23) (2021-11-17)
 
 
