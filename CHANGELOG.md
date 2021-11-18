@@ -1,3 +1,10 @@
+## [1.0.27](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.26...v1.0.27) (2021-11-18)
+
+
+### Bug Fixes
+
+* release package test ([24e2841](https://github.com/openapi-automatons/openapi-automatons/commit/24e2841cd56bdf48feedb658194d1c2f7aa83738))
+
 ## [1.0.26](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.25...v1.0.26) (2021-11-18)
 
 
