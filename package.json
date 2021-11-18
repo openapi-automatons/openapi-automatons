@@ -22,7 +22,7 @@
     "postversion": "cp package.json ../package.json"
   },
   "dependencies": {
-    "@automatons/tools": "^1.0.16",
+    "@automatons/tools": "^1.0.18",
     "@automatons/validator": "^1.0.1",
     "chalk": "^4.1.2",
     "fs-extra": "^10.0.0",
