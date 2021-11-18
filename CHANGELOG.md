@@ -1,3 +1,10 @@
+## [1.0.30](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.29...v1.0.30) (2021-11-18)
+
+
+### Bug Fixes
+
+* package.json ([c18aa24](https://github.com/openapi-automatons/openapi-automatons/commit/c18aa24dac61a2ff887f1086ca246f065effe7c9))
+
 ## [1.0.29](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.28...v1.0.29) (2021-11-18)
 
 
