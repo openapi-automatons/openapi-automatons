@@ -1,3 +1,10 @@
+## [1.0.25](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.24...v1.0.25) (2021-11-18)
+
+
+### Bug Fixes
+
+* release test ([330cdc6](https://github.com/openapi-automatons/openapi-automatons/commit/330cdc6b7ca7a4e1f008ebf4d8bb9ed8f485bfcc))
+
 ## [1.0.24](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.23...v1.0.24) (2021-11-18)
 
 
