@@ -1,3 +1,13 @@
+## [1.0.31](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.30...v1.0.31) (2021-11-19)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump lint-staged from 12.0.2 to 12.0.3 ([#39](https://github.com/openapi-automatons/openapi-automatons/issues/39)) ([bc86422](https://github.com/openapi-automatons/openapi-automatons/commit/bc86422ee0ddfb645e8fb745b9a3258d1acc8397))
+* **deps-dev:** bump typescript from 4.4.4 to 4.5.2 ([#40](https://github.com/openapi-automatons/openapi-automatons/issues/40)) ([d1cf591](https://github.com/openapi-automatons/openapi-automatons/commit/d1cf59115aa68a2d4f177091103c9792702b3602))
+* **deps:** bump @automatons/tools from 1.0.16 to 1.0.18 ([#37](https://github.com/openapi-automatons/openapi-automatons/issues/37)) ([d9ae2ea](https://github.com/openapi-automatons/openapi-automatons/commit/d9ae2ea0acb9574b240d80f262e72138afbcd9d5))
+* **deps:** bump @automatons/validator from 1.0.1 to 1.0.5 ([#38](https://github.com/openapi-automatons/openapi-automatons/issues/38)) ([6d85e71](https://github.com/openapi-automatons/openapi-automatons/commit/6d85e71db842bbdc7aed5cdfc3f69d6cd2b605ea))
+
 ## [1.0.30](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.29...v1.0.30) (2021-11-18)
 
 
