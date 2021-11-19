@@ -1,4 +1,4 @@
-const fs = require('fs-extra');
-const paths = require('../config/paths.js');
+import fs from "fs-extra";
+import paths from "../config/paths.js";
 
 fs.removeSync(paths.build);
