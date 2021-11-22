@@ -23,7 +23,7 @@
     "postversion": "cp package.json ../package.json"
   },
   "dependencies": {
-    "@automatons/tools": "^1.0.18",
+    "@automatons/tools": "^1.0.20",
     "@automatons/validator": "^1.0.5",
     "chalk": "^4.1.2",
     "fs-extra": "^10.0.0",
@@ -37,7 +37,7 @@
     "@semantic-release/git": "^10.0.0",
     "@semantic-release/npm": "^8.0.0",
     "@types/fs-extra": "^9.0.1",
-    "@types/jest": "^27.0.2",
+    "@types/jest": "^27.0.3",
     "@types/js-yaml": "^4.0.4",
     "@types/jsonschema": "^1.1.1",
     "@types/node": "^16.11.9",
