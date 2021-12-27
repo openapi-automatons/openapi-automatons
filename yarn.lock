@@ -7215,10 +7215,10 @@ typescript@^4.4.3:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.2.tgz#8ac1fba9f52256fdb06fb89e4122fa6a346c2998"
   integrity sha512-5BlMof9H1yGt0P8/WF+wPNw6GfctgGjXp5hkblpyT+8rkASSmkUKMXrxR0Xg8ThVCi/JnHQiKXeBaEwCeQwMFw==
 
-typescript@^4.6.0-dev.20211118:
-  version "4.6.0-dev.20211118"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.6.0-dev.20211118.tgz#185b6f41b6ba5ad5747fa4b19502e95775ec13d0"
-  integrity sha512-QPfgtKYsYPSpy2PfjwTWsO8y3RuZzLL+JDbzTwlqkGibYkZ9JfGOhRfkxZZdtHxBkMfzcii9BmAy3RQtzFT06Q==
+typescript@^4.6.0-dev.20211227:
+  version "4.6.0-dev.20211227"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.6.0-dev.20211227.tgz#9a6448a5c1c3c5089aed5763f53707b144e6edfd"
+  integrity sha512-ybFDDvIhNbxjJY/PFflxFtUWRveDyQAHFmzEr4YkNBbT0iGTJyLblIZiuAHlzxSWFjE0KgLeoSfGmsj1tZrldg==
 
 typesync@^0.8.0:
   version "0.8.0"
