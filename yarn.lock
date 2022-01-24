@@ -11,10 +11,10 @@
     js-yaml "^4.1.0"
     node-fetch "^2.6.0"
 
-"@automatons/validator@^1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@automatons/validator/-/validator-1.0.5.tgz#6b454d21f9b0317e956d435586e73ce96e7c8419"
-  integrity sha512-hezrmAZYB5ENuK6Et1B1lJodio8UIMaEuf5iFreOJqBFl88bBWfLx90vr4uVn8yZhFvtvnp2f2F9EnMuCAisug==
+"@automatons/validator@^1.0.44":
+  version "1.0.44"
+  resolved "https://registry.yarnpkg.com/@automatons/validator/-/validator-1.0.44.tgz#a06ca3913f7167a03374335e7776b6c4a830c83e"
+  integrity sha512-YBZ/rlLcbu595FiJvoroYN2D+MycJBU7RydCczpkjnVxrepAG7ypAuSscLdFXWJSZIGdXQiUaBBQXLumEFElpw==
   dependencies:
     "@hyperjump/json-schema" "^0.18.3"
 
