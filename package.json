@@ -45,7 +45,7 @@
     "@types/yup": "0.28.3",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
-    "depcheck": "^1.4.2",
+    "depcheck": "^1.4.3",
     "eslint-config-google": "^0.14.0",
     "husky": "^7.0.4",
     "jest": "^26.0.1",
