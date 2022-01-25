@@ -2,21 +2,21 @@
 # yarn lockfile v1
 
 
-"@automatons/tools@^1.0.20":
-  version "1.0.20"
-  resolved "https://registry.yarnpkg.com/@automatons/tools/-/tools-1.0.20.tgz#05dc2da355668f4aacf4b977ad1e78eafc2407d9"
-  integrity sha512-kCY1ZyWzBCmBkzGOsEGyAddatdve6pIcgfd3w3kdM2TJ4mTMvDeEjw1i6cR9djwXFp/y9VYkS5uZCLPbdiyxMg==
+"@automatons/tools@^1.0.62":
+  version "1.0.62"
+  resolved "https://registry.yarnpkg.com/@automatons/tools/-/tools-1.0.62.tgz#38bf47edc94cb495decfb0f85161845a9107c65c"
+  integrity sha512-dKX1D/6BbBxP+QJoU9Ozj9WlNoYvi1hd2eA6E9yRelAPX+QZuHsxW9NCxJfXTGDNuXLOSCSZ4y/u3snywMOpuA==
   dependencies:
     fs-extra "^10.0.0"
     js-yaml "^4.1.0"
     node-fetch "^2.6.0"
 
-"@automatons/validator@^1.0.44":
-  version "1.0.44"
-  resolved "https://registry.yarnpkg.com/@automatons/validator/-/validator-1.0.44.tgz#a06ca3913f7167a03374335e7776b6c4a830c83e"
-  integrity sha512-YBZ/rlLcbu595FiJvoroYN2D+MycJBU7RydCczpkjnVxrepAG7ypAuSscLdFXWJSZIGdXQiUaBBQXLumEFElpw==
+"@automatons/validator@^1.0.46":
+  version "1.0.46"
+  resolved "https://registry.yarnpkg.com/@automatons/validator/-/validator-1.0.46.tgz#2598397d096416cf3a570b44596795b30cb7f1e3"
+  integrity sha512-RLeW+hPamVEsu3AL5YWl+t44d415b7lUDxafunirzT7q6apOTaNF8ReZFK6v6G8kWqYfCyxHx5il4lpZxmA+Yg==
   dependencies:
-    "@hyperjump/json-schema" "^0.18.3"
+    "@hyperjump/json-schema" "^0.18.4"
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.16.0":
   version "7.16.0"
@@ -513,10 +513,10 @@
     pubsub-js "^1.9.1"
     url-resolve-browser "^1.2.0"
 
-"@hyperjump/json-schema@^0.18.3":
-  version "0.18.3"
-  resolved "https://registry.yarnpkg.com/@hyperjump/json-schema/-/json-schema-0.18.3.tgz#1f7989843dc8972a3d8107c0bf6d7b3acedaf052"
-  integrity sha512-HKrrsuJOlYdqpHEr/eRU99LCiAe8ZH4LUkQOQOMa/P8pNSgs4FQHMKy3sgkmgLSgdmQbRX2/hA+yn2Ts/gS0lA==
+"@hyperjump/json-schema@^0.18.4":
+  version "0.18.4"
+  resolved "https://registry.yarnpkg.com/@hyperjump/json-schema/-/json-schema-0.18.4.tgz#f726114b0d2b40c54e9603facef270b18009436e"
+  integrity sha512-FVdSlOrOio/sWCbVbAP3yH/gKKddvrIvKzLS/id6/CidWH0r0x5ZTPM1zBS0Su7gU6OOjFRxDYhrIhnNBI5ODg==
   dependencies:
     "@hyperjump/json-schema-core" "^0.23.4"
     fastest-stable-stringify "^2.0.2"
