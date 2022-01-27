@@ -25,7 +25,7 @@
   "dependencies": {
     "@automatons/tools": "^1.0.63",
     "@automatons/validator": "^1.0.47",
-    "chalk": "^4.1.2",
+    "chalk": "^5.0.0",
     "fs-extra": "^10.0.0",
     "ora": "6.0.1",
     "yup": "0.28.5"
