@@ -25,20 +25,20 @@
   "dependencies": {
     "@automatons/tools": "^1.0.62",
     "@automatons/validator": "^1.0.47",
-    "chalk": "^4.1.2",
+    "chalk": "^5.0.0",
     "fs-extra": "^10.0.0",
     "ora": "6.0.1",
     "yup": "0.28.5"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.1.0",
-    "@commitlint/config-conventional": "^15.0.0",
+    "@commitlint/config-conventional": "^16.0.0",
     "@semantic-release/changelog": "^6.0.0",
     "@semantic-release/git": "^10.0.0",
     "@semantic-release/npm": "^8.0.0",
     "@types/fs-extra": "^9.0.1",
     "@types/jest": "^27.0.2",
-    "@types/js-yaml": "^4.0.4",
+    "@types/js-yaml": "^4.0.5",
     "@types/jsonschema": "^1.1.1",
     "@types/node": "^17.0.10",
     "@types/semantic-release": "^17.2.3",
