@@ -1,3 +1,11 @@
+## [1.0.35](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.34...v1.0.35) (2022-01-27)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump @semantic-release/npm from 8.0.3 to 9.0.0 ([#111](https://github.com/openapi-automatons/openapi-automatons/issues/111)) ([7f130ca](https://github.com/openapi-automatons/openapi-automatons/commit/7f130caea8e86929836305983c02fd3f5992cc79))
+* downgrade chalk ([a5c2100](https://github.com/openapi-automatons/openapi-automatons/commit/a5c2100e9a880ad28a6952a33aac853bd9ca7f29))
+
 ## [1.0.34](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.33...v1.0.34) (2022-01-27)
 
 
