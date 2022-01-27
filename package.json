@@ -16,10 +16,11 @@
     "build": "tsc && cp package.json README.md LICENSE dist",
     "lint": "eslint src --ext .ts,.tsx",
     "test": "jest",
-    "postinstall": "husky install && typesync && yarn check --integrity || yarn install --ignore-scripts && yarn-deduplicate",
+    "postinstall": "typesync && yarn check --integrity || yarn install --ignore-scripts && yarn-deduplicate",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",
-    "postversion": "cp package.json ../package.json"
+    "postversion": "cp package.json ../package.json",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@automatons/tools": "^1.0.62",
