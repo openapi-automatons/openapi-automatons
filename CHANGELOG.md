@@ -1,3 +1,10 @@
+## [1.0.34](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.33...v1.0.34) (2022-01-27)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump lint-staged from 12.0.3 to 12.3.2 ([#110](https://github.com/openapi-automatons/openapi-automatons/issues/110)) ([c242be0](https://github.com/openapi-automatons/openapi-automatons/commit/c242be07b50f01e5d931657d95583809f7c5dc03))
+
 ## [1.0.33](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.32...v1.0.33) (2022-01-27)
 
 
