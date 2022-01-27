@@ -5638,6 +5638,21 @@ optionator@^0.8.1:
     type-check "~0.3.2"
     word-wrap "~1.2.3"
 
+ora@6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/ora/-/ora-6.0.1.tgz#68caa9fd6c485a40d6f46c50a3940fa3df99c7f3"
+  integrity sha512-TDdKkKHdWE6jo/6pIa5U5AWcSVfpNRFJ8sdRJpioGNVPLAzZzHs/N+QhUfF7ZbyoC+rnDuNTKzeDJUbAza9g4g==
+  dependencies:
+    bl "^5.0.0"
+    chalk "^4.1.2"
+    cli-cursor "^4.0.0"
+    cli-spinners "^2.6.0"
+    is-interactive "^2.0.0"
+    is-unicode-supported "^1.1.0"
+    log-symbols "^5.0.0"
+    strip-ansi "^7.0.1"
+    wcwidth "^1.0.1"
+
 ora@^5.1.0:
   version "5.4.1"
   resolved "https://registry.yarnpkg.com/ora/-/ora-5.4.1.tgz#1b2678426af4ac4a509008e5e4ac9e9959db9e18"
@@ -5651,21 +5666,6 @@ ora@^5.1.0:
     is-unicode-supported "^0.1.0"
     log-symbols "^4.1.0"
     strip-ansi "^6.0.0"
-    wcwidth "^1.0.1"
-
-ora@^6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/ora/-/ora-6.0.1.tgz#68caa9fd6c485a40d6f46c50a3940fa3df99c7f3"
-  integrity sha512-TDdKkKHdWE6jo/6pIa5U5AWcSVfpNRFJ8sdRJpioGNVPLAzZzHs/N+QhUfF7ZbyoC+rnDuNTKzeDJUbAza9g4g==
-  dependencies:
-    bl "^5.0.0"
-    chalk "^4.1.2"
-    cli-cursor "^4.0.0"
-    cli-spinners "^2.6.0"
-    is-interactive "^2.0.0"
-    is-unicode-supported "^1.1.0"
-    log-symbols "^5.0.0"
-    strip-ansi "^7.0.1"
     wcwidth "^1.0.1"
 
 p-each-series@^2.1.0:
@@ -7262,15 +7262,10 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
-typescript@^4.4.3:
+typescript@^4.4.3, typescript@^4.5.2:
   version "4.5.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.2.tgz#8ac1fba9f52256fdb06fb89e4122fa6a346c2998"
   integrity sha512-5BlMof9H1yGt0P8/WF+wPNw6GfctgGjXp5hkblpyT+8rkASSmkUKMXrxR0Xg8ThVCi/JnHQiKXeBaEwCeQwMFw==
-
-typescript@^4.6.0-dev.20211118:
-  version "4.6.0-dev.20211118"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.6.0-dev.20211118.tgz#185b6f41b6ba5ad5747fa4b19502e95775ec13d0"
-  integrity sha512-QPfgtKYsYPSpy2PfjwTWsO8y3RuZzLL+JDbzTwlqkGibYkZ9JfGOhRfkxZZdtHxBkMfzcii9BmAy3RQtzFT06Q==
 
 typesync@^0.8.0:
   version "0.8.0"
