@@ -26,7 +26,7 @@
     "@automatons/validator": "^1.0.49",
     "chalk": "^5.0.0",
     "fs-extra": "^10.0.0",
-    "ora": "6.0.1",
+    "ora": "5.4.1",
     "yup": "0.28.5"
   },
   "devDependencies": {
