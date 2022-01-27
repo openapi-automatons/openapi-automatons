@@ -8,22 +8,22 @@
 This library is a generator using openapi file.
 
 ## What code can generate?
-| name | language | type | example |
-| ---- | -------- | ---- | ------- |
-| @automatons/typescript-axios | typescript | client | [example](https://github.com/openapi-automatons/openapi-automatons/tree/main/examples/typescript/clients/axios "example") |
+| name | language | type |
+| ---- | -------- | ---- |
+| @automatons/typescript-client-axios | typescript | client |
 
 ## Get Started
 1. Install library to your project
 ```shell script
-yarn add -D openapi-automatons @automatons/typescript-axios
+yarn add -D openapi-automatons @automatons/typescript-client-axios
 ```
 
-2. Create settings in your project root
-```json:automatons.json
+2. Create settings in your project root `automatons.json`
+```json
 {
   "openapi": "openapi.yml",
   "automatons": [{
-    "automaton": "@automatons/typescript-axios",
+    "automaton": "@automatons/typescript-client-axios",
     "outDir": "src/clients"
   }]
 }
