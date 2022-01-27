@@ -1,3 +1,10 @@
+## [1.0.37](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.36...v1.0.37) (2022-01-27)
+
+
+### Bug Fixes
+
+* **readme:** fix library name ([bdd12a3](https://github.com/openapi-automatons/openapi-automatons/commit/bdd12a30448e556bfc4cc327654a6bdec49a4067))
+
 ## [1.0.36](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.35...v1.0.36) (2022-01-27)
 
 
