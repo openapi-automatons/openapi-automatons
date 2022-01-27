@@ -1,3 +1,35 @@
+## [1.0.32](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.31...v1.0.32) (2022-01-27)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump @commitlint/cli from 15.0.0 to 16.1.0 ([#96](https://github.com/openapi-automatons/openapi-automatons/issues/96)) ([6861be1](https://github.com/openapi-automatons/openapi-automatons/commit/6861be18a8e06c7f50c58cb9e02a9ffd5ab279dd))
+* **deps-dev:** bump @commitlint/config-conventional ([#106](https://github.com/openapi-automatons/openapi-automatons/issues/106)) ([226b145](https://github.com/openapi-automatons/openapi-automatons/commit/226b1454296f80b3b6ece441dbc7773da3d0d9a0))
+* **deps-dev:** bump @types/js-yaml from 4.0.4 to 4.0.5 ([#105](https://github.com/openapi-automatons/openapi-automatons/issues/105)) ([5deacbe](https://github.com/openapi-automatons/openapi-automatons/commit/5deacbed7554ca734b170e1a5776d8ed31a450ab))
+* **deps-dev:** bump @types/node from 16.11.7 to 16.11.9 ([#41](https://github.com/openapi-automatons/openapi-automatons/issues/41)) ([bc61bfa](https://github.com/openapi-automatons/openapi-automatons/commit/bc61bfa27eed5b48a1849677be390ca35980277b))
+* **deps-dev:** bump @types/node from 16.11.9 to 17.0.10 ([#97](https://github.com/openapi-automatons/openapi-automatons/issues/97)) ([ffd1fc3](https://github.com/openapi-automatons/openapi-automatons/commit/ffd1fc39dbb87a68b7e0c38d22816ecbc4cd94e8))
+* **deps-dev:** bump @typescript-eslint/parser from 5.4.0 to 5.10.1 ([#104](https://github.com/openapi-automatons/openapi-automatons/issues/104)) ([815a9c8](https://github.com/openapi-automatons/openapi-automatons/commit/815a9c8ac15ae53189b24b545c872d713bae693a))
+* **deps-dev:** bump depcheck from 1.4.2 to 1.4.3 ([#100](https://github.com/openapi-automatons/openapi-automatons/issues/100)) ([751ac42](https://github.com/openapi-automatons/openapi-automatons/commit/751ac4298ec0c5dc7b8421b9e3154144d1abb5fd))
+* **deps-dev:** bump semantic-release from 18.0.0 to 19.0.2 ([#103](https://github.com/openapi-automatons/openapi-automatons/issues/103)) ([4284cc0](https://github.com/openapi-automatons/openapi-automatons/commit/4284cc0e48be8d31781a64270282e0acea4d1238))
+* **deps:** bump @automatons/tools from 1.0.18 to 1.0.20 ([#46](https://github.com/openapi-automatons/openapi-automatons/issues/46)) ([1820b27](https://github.com/openapi-automatons/openapi-automatons/commit/1820b27f6586b531459ac9fc371b26de53dae494))
+* **deps:** bump @automatons/tools from 1.0.20 to 1.0.62 ([#99](https://github.com/openapi-automatons/openapi-automatons/issues/99)) ([0dc2207](https://github.com/openapi-automatons/openapi-automatons/commit/0dc22078e9ca76067898e361f49d951d0c9ea74d))
+* **deps:** bump @automatons/tools from 1.0.62 to 1.0.63 ([#108](https://github.com/openapi-automatons/openapi-automatons/issues/108)) ([230d75a](https://github.com/openapi-automatons/openapi-automatons/commit/230d75abc6b01360ecc43b77e46375a54fce0616))
+* **deps:** bump @automatons/validator from 1.0.44 to 1.0.47 ([#102](https://github.com/openapi-automatons/openapi-automatons/issues/102)) ([9b4723e](https://github.com/openapi-automatons/openapi-automatons/commit/9b4723e61b805a5b2da407d98701be668c5afe52))
+* **deps:** bump @automatons/validator from 1.0.5 to 1.0.44 ([#93](https://github.com/openapi-automatons/openapi-automatons/issues/93)) ([f0f768a](https://github.com/openapi-automatons/openapi-automatons/commit/f0f768a19f4a15c8989225432ecf5e527351220f))
+* **deps:** bump chalk from 4.1.2 to 5.0.0 ([#107](https://github.com/openapi-automatons/openapi-automatons/issues/107)) ([f6db4a9](https://github.com/openapi-automatons/openapi-automatons/commit/f6db4a9959cc719adf815c8dde34d8fbc43d6eb2))
+* **deps:** bump follow-redirects from 1.14.5 to 1.14.7 ([#84](https://github.com/openapi-automatons/openapi-automatons/issues/84)) ([393e660](https://github.com/openapi-automatons/openapi-automatons/commit/393e6607f94c3e2c358570f5370735e95f00f535))
+* **deps:** bump nanoid from 3.1.30 to 3.2.0 ([#91](https://github.com/openapi-automatons/openapi-automatons/issues/91)) ([d24f214](https://github.com/openapi-automatons/openapi-automatons/commit/d24f214a381d15697f689f79bf2cf5168e15ac87))
+* **deps:** bump node-fetch from 2.6.6 to 2.6.7 ([#94](https://github.com/openapi-automatons/openapi-automatons/issues/94)) ([b6edb7b](https://github.com/openapi-automatons/openapi-automatons/commit/b6edb7ba1d14873e2048784f44c1507cbf890311))
+* disable husky env name ([8a76c76](https://github.com/openapi-automatons/openapi-automatons/commit/8a76c76eb180516a6096032c034e66697b0e8710))
+* husky ([299ef84](https://github.com/openapi-automatons/openapi-automatons/commit/299ef8497b0acf56cd21edfc9897445f78970008))
+* revert husky ([e82eaae](https://github.com/openapi-automatons/openapi-automatons/commit/e82eaaed9c079b91e46d72084daff0f2dc46ed98))
+* support esm ([23f9bea](https://github.com/openapi-automatons/openapi-automatons/commit/23f9bea36d9b5de254754914cea0554bf9ebcee2))
+
+
+### Performance Improvements
+
+* revert support esm ([c6a0859](https://github.com/openapi-automatons/openapi-automatons/commit/c6a0859c5b35a34948d5038d6123409facaab59e))
+
 ## [1.0.31](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.30...v1.0.31) (2021-11-19)
 
 
