@@ -23,7 +23,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@automatons/tools": "^1.0.62",
+    "@automatons/tools": "^1.0.63",
     "@automatons/validator": "^1.0.47",
     "chalk": "^5.0.0",
     "fs-extra": "^10.0.0",
