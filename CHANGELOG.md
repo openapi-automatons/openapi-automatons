@@ -1,3 +1,11 @@
+## [1.0.44](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.43...v1.0.44) (2022-02-01)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump @types/node from 17.0.13 to 17.0.14 ([#120](https://github.com/openapi-automatons/openapi-automatons/issues/120)) ([2ec94ea](https://github.com/openapi-automatons/openapi-automatons/commit/2ec94ead28e2d6ed5f1d9bbf46fd190172c75598))
+* **deps:** bump @automatons/validator from 1.0.50 to 1.0.52 ([#121](https://github.com/openapi-automatons/openapi-automatons/issues/121)) ([39e1d1c](https://github.com/openapi-automatons/openapi-automatons/commit/39e1d1ce4d1c85db7246c27163d1d39b6bc3f945))
+
 ## [1.0.43](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.42...v1.0.43) (2022-01-31)
 
 
