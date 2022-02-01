@@ -1,3 +1,11 @@
+## [1.0.45](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.44...v1.0.45) (2022-02-01)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump lint-staged from 12.3.2 to 12.3.3 ([#122](https://github.com/openapi-automatons/openapi-automatons/issues/122)) ([9e4fa5b](https://github.com/openapi-automatons/openapi-automatons/commit/9e4fa5b0e4a558bffcb678e912ec3107e1b7e8ec))
+* **deps:** bump @automatons/tools from 1.0.65 to 1.0.66 ([#123](https://github.com/openapi-automatons/openapi-automatons/issues/123)) ([41490fc](https://github.com/openapi-automatons/openapi-automatons/commit/41490fcdf3b380ff0cb5ca60b5014724e038a087))
+
 ## [1.0.44](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.43...v1.0.44) (2022-02-01)
 
 
