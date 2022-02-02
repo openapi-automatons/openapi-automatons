@@ -2,19 +2,19 @@
 # yarn lockfile v1
 
 
-"@automatons/tools@^1.0.66":
-  version "1.0.66"
-  resolved "https://registry.yarnpkg.com/@automatons/tools/-/tools-1.0.66.tgz#53ce62df9893761961eaf37170eae8f230a3201b"
-  integrity sha512-HlWDMiFxBfSQX4HyGmHq7LZdnORROVAGEophP61eD5nWQvAycxUcgrkF6uz7rfkeuGXmPUgyFOo5y0IaqZFRng==
+"@automatons/tools@^1.0.67":
+  version "1.0.67"
+  resolved "https://registry.yarnpkg.com/@automatons/tools/-/tools-1.0.67.tgz#894ef780de656188e454c14b4dec49fe819abe8e"
+  integrity sha512-NvckGNiFnWcZHp456MI1oGlgGCOL/DlYHD2jcDFP+M8JraxLsOPsVnIAqe0xVPM5FETQ2Xk6rqu7izPbX6L7LQ==
   dependencies:
     fs-extra "^10.0.0"
     js-yaml "^4.1.0"
     node-fetch "^2.6.0"
 
-"@automatons/validator@^1.0.52":
-  version "1.0.52"
-  resolved "https://registry.yarnpkg.com/@automatons/validator/-/validator-1.0.52.tgz#927b9e8225cf9e4116e95f51668e60901b988a91"
-  integrity sha512-f7fRgW3mo4DkTIvdEeJcWrgHXqerZD8K+wi9vPMGn/6PGng/ubgCGoN/S4HmTfduHKo4cWna5gnkR/9YfW0XWg==
+"@automatons/validator@^1.0.53":
+  version "1.0.53"
+  resolved "https://registry.yarnpkg.com/@automatons/validator/-/validator-1.0.53.tgz#87370136d43f17a5920281bcba6278e2f7af6cd7"
+  integrity sha512-BXY4oCUrC4gyxg2/UOEnMAvFne18Z6RqaSHLzbYdub3vNob6T1yKsNf+bFIXIzRz37BPvqvBRBIoN3rfay69Hw==
   dependencies:
     "@hyperjump/json-schema" "^0.18.4"
 
