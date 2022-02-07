@@ -22,7 +22,7 @@
     "postversion": "cp package.json ../package.json"
   },
   "dependencies": {
-    "@automatons/tools": "^1.0.66",
+    "@automatons/tools": "^1.0.68",
     "@automatons/validator": "^1.0.53",
     "chalk": "^4.1.2",
     "fs-extra": "^10.0.0",
@@ -43,7 +43,7 @@
     "@types/semantic-release": "^17.2.3",
     "@types/yup": "0.28.3",
     "@typescript-eslint/eslint-plugin": "^5.10.2",
-    "@typescript-eslint/parser": "^5.10.2",
+    "@typescript-eslint/parser": "^5.11.0",
     "depcheck": "^1.4.3",
     "eslint-config-google": "^0.14.0",
     "husky": "^7.0.4",
