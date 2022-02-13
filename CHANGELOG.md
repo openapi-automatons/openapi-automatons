@@ -1,3 +1,10 @@
+## [1.0.49](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.48...v1.0.49) (2022-02-13)
+
+
+### Bug Fixes
+
+* **deps:** bump follow-redirects from 1.14.7 to 1.14.8 ([#130](https://github.com/openapi-automatons/openapi-automatons/issues/130)) ([410de4d](https://github.com/openapi-automatons/openapi-automatons/commit/410de4daa12f32bffd23331cf6dee64e345aeaaa))
+
 ## [1.0.48](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.47...v1.0.48) (2022-02-07)
 
 
