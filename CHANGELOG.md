@@ -1,3 +1,10 @@
+## [1.0.59](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.58...v1.0.59) (2022-02-15)
+
+
+### Bug Fixes
+
+* **deps:** bump chalk from 4.1.2 to 5.0.0 ([#139](https://github.com/openapi-automatons/openapi-automatons/issues/139)) ([872dfa6](https://github.com/openapi-automatons/openapi-automatons/commit/872dfa63a6bc2c97498f0606629c83049b8936e6))
+
 ## [1.0.58](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.57...v1.0.58) (2022-02-14)
 
 
