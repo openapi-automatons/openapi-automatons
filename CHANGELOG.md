@@ -1,3 +1,11 @@
+## [1.0.66](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.65...v1.0.66) (2022-03-26)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump pinst from 2.1.6 to 3.0.0 ([#147](https://github.com/openapi-automatons/openapi-automatons/issues/147)) ([adbff16](https://github.com/openapi-automatons/openapi-automatons/commit/adbff168b2f9c88b0573a0a9f5d25deccda4a887))
+* **deps:** bump minimist from 1.2.5 to 1.2.6 ([#148](https://github.com/openapi-automatons/openapi-automatons/issues/148)) ([7ef6bf9](https://github.com/openapi-automatons/openapi-automatons/commit/7ef6bf9cf293ac8b129171d042cbbd8f4ce6c543))
+
 ## [1.0.65](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.64...v1.0.65) (2022-02-22)
 
 
