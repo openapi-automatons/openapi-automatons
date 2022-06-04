@@ -1,3 +1,16 @@
+## [1.0.71](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.70...v1.0.71) (2022-06-04)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump typesync from 0.8.0 to 0.9.1 ([#158](https://github.com/openapi-automatons/openapi-automatons/issues/158)) ([1b4667e](https://github.com/openapi-automatons/openapi-automatons/commit/1b4667e694d7b1946d7ed7257871eec573ef386b))
+* **deps-dev:** bump yarn-deduplicate from 3.1.0 to 5.0.0 ([#157](https://github.com/openapi-automatons/openapi-automatons/issues/157)) ([6bc9e4d](https://github.com/openapi-automatons/openapi-automatons/commit/6bc9e4d40e37e8901316d3b565c80c2188075158))
+* **deps:** bump chalk from 5.0.0 to 5.0.1 ([#154](https://github.com/openapi-automatons/openapi-automatons/issues/154)) ([c0e76d9](https://github.com/openapi-automatons/openapi-automatons/commit/c0e76d99f8886a6d32e09f47bc1a01d83f8c8283))
+* **deps:** bump fs-extra from 10.0.1 to 10.1.0 ([#156](https://github.com/openapi-automatons/openapi-automatons/issues/156)) ([c2d9dae](https://github.com/openapi-automatons/openapi-automatons/commit/c2d9daea99e3c44145a7597a44625fb7e91fa07c))
+* **deps:** bump npm from 8.3.2 to 8.12.0 ([#155](https://github.com/openapi-automatons/openapi-automatons/issues/155)) ([b81d60b](https://github.com/openapi-automatons/openapi-automatons/commit/b81d60bcff8b4085519be5d774862a45beaf6917))
+* **deps:** bump semver-regex from 3.1.3 to 3.1.4 ([#159](https://github.com/openapi-automatons/openapi-automatons/issues/159)) ([76c868d](https://github.com/openapi-automatons/openapi-automatons/commit/76c868d2c712144d646b352cb0b0321c67f7aced))
+* **update:** update tools ([afe2cf2](https://github.com/openapi-automatons/openapi-automatons/commit/afe2cf267015b503afb1cbe6e204d712116df743))
+
 ## [1.0.70](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.69...v1.0.70) (2022-03-28)
 
 
