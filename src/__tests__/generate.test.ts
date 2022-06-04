@@ -1,11 +1,11 @@
-import {mocked} from "ts-jest/utils";
-import mockGenerator from "../__mocks__/@automatons/client-typescript-axios"
-import {generate} from "../generate";
-import {readSettings} from "../settings";
+import {mocked} from 'ts-jest/utils';
+import mockGenerator from '../__mocks__/@automatons/client-typescript-axios';
+import {generate} from '../generate';
+import {readSettings} from '../settings';
 import settings from './examples/automatons.json';
 import openapi from './examples/v3_0/petstore.json';
 
-jest.mock('@automatons/client-typescript-axios')
+jest.mock('@automatons/client-typescript-axios');
 jest.mock('../settings');
 
 it('should be generate', async () => {
@@ -14,14 +14,29 @@ it('should be generate', async () => {
     .toBeCalledWith(openapi, {
       openapiPath: settings.openapi,
       outDir: settings.automatons?.[0].outDir,
-      path: process.cwd()
-    }, undefined)
+      path: process.cwd(),
+    }, undefined);
+});
+
+it('should be generate with remote yaml', async () => {
+  mocked(readSettings).mockReturnValue(
+    Promise.resolve({
+      ...settings,
+      openapi: 'https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/examples/v3.0/petstore.yaml',
+    }));
+  await Promise.all(await generate());
+  expect(mockGenerator)
+    .toBeCalledWith(openapi, {
+      openapiPath: 'https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/examples/v3.0/petstore.yaml',
+      outDir: settings.automatons?.[0].outDir,
+      path: process.cwd(),
+    }, undefined);
 });
 
 it('should be error if invalid openapi', () => {
   mocked(readSettings).mockReturnValue(
-    Promise.resolve({...settings, openapi: './src/__tests__/examples/invalid_schema.json'}))
+    Promise.resolve({...settings, openapi: './src/__tests__/examples/invalid_schema.json'}));
   expect(() => generate())
     .rejects.toThrow('Invalid schema in openapi.\n' +
-    '#/components/type: [validate error] #/$defs/components/unevaluatedProperties')
+    '#/components/type: [validate error] #/$defs/components/unevaluatedProperties');
 });
