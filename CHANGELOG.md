@@ -1,3 +1,10 @@
+## [1.0.72](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.71...v1.0.72) (2022-06-04)
+
+
+### Bug Fixes
+
+* **downgrade:** chalk ([01854aa](https://github.com/openapi-automatons/openapi-automatons/commit/01854aa77f91612223fc2d35379aa1825fa21b9e))
+
 ## [1.0.71](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.70...v1.0.71) (2022-06-04)
 
 
