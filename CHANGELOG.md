@@ -1,3 +1,10 @@
+## [1.0.81](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.80...v1.0.81) (2022-06-06)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump @commitlint/config-conventional ([#170](https://github.com/openapi-automatons/openapi-automatons/issues/170)) ([714397f](https://github.com/openapi-automatons/openapi-automatons/commit/714397f9da947183b11195d2f33f2d20bd61960c))
+
 ## [1.0.80](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.79...v1.0.80) (2022-06-06)
 
 
