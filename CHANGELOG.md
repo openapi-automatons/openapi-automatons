@@ -1,3 +1,17 @@
+## [1.0.76](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.75...v1.0.76) (2022-06-06)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump @semantic-release/npm from 9.0.0 to 9.0.1 ([#165](https://github.com/openapi-automatons/openapi-automatons/issues/165)) ([92d1553](https://github.com/openapi-automatons/openapi-automatons/commit/92d1553ef68f7da95f95bab967a4e5974cdad041))
+
+## [1.0.75](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.74...v1.0.75) (2022-06-06)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump @types/node from 17.0.23 to 17.0.40 ([#164](https://github.com/openapi-automatons/openapi-automatons/issues/164)) ([0182165](https://github.com/openapi-automatons/openapi-automatons/commit/018216527f458f974f536a797b1c0129749d9fd0))
+
 ## [1.0.74](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.73...v1.0.74) (2022-06-06)
 
 
