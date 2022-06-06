@@ -1,6 +1,6 @@
 {
   "name": "openapi-automatons",
-  "version": "1.0.74",
+  "version": "1.0.76",
   "repository": "git@github.com:openapi-automatons/openapi-automatons.git",
   "author": "tanmen <yt.prog@gmail.com>",
   "license": "MIT",
@@ -26,7 +26,7 @@
     "@automatons/validator": "^1.0.76",
     "chalk": "^4.1.2",
     "fs-extra": "^10.1.0",
-    "ora": "5.4.1",
+    "ora": "6.1.0",
     "yup": "0.28.5"
   },
   "devDependencies": {
@@ -34,7 +34,7 @@
     "@commitlint/config-conventional": "^16.2.1",
     "@semantic-release/changelog": "^6.0.0",
     "@semantic-release/git": "^10.0.0",
-    "@semantic-release/npm": "^9.0.0",
+    "@semantic-release/npm": "^9.0.1",
     "@types/eslint": "^8.4.2",
     "@types/fs-extra": "^9.0.1",
     "@types/jest": "^27.0.2",
