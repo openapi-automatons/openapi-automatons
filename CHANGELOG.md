@@ -1,3 +1,10 @@
+## [1.0.78](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.77...v1.0.78) (2022-06-06)
+
+
+### Bug Fixes
+
+* **deps:** bump ora from 5.4.1 to 6.1.0 ([#167](https://github.com/openapi-automatons/openapi-automatons/issues/167)) ([3bcd5d7](https://github.com/openapi-automatons/openapi-automatons/commit/3bcd5d707fdfe3946ba1b6916b1b9ec8736768c1))
+
 ## [1.0.77](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.76...v1.0.77) (2022-06-06)
 
 
