@@ -22,7 +22,7 @@
     "postversion": "cp package.json ../package.json"
   },
   "dependencies": {
-    "@automatons/tools": "^1.0.106",
+    "@automatons/tools": "^1.0.108",
     "@automatons/validator": "^1.0.76",
     "chalk": "^4.1.2",
     "fs-extra": "^10.1.0",
@@ -30,7 +30,7 @@
     "yup": "0.28.5"
   },
   "devDependencies": {
-    "@commitlint/cli": "^16.2.1",
+    "@commitlint/cli": "^17.0.2",
     "@commitlint/config-conventional": "^16.2.1",
     "@semantic-release/changelog": "^6.0.0",
     "@semantic-release/git": "^10.0.0",
@@ -48,7 +48,7 @@
     "depcheck": "^1.4.3",
     "eslint": "^8.17.0",
     "eslint-config-google": "^0.14.0",
-    "husky": "^7.0.4",
+    "husky": "^8.0.1",
     "jest": "^26.0.1",
     "lint-staged": "^12.3.4",
     "pinst": "^3.0.0",
