@@ -22,7 +22,7 @@
     "postversion": "cp package.json ../package.json"
   },
   "dependencies": {
-    "@automatons/tools": "^1.0.106",
+    "@automatons/tools": "^1.0.108",
     "@automatons/validator": "^1.0.76",
     "chalk": "^4.1.2",
     "fs-extra": "^10.1.0",
@@ -30,7 +30,7 @@
     "yup": "0.28.5"
   },
   "devDependencies": {
-    "@commitlint/cli": "^16.2.1",
+    "@commitlint/cli": "^17.0.2",
     "@commitlint/config-conventional": "^16.2.1",
     "@semantic-release/changelog": "^6.0.0",
     "@semantic-release/git": "^10.0.0",
@@ -43,7 +43,7 @@
     "@types/node": "^17.0.23",
     "@types/semantic-release": "^17.2.3",
     "@types/yup": "0.28.3",
-    "@typescript-eslint/eslint-plugin": "^5.17.0",
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
     "@typescript-eslint/parser": "^5.17.0",
     "depcheck": "^1.4.3",
     "eslint": "^8.17.0",
