@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@automatons/tools@^1.0.110":
-  version "1.0.110"
-  resolved "https://registry.yarnpkg.com/@automatons/tools/-/tools-1.0.110.tgz#323246698aa7643912c8b42929c56b2b78d34ce9"
-  integrity sha512-1l39aixsRTd5mVVVIFpbpqpfJTgUFsAfwyz6FaPEKhXoaWVPiGJ4aLt2wib3DNnoO0PVC2XVvI4x8K6yZIwZBA==
+"@automatons/tools@^1.0.112":
+  version "1.0.112"
+  resolved "https://registry.yarnpkg.com/@automatons/tools/-/tools-1.0.112.tgz#c9b8d78f76e2de143092e8028664cbe52615ceef"
+  integrity sha512-djMogVdcEBtFyd0opT+hBrzQgVJrkb6loDiz05RFf1uJa26PyRWML1Bqkax263KPBONoXQmMxGR1LN2v1v8S5Q==
   dependencies:
     fs-extra "^10.1.0"
     got "^11.8.5"
@@ -1378,10 +1378,10 @@
   resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.2.tgz#ee771e2ba4b3dc5b372935d549fd9617bf345b8c"
   integrity sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==
 
-"@types/node@*", "@types/node@>=12", "@types/node@^17.0.41":
-  version "17.0.41"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.41.tgz#1607b2fd3da014ae5d4d1b31bc792a39348dfb9b"
-  integrity sha512-xA6drNNeqb5YyV5fO3OAEsnXLfO7uF0whiOfPTz5AeDo8KeZFmODKnvwPymMNO8qE/an8pVY/O50tig2SQCrGw==
+"@types/node@*", "@types/node@>=12", "@types/node@^17.0.42":
+  version "17.0.42"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.42.tgz#d7e8f22700efc94d125103075c074396b5f41f9b"
+  integrity sha512-Q5BPGyGKcvQgAMbsr7qEGN/kIPN6zZecYYABeTDBizOsau+2NMdSVTar9UQw21A2+JyA2KRNDYaYrPB0Rpk2oQ==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
