@@ -1,3 +1,10 @@
+## [1.0.98](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.97...v1.0.98) (2022-06-16)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump lint-staged from 13.0.1 to 13.0.2 ([#188](https://github.com/openapi-automatons/openapi-automatons/issues/188)) ([d1f7137](https://github.com/openapi-automatons/openapi-automatons/commit/d1f713714fcb36992bf24cbd48a203bdf4bca851))
+
 ## [1.0.97](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.96...v1.0.97) (2022-06-15)
 
 
