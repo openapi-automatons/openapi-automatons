@@ -1,6 +1,6 @@
 {
   "name": "openapi-automatons",
-  "version": "1.0.102",
+  "version": "1.0.103",
   "repository": "git@github.com:openapi-automatons/openapi-automatons.git",
   "author": "tanmen <yt.prog@gmail.com>",
   "license": "MIT",
@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@automatons/tools": "^1.0.117",
-    "@automatons/validator": "^1.0.96",
+    "@automatons/validator": "^1.0.97",
     "chalk": "^5.0.1",
     "fs-extra": "^10.1.0",
     "ora": "6.1.0",
@@ -44,7 +44,7 @@
     "@types/semantic-release": "^17.2.3",
     "@types/yup": "0.28.3",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
-    "@typescript-eslint/parser": "^5.28.0",
+    "@typescript-eslint/parser": "^5.29.0",
     "depcheck": "^1.4.3",
     "eslint": "^8.18.0",
     "eslint-config-google": "^0.14.0",
