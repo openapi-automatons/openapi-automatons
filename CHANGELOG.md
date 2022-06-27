@@ -1,3 +1,11 @@
+## [1.0.108](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.107...v1.0.108) (2022-06-27)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump @commitlint/config-conventional ([#201](https://github.com/openapi-automatons/openapi-automatons/issues/201)) ([a8425dd](https://github.com/openapi-automatons/openapi-automatons/commit/a8425dd626f4de858f679c01d2df5b032a0ec5a7))
+* **deps:** bump ora from 6.1.0 to 6.1.1 ([#202](https://github.com/openapi-automatons/openapi-automatons/issues/202)) ([2226cea](https://github.com/openapi-automatons/openapi-automatons/commit/2226ceaf438e86a7ec237ba6fb60ed3bbbb0d8d6))
+
 ## [1.0.107](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.106...v1.0.107) (2022-06-24)
 
 
