@@ -30,7 +30,7 @@
     "yup": "0.28.5"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.0.2",
+    "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
     "@semantic-release/changelog": "^6.0.0",
     "@semantic-release/git": "^10.0.0",
