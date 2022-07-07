@@ -1,3 +1,10 @@
+## [1.0.127](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.126...v1.0.127) (2022-07-07)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump typesync from 0.9.1 to 0.9.2 ([#225](https://github.com/openapi-automatons/openapi-automatons/issues/225)) ([f83a70e](https://github.com/openapi-automatons/openapi-automatons/commit/f83a70ef0fe7d5b1bc51ecad00a2847be954260f))
+
 ## [1.0.126](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.125...v1.0.126) (2022-07-07)
 
 
