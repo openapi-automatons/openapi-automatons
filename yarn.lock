@@ -1868,7 +1868,7 @@ atob@^2.1.2:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-awilix@^7.0.2:
+awilix@^7.0.3:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/awilix/-/awilix-7.0.3.tgz#5afe8f7acb7cbf2ada5a6221dbdd3f882c77789c"
   integrity sha512-4Nmjyh9qloDwXfDK0DBuWd8WyFApyknoaKbE3leQflGLgNfNsBHy2/VYrlyy/mzMobjJ3J8XtNpbjzG3KRkIFQ==
@@ -7595,12 +7595,12 @@ typescript@^4.6.4:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.7.3.tgz#8364b502d5257b540f9de4c40be84c98e23a129d"
   integrity sha512-WOkT3XYvrpXx4vMMqlD+8R8R37fZkjyLGlxavMc4iB8lrl8L0DeTcHbYgw/v0N/z9wAFsgBhcsF0ruoySS22mA==
 
-typesync@^0.9.1:
-  version "0.9.1"
-  resolved "https://registry.yarnpkg.com/typesync/-/typesync-0.9.1.tgz#9c770b2da3920e3033119e9c0db1914a3cf91d62"
-  integrity sha512-kGaieZEJWIMhS+xRL6OJ1Z5Jf8JFSYBTRZfmmMVdzYQkm6uP9ZwJGI/yt0TZ19mhGUZqLzruV/BDHEl2FByeYQ==
+typesync@^0.9.2:
+  version "0.9.2"
+  resolved "https://registry.yarnpkg.com/typesync/-/typesync-0.9.2.tgz#0daea53e1658dadf66b3bdf511031c809c21b757"
+  integrity sha512-FnHhbgECgkcGOR/DVmE0V9Z81Od7Icu2qkXGM91GFFzVO9HaQ9fYwmSY9ibKoydN4k7IV0hRRKGLLgfenWjRFw==
   dependencies:
-    awilix "^7.0.2"
+    awilix "^7.0.3"
     axios "^0.27.2"
     chalk "^4.1.0"
     cosmiconfig "^7.0.1"
