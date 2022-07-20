@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@automatons/tools@^1.0.127":
-  version "1.0.127"
-  resolved "https://registry.yarnpkg.com/@automatons/tools/-/tools-1.0.127.tgz#f6fcc476a9022f9a392029825ba5dd8962e7f4bf"
-  integrity sha512-D0bLmE+KgrsJ6fSj0Nadq+KR3xdCRKfho2V7l8eVoSYyQLz16CLxISK5X4g/uGRhR5JGWiKIk/CFhRH8dmTQZQ==
+"@automatons/tools@^1.0.131":
+  version "1.0.131"
+  resolved "https://registry.yarnpkg.com/@automatons/tools/-/tools-1.0.131.tgz#7aa556d075e45443594df2d8087f2e69f79386d7"
+  integrity sha512-lPXUagbT2TXR/EaODvr97fPOCMrHFoIz2/gQnmjb4kcpkWve9Xxn2w4DIr21Kq8BQpQT78edb1lsQO8xHXm41w==
   dependencies:
     fs-extra "^10.1.0"
     got "^11.8.5"
@@ -1410,10 +1410,10 @@
   resolved "https://registry.yarnpkg.com/@types/retry/-/retry-0.12.1.tgz#d8f1c0d0dc23afad6dc16a9e993a0865774b4065"
   integrity sha512-xoDlM2S4ortawSWORYqsdU+2rxdh4LRW9ytc3zmT37RIKQh6IHyKwwtKhKis9ah8ol07DCkZxPt8BBvPjC6v4g==
 
-"@types/semantic-release@^17.2.3":
-  version "17.2.3"
-  resolved "https://registry.yarnpkg.com/@types/semantic-release/-/semantic-release-17.2.3.tgz#f5b09ab68e09d1949e9012a5191fe938a25b54c4"
-  integrity sha512-iSqx8cZbDRQSCi/VR1LtmUV4OFiDZVAvfpVdVeq3rPveXYU+xb3bzmVphXSw7wkFgE7LwAoaoE96RV4nkL0Rvg==
+"@types/semantic-release@^17.2.4":
+  version "17.2.4"
+  resolved "https://registry.yarnpkg.com/@types/semantic-release/-/semantic-release-17.2.4.tgz#2b82cd645a4e10547737d37248ca581ab799fa33"
+  integrity sha512-Ud2GB2+0WgyBrKB7PbyZA+bud3QD0z3Iv6KPx6FfeMUNDekw3EWgZi3eLKXoeGDPBo+hev74NN1pEPMp0rL2vQ==
   dependencies:
     "@types/node" "*"
 
