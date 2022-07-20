@@ -1,3 +1,10 @@
+## [1.0.135](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.134...v1.0.135) (2022-07-20)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump @types/semantic-release from 17.2.3 to 17.2.4 ([#236](https://github.com/openapi-automatons/openapi-automatons/issues/236)) ([c9d014a](https://github.com/openapi-automatons/openapi-automatons/commit/c9d014ae98c3ddffadef35075b2a7b802de422ce))
+
 ## [1.0.134](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.133...v1.0.134) (2022-07-20)
 
 
