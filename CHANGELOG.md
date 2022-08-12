@@ -1,3 +1,10 @@
+## [1.0.159](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.158...v1.0.159) (2022-08-12)
+
+
+### Bug Fixes
+
+* **deps:** bump @automatons/tools from 1.0.139 to 1.0.140 ([#262](https://github.com/openapi-automatons/openapi-automatons/issues/262)) ([021a79c](https://github.com/openapi-automatons/openapi-automatons/commit/021a79c37a6e263d9419dcda0b77b38ca6215b62))
+
 ## [1.0.158](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.157...v1.0.158) (2022-08-12)
 
 
