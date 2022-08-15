@@ -1,3 +1,10 @@
+## [1.0.162](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.161...v1.0.162) (2022-08-15)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump eslint from 8.21.0 to 8.22.0 ([#265](https://github.com/openapi-automatons/openapi-automatons/issues/265)) ([9407bb4](https://github.com/openapi-automatons/openapi-automatons/commit/9407bb4d33fa00bebbb705af7da3d339b29d72f4))
+
 ## [1.0.161](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.160...v1.0.161) (2022-08-15)
 
 
