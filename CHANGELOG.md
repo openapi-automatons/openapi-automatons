@@ -1,3 +1,11 @@
+## [1.0.174](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.173...v1.0.174) (2022-08-23)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump semantic-release from 19.0.3 to 19.0.4 ([#279](https://github.com/openapi-automatons/openapi-automatons/issues/279)) ([a519d17](https://github.com/openapi-automatons/openapi-automatons/commit/a519d174e077e97387867c5b5e0e619dd710a5cc))
+* **deps-dev:** bump semantic-release from 19.0.4 to 19.0.5 ([#280](https://github.com/openapi-automatons/openapi-automatons/issues/280)) ([97bd060](https://github.com/openapi-automatons/openapi-automatons/commit/97bd0601b4157dc2ff5b34af8ed11e7124d435d9))
+
 ## [1.0.173](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.172...v1.0.173) (2022-08-22)
 
 
