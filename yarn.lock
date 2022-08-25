@@ -11,10 +11,10 @@
     got "^11.8.5"
     js-yaml "^4.1.0"
 
-"@automatons/validator@^1.0.123":
-  version "1.0.123"
-  resolved "https://registry.yarnpkg.com/@automatons/validator/-/validator-1.0.123.tgz#9d0fe5c71c0b5dcaa0e7747aaf03658abfe7a30e"
-  integrity sha512-K1Kg/cnMxeKaJ1RT57OLv38VdClYT5iKVagJ27sFmJ5rUthkzYFUKmNlzGf2JJjapcQuz8yaImekLHApSmn/kw==
+"@automatons/validator@^1.0.125":
+  version "1.0.125"
+  resolved "https://registry.yarnpkg.com/@automatons/validator/-/validator-1.0.125.tgz#3d5efa8369f52547ef7e26089610796fd9ac8d28"
+  integrity sha512-n2VOdIpTicpjf9B2pU4g9XmNNNJE4ppYPjrQYSPjrZll2e0oT62vYNyzMnd8B4CcHrfMcte7R8WdF6jtjL3tDQ==
   dependencies:
     "@hyperjump/json-schema" "^0.18.5"
 
