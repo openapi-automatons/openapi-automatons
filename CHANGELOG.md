@@ -1,3 +1,10 @@
+## [1.0.187](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.186...v1.0.187) (2022-08-29)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump yarn-deduplicate from 5.0.2 to 6.0.0 ([#295](https://github.com/openapi-automatons/openapi-automatons/issues/295)) ([2d531c1](https://github.com/openapi-automatons/openapi-automatons/commit/2d531c17cd6e074d13081bea9af8dfb748a9799a))
+
 ## [1.0.186](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.185...v1.0.186) (2022-08-29)
 
 
