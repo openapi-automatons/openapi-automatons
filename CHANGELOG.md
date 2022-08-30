@@ -1,3 +1,10 @@
+## [1.0.189](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.188...v1.0.189) (2022-08-30)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump @types/node from 18.7.13 to 18.7.14 ([#297](https://github.com/openapi-automatons/openapi-automatons/issues/297)) ([9d91306](https://github.com/openapi-automatons/openapi-automatons/commit/9d91306c0f194431d06271e2b9eca1ce44d3bd14))
+
 ## [1.0.188](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.187...v1.0.188) (2022-08-30)
 
 
