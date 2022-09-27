@@ -1,6 +1,6 @@
 {
   "name": "openapi-automatons",
-  "version": "1.0.209",
+  "version": "1.0.210",
   "repository": "git@github.com:openapi-automatons/openapi-automatons.git",
   "author": "tanmen <yt.prog@gmail.com>",
   "license": "MIT",
@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@automatons/tools": "^1.0.163",
-    "@automatons/validator": "^1.0.138",
+    "@automatons/validator": "^1.0.140",
     "chalk": "^5.0.1",
     "fs-extra": "^10.1.0",
     "ora": "6.1.2",
