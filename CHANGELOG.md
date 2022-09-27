@@ -1,3 +1,11 @@
+## [1.0.211](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.210...v1.0.211) (2022-09-27)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump @types/node from 18.7.19 to 18.7.23 ([#326](https://github.com/openapi-automatons/openapi-automatons/issues/326)) ([d22eaa1](https://github.com/openapi-automatons/openapi-automatons/commit/d22eaa18bee2838910e94055772a0a6481d57a7d))
+* **deps:** bump @automatons/validator from 1.0.138 to 1.0.140 ([#327](https://github.com/openapi-automatons/openapi-automatons/issues/327)) ([edbafde](https://github.com/openapi-automatons/openapi-automatons/commit/edbafdea706d80e608fdb1add4ab0b090aa64ba2))
+
 ## [1.0.210](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.209...v1.0.210) (2022-09-27)
 
 
