@@ -11,10 +11,10 @@
     got "^11.8.5"
     js-yaml "^4.1.0"
 
-"@automatons/validator@^1.0.141":
-  version "1.0.141"
-  resolved "https://registry.yarnpkg.com/@automatons/validator/-/validator-1.0.141.tgz#55a58cc9247c4dfb9989cd42014af8b2bad3856d"
-  integrity sha512-xFVcip0X4yUeYMSB6oDqZhSGE1+SbJ9bb9Tj955ORPd/BZyQR6Hv3Z+44dcn07BBZxa7UGKNYr9xIBEgjPcpYQ==
+"@automatons/validator@^1.0.143":
+  version "1.0.143"
+  resolved "https://registry.yarnpkg.com/@automatons/validator/-/validator-1.0.143.tgz#05ba3f27025661b13ae90d0213170192764a4155"
+  integrity sha512-sKS7d88401Waq+obilcOm8CgW2wU2mukRkdhywLR6DQjXu5k/uUzwtGD5AxRuYiN52l0JPyAtDujsRoft/JmHw==
   dependencies:
     "@hyperjump/json-schema" "^0.18.5"
 
@@ -1390,10 +1390,10 @@
   resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.2.tgz#ee771e2ba4b3dc5b372935d549fd9617bf345b8c"
   integrity sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==
 
-"@types/node@*", "@types/node@^18.8.0":
-  version "18.8.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.8.0.tgz#b8ee8d83a99470c0661bd899417fcd77060682fe"
-  integrity sha512-u+h43R6U8xXDt2vzUaVP3VwjjLyOJk6uEciZS8OSyziUQGOwmk+l+4drxcsDboHXwyTaqS1INebghmWMRxq3LA==
+"@types/node@*", "@types/node@^18.8.2":
+  version "18.8.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.8.2.tgz#17d42c6322d917764dd3d2d3a10d7884925de067"
+  integrity sha512-cRMwIgdDN43GO4xMWAfJAecYn8wV4JbsOGHNfNUIDiuYkUYAR5ec4Rj7IO2SAhFPEfpPtLtUTbbny/TCT7aDwA==
 
 "@types/node@^14.0.0":
   version "14.18.26"

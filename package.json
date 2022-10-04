@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@automatons/tools": "^1.0.164",
-    "@automatons/validator": "^1.0.141",
+    "@automatons/validator": "^1.0.143",
     "chalk": "^5.0.1",
     "fs-extra": "^10.1.0",
     "ora": "6.1.2",
@@ -40,7 +40,7 @@
     "@types/jest": "^27.0.2",
     "@types/js-yaml": "^4.0.5",
     "@types/jsonschema": "^1.1.1",
-    "@types/node": "^18.8.0",
+    "@types/node": "^18.8.2",
     "@types/semantic-release": "^17.2.4",
     "@types/yup": "0.28.3",
     "@typescript-eslint/eslint-plugin": "^5.39.0",
