@@ -44,7 +44,7 @@
     "@types/semantic-release": "^17.2.4",
     "@types/yup": "0.28.3",
     "@typescript-eslint/eslint-plugin": "^5.40.0",
-    "@typescript-eslint/parser": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.1",
     "depcheck": "^1.4.3",
     "eslint": "^8.25.0",
     "eslint-config-google": "^0.14.0",
