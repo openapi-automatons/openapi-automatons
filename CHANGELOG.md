@@ -1,3 +1,10 @@
+## [1.0.236](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.235...v1.0.236) (2022-10-18)
+
+
+### Bug Fixes
+
+* **deps:** bump @automatons/validator from 1.0.145 to 1.0.147 ([#353](https://github.com/openapi-automatons/openapi-automatons/issues/353)) ([a776a90](https://github.com/openapi-automatons/openapi-automatons/commit/a776a90154dbad289454d213366e743f14929a5a))
+
 ## [1.0.235](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.234...v1.0.235) (2022-10-17)
 
 
