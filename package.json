@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@automatons/tools": "^1.0.176",
-    "@automatons/validator": "^1.0.148",
+    "@automatons/validator": "^1.0.149",
     "chalk": "^5.1.2",
     "fs-extra": "^10.1.0",
     "ora": "6.1.2",
