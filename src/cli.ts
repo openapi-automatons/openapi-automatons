@@ -4,7 +4,7 @@ import ora from 'ora';
 import {config} from './config';
 import {generate} from './generate';
 
-console.log(`${chalk.white('»')} ${chalk.gray(chalk`${config.name} {white v${config.version}}`)}`);
+console.log(`${chalk.white('»')} ${chalk.gray(`${config.name} ${chalk.white(`v${config.version}`)}`)}`);
 
 const spinner = ora('Generating');
 

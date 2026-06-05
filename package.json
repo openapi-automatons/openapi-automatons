@@ -1,62 +1,62 @@
 {
   "name": "openapi-automatons",
   "version": "1.0.259",
-  "repository": "git@github.com:openapi-automatons/openapi-automatons.git",
+  "repository": "https://github.com/openapi-automatons/openapi-automatons.git",
   "author": "tanmen <yt.prog@gmail.com>",
   "license": "MIT",
+  "packageManager": "yarn@1.22.22",
+  "type": "module",
   "keywords": [
     "openapi"
   ],
   "main": "index.js",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.js"
+    }
+  },
   "bin": {
     "openapi-automatons": "cli.js"
   },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
-    "prebuild": "depcheck && node scripts/prebuild.js",
-    "build": "tsc && cp package.json README.md LICENSE dist",
-    "lint": "eslint src --ext .ts,.tsx",
-    "test": "jest",
-    "postinstall": "husky install && typesync && yarn check --integrity || yarn install --ignore-scripts && yarn-deduplicate",
-    "prepublishOnly": "pinst --disable",
-    "postpublish": "pinst --enable",
-    "postversion": "cp package.json ../package.json"
+    "prebuild": "depcheck",
+    "build": "tsup && cp package.json README.md LICENSE dist",
+    "lint": "eslint src",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "prepare": "husky"
   },
   "dependencies": {
-    "@automatons/tools": "^1.0.189",
-    "@automatons/validator": "^1.0.160",
-    "chalk": "^5.1.2",
-    "fs-extra": "^10.1.0",
-    "ora": "6.1.2",
-    "yup": "0.28.5"
+    "@automatons/tools": "^2.0.0",
+    "@automatons/validator": "^2.0.0",
+    "chalk": "^5.3.0",
+    "ora": "^8.1.0",
+    "zod": "^4.0.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.2.0",
-    "@commitlint/config-conventional": "^17.2.0",
-    "@semantic-release/changelog": "^6.0.0",
-    "@semantic-release/git": "^10.0.0",
-    "@semantic-release/npm": "^9.0.1",
-    "@types/eslint": "^8.4.10",
-    "@types/fs-extra": "^9.0.1",
-    "@types/jest": "^27.0.2",
-    "@types/js-yaml": "^4.0.5",
-    "@types/jsonschema": "^1.1.1",
-    "@types/node": "^18.11.9",
-    "@types/semantic-release": "^17.2.4",
-    "@types/yup": "0.28.3",
-    "@typescript-eslint/eslint-plugin": "^5.43.0",
-    "@typescript-eslint/parser": "^5.43.0",
-    "depcheck": "^1.4.3",
-    "eslint": "^8.27.0",
-    "eslint-config-google": "^0.14.0",
-    "husky": "^8.0.1",
-    "jest": "^26.0.1",
-    "lint-staged": "^13.0.3",
-    "pinst": "^3.0.0",
-    "semantic-release": "^19.0.5",
-    "ts-jest": "^26.0.0",
-    "typescript": "^4.5.2",
-    "typesync": "^0.9.2",
-    "yarn-deduplicate": "^6.0.0"
+    "@commitlint/cli": "^21.0.2",
+    "@commitlint/config-conventional": "^21.0.2",
+    "@eslint/js": "^9.39.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@types/node": "^24.0.0",
+    "@vitest/coverage-v8": "^3.2.0",
+    "depcheck": "^1.4.7",
+    "eslint": "^9.39.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.7",
+    "semantic-release": "^25.0.3",
+    "tsup": "^8.5.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.46.0",
+    "vitest": "^3.2.0"
   },
   "publishConfig": {
     "access": "public"

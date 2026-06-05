@@ -1,33 +1,27 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "target": "ESNext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "ignoreDeprecations": "6.0",
+    "target": "es2022",
+    "lib": ["es2022"],
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
     "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictBindCallApply": true,
-    "strictPropertyInitialization": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
+    "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
+    "isolatedModules": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "dist",
-    "resolveJsonModule": true
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "types": ["node", "vitest/globals"],
+    "outDir": "dist"
   },
   "include": ["src"],
-  "exclude": [
-    "dist",
-    "src/**/*.spec.ts",
-    "src/**/*.test.ts",
-    "src/**/__mocks__/**/*"
-  ]
+  "exclude": ["dist"]
 }

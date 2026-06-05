@@ -1,5 +1,5 @@
-import path from 'path';
-import {remove} from 'fs-extra';
+import path from 'node:path';
+import {rm} from 'node:fs/promises';
 import {fetch} from '@automatons/tools';
 import {validator} from '@automatons/validator';
 import {readSettings} from './settings';
@@ -18,7 +18,7 @@ export const generate = async () => {
 
   return automatons.map(async (automatonSetting) => {
     const {default: generator} = (await import(automatonSetting.automaton)) as { default: Automaton };
-    await remove(path.resolve(currentPath, automatonSetting.outDir));
+    await rm(path.resolve(currentPath, automatonSetting.outDir), {recursive: true, force: true});
     return generator(openapi, {
       outDir: automatonSetting.outDir,
       path: currentPath,

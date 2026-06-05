@@ -1,1 +1,1 @@
-ignores: ["@types/*", "@commitlint/*", "@semantic-release/*", "semantic-release", "husky", "lint-staged"]
+ignores: ["@types/*", "@commitlint/*", "@semantic-release/*", "semantic-release", "husky", "lint-staged", "typescript", "@vitest/coverage-v8", "@automatons/client-typescript-axios"]
