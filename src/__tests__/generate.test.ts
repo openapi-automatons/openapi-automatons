@@ -44,5 +44,6 @@ it('should be error if invalid openapi', () => {
   } as never);
   return expect(() => generate())
     .rejects.toThrow('Invalid schema in openapi.\n' +
-    '#/components/type: [validate error] #/$defs/components/unevaluatedProperties');
+    '#/components/type: [validate error] #/$defs/components/unevaluatedProperties\n' +
+    '#: [required error] #/required');
 });
