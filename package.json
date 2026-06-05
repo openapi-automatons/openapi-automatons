@@ -1,7 +1,7 @@
 {
   "name": "openapi-automatons",
   "version": "1.0.259",
-  "repository": "git@github.com:openapi-automatons/openapi-automatons.git",
+  "repository": "https://github.com/openapi-automatons/openapi-automatons.git",
   "author": "tanmen <yt.prog@gmail.com>",
   "license": "MIT",
   "packageManager": "yarn@1.22.22",
