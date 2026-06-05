@@ -1,3 +1,21 @@
+# [2.0.0](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.259...v2.0.0) (2026-06-05)
+
+
+* feat!: migrate to ESM, vitest, tsup and native APIs ([1ad500f](https://github.com/openapi-automatons/openapi-automatons/commit/1ad500fe75b46c4672dec0904b6c669c5a068089))
+
+
+### Bug Fixes
+
+* **deps:** require @automatons/tools and @automatons/validator v2 (ESM) ([6296d0b](https://github.com/openapi-automatons/openapi-automatons/commit/6296d0b5768c9cffbef992c3def77bd88a07039b))
+* make release config ESM-compatible (.releaserc.cjs, drop jest config) ([8312f49](https://github.com/openapi-automatons/openapi-automatons/commit/8312f4949566ec5527985d5a27e1bfb113bd7122))
+* **release:** shorten release commit message to avoid E2BIG ([cc20f50](https://github.com/openapi-automatons/openapi-automatons/commit/cc20f50d9e4becae7767cb7b3e3fefdde70f9aca))
+* use https repository url for semantic-release git auth in CI ([1c284ce](https://github.com/openapi-automatons/openapi-automatons/commit/1c284ce1f65901199adb26be9bed96a8d804e0ff))
+
+
+### BREAKING CHANGES
+
+* the package is now ESM-only and requires Node >= 22.
+
 ## [1.0.259](https://github.com/openapi-automatons/openapi-automatons/compare/v1.0.258...v1.0.259) (2022-11-16)
 
 
