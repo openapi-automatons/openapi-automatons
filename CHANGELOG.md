@@ -1,3 +1,11 @@
+## [2.0.2](https://github.com/openapi-automatons/openapi-automatons/compare/v2.0.1...v2.0.2) (2026-06-05)
+
+
+### Bug Fixes
+
+* **deps:** bump braces from 3.0.2 to 3.0.3 ([#391](https://github.com/openapi-automatons/openapi-automatons/issues/391)) ([63fd10d](https://github.com/openapi-automatons/openapi-automatons/commit/63fd10dcd04ddc9d1bf243df52afa045a3ed17d0))
+* **deps:** bump lodash from 4.17.21 to 4.18.1 ([#390](https://github.com/openapi-automatons/openapi-automatons/issues/390)) ([1d70cc7](https://github.com/openapi-automatons/openapi-automatons/commit/1d70cc793b652ff5c2ecfb5639671feed58d139a))
+
 ## [2.0.1](https://github.com/openapi-automatons/openapi-automatons/compare/v2.0.0...v2.0.1) (2026-06-05)
 
 
