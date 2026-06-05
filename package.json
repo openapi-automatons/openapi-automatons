@@ -34,8 +34,8 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@automatons/tools": "^1.0.189",
-    "@automatons/validator": "^1.0.160",
+    "@automatons/tools": "^2.0.0",
+    "@automatons/validator": "^2.0.0",
     "chalk": "^5.3.0",
     "ora": "^8.1.0",
     "zod": "^4.0.0"
