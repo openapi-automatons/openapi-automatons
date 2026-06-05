@@ -3,3 +3,4 @@ dist
 coverage
 test
 result.json
+.idea/

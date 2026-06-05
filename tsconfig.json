@@ -9,6 +9,7 @@
     "declarationMap": true,
     "sourceMap": true,
     "strict": true,
+    "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,

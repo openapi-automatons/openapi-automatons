@@ -18,7 +18,7 @@ it('should be generate', async () => {
   expect(generator)
     .toBeCalledWith(openapi, {
       openapiPath: settings.openapi,
-      outDir: settings.automatons?.[0].outDir,
+      outDir: settings.automatons?.[0]?.outDir,
       path: process.cwd(),
     }, undefined);
 });
@@ -32,7 +32,7 @@ it('should be generate with remote yaml', async () => {
   expect(generator)
     .toBeCalledWith(openapi, {
       openapiPath: 'https://raw.githubusercontent.com/OAI/OpenAPI-Specification/3.0.4/examples/v3.0/petstore.yaml',
-      outDir: settings.automatons?.[0].outDir,
+      outDir: settings.automatons?.[0]?.outDir,
       path: process.cwd(),
     }, undefined);
 });

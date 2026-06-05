@@ -4,6 +4,7 @@
   "repository": "git@github.com:openapi-automatons/openapi-automatons.git",
   "author": "tanmen <yt.prog@gmail.com>",
   "license": "MIT",
+  "packageManager": "yarn@1.22.22",
   "type": "module",
   "keywords": [
     "openapi"
