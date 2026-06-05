@@ -7,6 +7,9 @@
 ## What OpenapiAutomatons
 This library is a generator using openapi file.
 
+## Requirements
+Since v2 this package is **ESM-only** and requires **Node.js >= 22**. Use it from an ESM project (or import it dynamically). v1.x (CommonJS) remains available for older setups.
+
 ## What code can generate?
 | name | language | type |
 | ---- | -------- | ---- |
