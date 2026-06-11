@@ -4,6 +4,10 @@
   "repository": "https://github.com/openapi-automatons/openapi-automatons.git",
   "author": "tanmen <yt.prog@gmail.com>",
   "license": "MIT",
+  "homepage": "https://github.com/openapi-automatons/openapi-automatons#readme",
+  "bugs": {
+    "url": "https://github.com/openapi-automatons/openapi-automatons/issues"
+  },
   "packageManager": "yarn@1.22.22",
   "type": "module",
   "keywords": [
