@@ -1,6 +1,10 @@
 {
   "name": "openapi-automatons",
   "version": "1.0.259",
+  "homepage": "https://github.com/openapi-automatons/openapi-automatons",
+  "bugs": {
+    "url": "https://github.com/openapi-automatons/openapi-automatons/issues"
+  },
   "repository": "https://github.com/openapi-automatons/openapi-automatons.git",
   "author": "tanmen <yt.prog@gmail.com>",
   "license": "MIT",
