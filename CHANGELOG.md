@@ -1,3 +1,10 @@
+## [2.0.5](https://github.com/openapi-automatons/openapi-automatons/compare/v2.0.4...v2.0.5) (2026-06-15)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump vitest from 3.2.6 to 4.1.0 ([#389](https://github.com/openapi-automatons/openapi-automatons/issues/389)) ([339244d](https://github.com/openapi-automatons/openapi-automatons/commit/339244d4ff5b3dca127c3e2fcacbe9b6d53e9d9c))
+
 ## [2.0.4](https://github.com/openapi-automatons/openapi-automatons/compare/v2.0.3...v2.0.4) (2026-06-15)
 
 
