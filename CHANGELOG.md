@@ -1,3 +1,25 @@
+## [2.0.4](https://github.com/openapi-automatons/openapi-automatons/compare/v2.0.3...v2.0.4) (2026-06-15)
+
+
+### Bug Fixes
+
+* add homepage and bugs.url to package manifest ([#394](https://github.com/openapi-automatons/openapi-automatons/issues/394)) ([bf440eb](https://github.com/openapi-automatons/openapi-automatons/commit/bf440eb3f7c552fee88a5cfaba5ab77ec4d8c812))
+
+## [2.0.3](https://github.com/openapi-automatons/openapi-automatons/compare/v2.0.2...v2.0.3) (2026-06-05)
+
+
+### Bug Fixes
+
+* **deps:** require @automatons/validator ^2.2.0 for OpenAPI 3.2 ([#392](https://github.com/openapi-automatons/openapi-automatons/issues/392)) ([2f2b384](https://github.com/openapi-automatons/openapi-automatons/commit/2f2b38495f80be5e44306427e9699d29a16d0a20))
+
+## [2.0.2](https://github.com/openapi-automatons/openapi-automatons/compare/v2.0.1...v2.0.2) (2026-06-05)
+
+
+### Bug Fixes
+
+* **deps:** bump braces from 3.0.2 to 3.0.3 ([#391](https://github.com/openapi-automatons/openapi-automatons/issues/391)) ([63fd10d](https://github.com/openapi-automatons/openapi-automatons/commit/63fd10dcd04ddc9d1bf243df52afa045a3ed17d0))
+* **deps:** bump lodash from 4.17.21 to 4.18.1 ([#390](https://github.com/openapi-automatons/openapi-automatons/issues/390)) ([1d70cc7](https://github.com/openapi-automatons/openapi-automatons/commit/1d70cc793b652ff5c2ecfb5639671feed58d139a))
+
 ## [2.0.1](https://github.com/openapi-automatons/openapi-automatons/compare/v2.0.0...v2.0.1) (2026-06-05)
 
 

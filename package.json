@@ -4,6 +4,10 @@
   "repository": "https://github.com/openapi-automatons/openapi-automatons.git",
   "author": "tanmen <yt.prog@gmail.com>",
   "license": "MIT",
+  "homepage": "https://github.com/openapi-automatons/openapi-automatons#readme",
+  "bugs": {
+    "url": "https://github.com/openapi-automatons/openapi-automatons/issues"
+  },
   "packageManager": "yarn@1.22.22",
   "type": "module",
   "keywords": [
@@ -35,7 +39,7 @@
   },
   "dependencies": {
     "@automatons/tools": "^2.0.0",
-    "@automatons/validator": "^2.1.0",
+    "@automatons/validator": "^2.2.0",
     "chalk": "^5.3.0",
     "ora": "^8.1.0",
     "zod": "^4.0.0"
