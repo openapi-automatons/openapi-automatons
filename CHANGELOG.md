@@ -1,3 +1,10 @@
+## [2.0.4](https://github.com/openapi-automatons/openapi-automatons/compare/v2.0.3...v2.0.4) (2026-06-15)
+
+
+### Bug Fixes
+
+* add homepage and bugs.url to package manifest ([#394](https://github.com/openapi-automatons/openapi-automatons/issues/394)) ([bf440eb](https://github.com/openapi-automatons/openapi-automatons/commit/bf440eb3f7c552fee88a5cfaba5ab77ec4d8c812))
+
 ## [2.0.3](https://github.com/openapi-automatons/openapi-automatons/compare/v2.0.2...v2.0.3) (2026-06-05)
 
 
