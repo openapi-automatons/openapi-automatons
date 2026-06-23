@@ -1,3 +1,10 @@
+## [2.0.13](https://github.com/openapi-automatons/openapi-automatons/compare/v2.0.12...v2.0.13) (2026-06-23)
+
+
+### Bug Fixes
+
+* **deps:** bump ora from 9.4.0 to 9.4.1 ([#403](https://github.com/openapi-automatons/openapi-automatons/issues/403)) ([c18a0cb](https://github.com/openapi-automatons/openapi-automatons/commit/c18a0cb5cf22d91c6bbfe8878120c67c870ee497))
+
 ## [2.0.12](https://github.com/openapi-automatons/openapi-automatons/compare/v2.0.11...v2.0.12) (2026-06-22)
 
 
