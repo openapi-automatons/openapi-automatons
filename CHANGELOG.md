@@ -1,3 +1,10 @@
+## [2.0.14](https://github.com/openapi-automatons/openapi-automatons/compare/v2.0.13...v2.0.14) (2026-06-24)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump lint-staged from 17.0.7 to 17.0.8 ([#404](https://github.com/openapi-automatons/openapi-automatons/issues/404)) ([d5e7fdd](https://github.com/openapi-automatons/openapi-automatons/commit/d5e7fdd44fac6c6f39cc4a0fae445f7f77776951))
+
 ## [2.0.13](https://github.com/openapi-automatons/openapi-automatons/compare/v2.0.12...v2.0.13) (2026-06-23)
 
 
