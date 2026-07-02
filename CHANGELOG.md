@@ -1,3 +1,10 @@
+## [2.0.20](https://github.com/openapi-automatons/openapi-automatons/compare/v2.0.19...v2.0.20) (2026-07-02)
+
+
+### Bug Fixes
+
+* **deps:** bump @automatons/tools from 2.2.16 to 2.2.17 ([#410](https://github.com/openapi-automatons/openapi-automatons/issues/410)) ([6584bff](https://github.com/openapi-automatons/openapi-automatons/commit/6584bff06f5dcbe500523b4d9aa485f785e1f55f))
+
 ## [2.0.19](https://github.com/openapi-automatons/openapi-automatons/compare/v2.0.18...v2.0.19) (2026-07-01)
 
 
