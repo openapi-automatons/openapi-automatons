@@ -1,3 +1,10 @@
+## [2.0.23](https://github.com/openapi-automatons/openapi-automatons/compare/v2.0.22...v2.0.23) (2026-07-07)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump eslint from 10.5.0 to 10.6.0 ([#413](https://github.com/openapi-automatons/openapi-automatons/issues/413)) ([de4d2e4](https://github.com/openapi-automatons/openapi-automatons/commit/de4d2e4d0e0f6b53d7b6bdce490a2c620bc94ac3))
+
 ## [2.0.22](https://github.com/openapi-automatons/openapi-automatons/compare/v2.0.21...v2.0.22) (2026-07-06)
 
 
