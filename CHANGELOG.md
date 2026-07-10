@@ -1,3 +1,10 @@
+## [2.0.26](https://github.com/openapi-automatons/openapi-automatons/compare/v2.0.25...v2.0.26) (2026-07-10)
+
+
+### Bug Fixes
+
+* **deps:** bump @automatons/validator from 2.2.21 to 2.2.25 ([#417](https://github.com/openapi-automatons/openapi-automatons/issues/417)) ([466643b](https://github.com/openapi-automatons/openapi-automatons/commit/466643b4674966d0a1db83ae92243e0eb8b8a07b))
+
 ## [2.0.25](https://github.com/openapi-automatons/openapi-automatons/compare/v2.0.24...v2.0.25) (2026-07-09)
 
 
