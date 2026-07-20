@@ -1,3 +1,11 @@
+## [2.0.30](https://github.com/openapi-automatons/openapi-automatons/compare/v2.0.29...v2.0.30) (2026-07-20)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump @types/node from 26.0.0 to 26.1.1 ([#423](https://github.com/openapi-automatons/openapi-automatons/issues/423)) ([b95fc1f](https://github.com/openapi-automatons/openapi-automatons/commit/b95fc1f93e78f8e3d495f330977b8db79401bd7c))
+* **deps-dev:** bump lint-staged from 17.0.8 to 17.1.0 ([#424](https://github.com/openapi-automatons/openapi-automatons/issues/424)) ([034fefa](https://github.com/openapi-automatons/openapi-automatons/commit/034fefab8dfbc80f6c51ab31615b00838403f05d))
+
 ## [2.0.29](https://github.com/openapi-automatons/openapi-automatons/compare/v2.0.28...v2.0.29) (2026-07-16)
 
 
