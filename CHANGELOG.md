@@ -1,3 +1,10 @@
+## [2.0.32](https://github.com/openapi-automatons/openapi-automatons/compare/v2.0.31...v2.0.32) (2026-07-21)
+
+
+### Bug Fixes
+
+* **deps:** bump tar from 7.5.16 to 7.5.20 ([#426](https://github.com/openapi-automatons/openapi-automatons/issues/426)) ([2758b79](https://github.com/openapi-automatons/openapi-automatons/commit/2758b795a0f4ce61ced0395de8259d6db76b3728))
+
 ## [2.0.31](https://github.com/openapi-automatons/openapi-automatons/compare/v2.0.30...v2.0.31) (2026-07-21)
 
 
