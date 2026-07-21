@@ -1,3 +1,10 @@
+## [2.0.31](https://github.com/openapi-automatons/openapi-automatons/compare/v2.0.30...v2.0.31) (2026-07-21)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump @semantic-release/git from 10.0.1 to 11.0.0 ([#425](https://github.com/openapi-automatons/openapi-automatons/issues/425)) ([c7807f5](https://github.com/openapi-automatons/openapi-automatons/commit/c7807f5988996aa45c8da79e81ead93828433b57))
+
 ## [2.0.30](https://github.com/openapi-automatons/openapi-automatons/compare/v2.0.29...v2.0.30) (2026-07-20)
 
 
