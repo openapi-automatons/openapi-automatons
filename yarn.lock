@@ -30,10 +30,10 @@
   resolved "https://registry.yarnpkg.com/@actions/io/-/io-3.0.2.tgz#6f89b27a159d109836d983efa283997c23b92284"
   integrity sha512-nRBchcMM+QK1pdjO7/idu86rbJI5YHUKCvKs0KxnSYbVe3F51UfGxuZX4Qy/fWlp6l7gWFwIkrOzN+oUK03kfw==
 
-"@automatons/tools@^2.2.21":
-  version "2.2.21"
-  resolved "https://registry.yarnpkg.com/@automatons/tools/-/tools-2.2.21.tgz#f54277e789538430543fcd30482c9f5d0ebbec39"
-  integrity sha512-uTP6b5MoboYoChgJLtbdV2vqN/ul+XvZd0UQTivfJewWaTcceucDiJb4qCA8XnBekVJ6kOCORHY6kWJ5TCLUkw==
+"@automatons/tools@^2.2.27":
+  version "2.2.27"
+  resolved "https://registry.yarnpkg.com/@automatons/tools/-/tools-2.2.27.tgz#8b84bd7d1509937e5857f54a082cccf6443b5669"
+  integrity sha512-hc93qBhyFiGs4sD4ikdpJZY8/u8pvi6B4FvXIdrXoAPMiiV27LXu1rG9FxONkofmA9EHz05DXZoUiQ3avopgVA==
   dependencies:
     js-yaml "^5.2.1"
 
