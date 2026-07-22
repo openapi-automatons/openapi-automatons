@@ -1,3 +1,11 @@
+## [2.0.33](https://github.com/[secure]-automatons/[secure]-automatons/compare/v2.0.32...v2.0.33) (2026-07-22)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump semantic-release from 25.0.7 to 25.0.8 ([#427](https://github.com/[secure]-automatons/[secure]-automatons/issues/427)) ([7c84026](https://github.com/[secure]-automatons/[secure]-automatons/commit/7c840267e7fd6f281f807f1b1e4c8a2650163e3b))
+* **deps:** bump @automatons/tools from 2.2.21 to 2.2.27 ([#428](https://github.com/[secure]-automatons/[secure]-automatons/issues/428)) ([88d8b8b](https://github.com/[secure]-automatons/[secure]-automatons/commit/88d8b8b1474ed5d68163570f0afafe47deb00b70))
+
 ## [2.0.32](https://github.com/openapi-automatons/openapi-automatons/compare/v2.0.31...v2.0.32) (2026-07-21)
 
 
