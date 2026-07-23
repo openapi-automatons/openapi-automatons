@@ -1,3 +1,10 @@
+## [2.0.34](https://github.com/[secure]-automatons/[secure]-automatons/compare/v2.0.33...v2.0.34) (2026-07-23)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump @semantic-release/changelog from 6.0.3 to 7.0.0 ([#429](https://github.com/[secure]-automatons/[secure]-automatons/issues/429)) ([a90f22a](https://github.com/[secure]-automatons/[secure]-automatons/commit/a90f22a35351b17529120e1611abd9f51db95071))
+
 ## [2.0.33](https://github.com/[secure]-automatons/[secure]-automatons/compare/v2.0.32...v2.0.33) (2026-07-22)
 
 
