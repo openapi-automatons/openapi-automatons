@@ -18,6 +18,7 @@ Since v2 this package is **ESM-only** and requires **Node.js >= 22**. Use it fro
 | [@automatons/typescript-client-react-query](https://github.com/openapi-automatons/typescript-client-react-query) | typescript | client (TanStack Query hooks) |
 | [@automatons/typescript-zod](https://github.com/openapi-automatons/typescript-zod) | typescript | schema (zod) |
 | [@automatons/typescript-server-nestjs](https://github.com/openapi-automatons/typescript-server-nestjs) | typescript | server (NestJS) |
+| [@automatons/typescript-server-nextjs](https://github.com/openapi-automatons/typescript-server-nextjs) | typescript | server (Next.js App Router) |
 
 ## Get Started
 1. Install library to your project
