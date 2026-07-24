@@ -13,8 +13,11 @@ Since v2 this package is **ESM-only** and requires **Node.js >= 22**. Use it fro
 ## What code can generate?
 | name | language | type |
 | ---- | -------- | ---- |
-| @automatons/typescript-client-axios | typescript | client (axios) |
-| @automatons/typescript-client-fetch | typescript | client (standard `fetch`) |
+| [@automatons/typescript-client-axios](https://github.com/openapi-automatons/typescript-client-axios) | typescript | client (axios) |
+| [@automatons/typescript-client-fetch](https://github.com/openapi-automatons/typescript-client-fetch) | typescript | client (standard `fetch`) |
+| [@automatons/typescript-client-react-query](https://github.com/openapi-automatons/typescript-client-react-query) | typescript | client (TanStack Query hooks) |
+| [@automatons/typescript-zod](https://github.com/openapi-automatons/typescript-zod) | typescript | schema (zod) |
+| [@automatons/typescript-server-nestjs](https://github.com/openapi-automatons/typescript-server-nestjs) | typescript | server (NestJS) |
 
 ## Get Started
 1. Install library to your project
