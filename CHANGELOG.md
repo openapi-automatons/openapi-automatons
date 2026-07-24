@@ -1,3 +1,10 @@
+## [2.0.35](https://github.com/[secure]-automatons/[secure]-automatons/compare/v2.0.34...v2.0.35) (2026-07-24)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump typescript-eslint from 8.64.0 to 8.65.0 ([#432](https://github.com/[secure]-automatons/[secure]-automatons/issues/432)) ([f64a0b8](https://github.com/[secure]-automatons/[secure]-automatons/commit/f64a0b823c651dda1b221454cdd7ce9813fd5916))
+
 ## [2.0.34](https://github.com/[secure]-automatons/[secure]-automatons/compare/v2.0.33...v2.0.34) (2026-07-23)
 
 
