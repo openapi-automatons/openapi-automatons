@@ -55,7 +55,7 @@
     "depcheck": "^1.4.7",
     "eslint": "^10.7.0",
     "husky": "^9.1.7",
-    "lint-staged": "^17.1.0",
+    "lint-staged": "^17.2.0",
     "semantic-release": "^25.0.8",
     "tsup": "^8.5.0",
     "typescript": "^6.0.3",
