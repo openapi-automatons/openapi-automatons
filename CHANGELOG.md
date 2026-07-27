@@ -1,3 +1,10 @@
+## [2.0.37](https://github.com/[secure]-automatons/[secure]-automatons/compare/v2.0.36...v2.0.37) (2026-07-27)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump lint-staged from 17.1.0 to 17.2.0 ([#434](https://github.com/[secure]-automatons/[secure]-automatons/issues/434)) ([de79f06](https://github.com/[secure]-automatons/[secure]-automatons/commit/de79f06ee8ed29ff74c3458cf6d43246ec7ae7b4))
+
 ## [2.0.36](https://github.com/[secure]-automatons/[secure]-automatons/compare/v2.0.35...v2.0.36) (2026-07-24)
 
 
