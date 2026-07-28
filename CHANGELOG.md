@@ -1,3 +1,10 @@
+## [2.0.38](https://github.com/[secure]-automatons/[secure]-automatons/compare/v2.0.37...v2.0.38) (2026-07-28)
+
+
+### Bug Fixes
+
+* **deps:** bump chalk from 5.6.2 to 6.0.0 ([#435](https://github.com/[secure]-automatons/[secure]-automatons/issues/435)) ([f29daa8](https://github.com/[secure]-automatons/[secure]-automatons/commit/f29daa802d4adba4a0ab4c6fb14bfeb0f718c95c))
+
 ## [2.0.37](https://github.com/[secure]-automatons/[secure]-automatons/compare/v2.0.36...v2.0.37) (2026-07-27)
 
 
