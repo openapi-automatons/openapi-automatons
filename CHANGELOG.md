@@ -1,3 +1,10 @@
+## [2.0.40](https://github.com/[secure]-automatons/[secure]-automatons/compare/v2.0.39...v2.0.40) (2026-07-30)
+
+
+### Bug Fixes
+
+* **deps:** bump @automatons/tools from 2.2.27 to 2.2.34 ([#437](https://github.com/[secure]-automatons/[secure]-automatons/issues/437)) ([d1f85f2](https://github.com/[secure]-automatons/[secure]-automatons/commit/d1f85f2159f85e394b6fa4693fd982c1e1f3f791))
+
 ## [2.0.39](https://github.com/[secure]-automatons/[secure]-automatons/compare/v2.0.38...v2.0.39) (2026-07-29)
 
 
