@@ -1,3 +1,10 @@
+## [2.0.43](https://github.com/[secure]-automatons/[secure]-automatons/compare/v2.0.42...v2.0.43) (2026-08-03)
+
+
+### Bug Fixes
+
+* **deps:** bump ip-address from 10.2.0 to 10.4.0 ([#440](https://github.com/[secure]-automatons/[secure]-automatons/issues/440)) ([4e94a2b](https://github.com/[secure]-automatons/[secure]-automatons/commit/4e94a2b873ac453b376e4ae5babedaa6749fbc81))
+
 ## [2.0.42](https://github.com/[secure]-automatons/[secure]-automatons/compare/v2.0.41...v2.0.42) (2026-08-03)
 
 
