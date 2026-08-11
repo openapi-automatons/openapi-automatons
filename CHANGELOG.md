@@ -1,3 +1,10 @@
+## [2.0.48](https://github.com/[secure]-automatons/[secure]-automatons/compare/v2.0.47...v2.0.48) (2026-08-11)
+
+
+### Bug Fixes
+
+* **deps:** bump @automatons/validator from 2.2.41 to 2.2.44 ([#445](https://github.com/[secure]-automatons/[secure]-automatons/issues/445)) ([b86fa59](https://github.com/[secure]-automatons/[secure]-automatons/commit/b86fa59ca53d2f3c04234a9a354e8ed9e4205d5f))
+
 ## [2.0.47](https://github.com/[secure]-automatons/[secure]-automatons/compare/v2.0.46...v2.0.47) (2026-08-10)
 
 
