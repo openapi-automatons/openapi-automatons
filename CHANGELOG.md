@@ -1,3 +1,10 @@
+## [2.0.49](https://github.com/[secure]-automatons/[secure]-automatons/compare/v2.0.48...v2.0.49) (2026-08-12)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump @types/node from 26.1.2 to 26.2.0 ([#446](https://github.com/[secure]-automatons/[secure]-automatons/issues/446)) ([36dcda4](https://github.com/[secure]-automatons/[secure]-automatons/commit/36dcda4469c13f384ab9d50f127e3171ad742ab0))
+
 ## [2.0.48](https://github.com/[secure]-automatons/[secure]-automatons/compare/v2.0.47...v2.0.48) (2026-08-11)
 
 
