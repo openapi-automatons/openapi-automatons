@@ -1,3 +1,10 @@
+## [2.0.54](https://github.com/[secure]-automatons/[secure]-automatons/compare/v2.0.53...v2.0.54) (2026-08-19)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump @commitlint/config-conventional ([#451](https://github.com/[secure]-automatons/[secure]-automatons/issues/451)) ([327ad35](https://github.com/[secure]-automatons/[secure]-automatons/commit/327ad356588b2f5a1fed7c0629c5cccf6eec519e))
+
 ## [2.0.53](https://github.com/[secure]-automatons/[secure]-automatons/compare/v2.0.52...v2.0.53) (2026-08-18)
 
 
