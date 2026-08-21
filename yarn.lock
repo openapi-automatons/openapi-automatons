@@ -30,12 +30,12 @@
   resolved "https://registry.yarnpkg.com/@actions/io/-/io-3.0.2.tgz#6f89b27a159d109836d983efa283997c23b92284"
   integrity sha512-nRBchcMM+QK1pdjO7/idu86rbJI5YHUKCvKs0KxnSYbVe3F51UfGxuZX4Qy/fWlp6l7gWFwIkrOzN+oUK03kfw==
 
-"@automatons/tools@^2.2.42":
-  version "2.2.42"
-  resolved "https://registry.yarnpkg.com/@automatons/tools/-/tools-2.2.42.tgz#7fc7dd6aaa513bd6f68f28216ea9ff43321b8699"
-  integrity sha512-ha8sL1l7j518/UuNCRa2q0gbcqM9brfz73EV1fJ4dIQY+3V2EU1A735DVpYP9KVoO6Mz3GxKbwu+NhKl1XAYXg==
+"@automatons/tools@^2.2.44":
+  version "2.2.44"
+  resolved "https://registry.yarnpkg.com/@automatons/tools/-/tools-2.2.44.tgz#8b255d2152b601dbdad5085041802df35ccaba1c"
+  integrity sha512-5kmm72BndwgK7ZEURuvWRTgU3hETga/1J2n0dCP4IyHkxz5ug/onw7ffx8g/esB4LhEbaXmtGju7rQ1wW96fLw==
   dependencies:
-    js-yaml "^5.2.3"
+    js-yaml "^5.3.0"
 
 "@automatons/validator@^2.2.44":
   version "2.2.44"
@@ -3204,10 +3204,10 @@ js-yaml@^4.1.0:
   dependencies:
     argparse "^2.0.1"
 
-js-yaml@^5.2.3:
-  version "5.2.3"
-  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-5.2.3.tgz#0942ae8f507e22eb0e54624871789cd477106e54"
-  integrity sha512-n+mUVyUX5bVv7G/G2zyIHOhdxfuU1dY2NOFzTQUWiMUbFss8b57NFlgCCaggU78wSw5KVS9cllzeLyzyR+n5nw==
+js-yaml@^5.3.0:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-5.3.0.tgz#526430a6da31065127528ae695ce168cfc5f91f0"
+  integrity sha512-muutsYr+e2+d3rTgUGslq5rxbBlUy3cJ61IsHag2QNDQV+7zXWjkUpmALIajhrlLlrgRUiymj6U3zUr/TMK84Q==
   dependencies:
     argparse "^2.0.1"
 
