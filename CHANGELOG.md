@@ -1,3 +1,10 @@
+## [2.0.57](https://github.com/[secure]-automatons/[secure]-automatons/compare/v2.0.56...v2.0.57) (2026-08-24)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump @commitlint/cli from 21.2.1 to 21.2.2 ([#454](https://github.com/[secure]-automatons/[secure]-automatons/issues/454)) ([00a5b06](https://github.com/[secure]-automatons/[secure]-automatons/commit/00a5b067ce5e70b4d63504f06683714755deb7df))
+
 ## [2.0.56](https://github.com/[secure]-automatons/[secure]-automatons/compare/v2.0.55...v2.0.56) (2026-08-21)
 
 
