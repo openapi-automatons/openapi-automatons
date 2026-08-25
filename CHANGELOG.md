@@ -1,3 +1,10 @@
+## [2.0.58](https://github.com/[secure]-automatons/[secure]-automatons/compare/v2.0.57...v2.0.58) (2026-08-25)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump eslint from 10.8.1 to 10.9.0 ([#455](https://github.com/[secure]-automatons/[secure]-automatons/issues/455)) ([50daf4e](https://github.com/[secure]-automatons/[secure]-automatons/commit/50daf4ed1a630b438a29351f606a8231c54756b4))
+
 ## [2.0.57](https://github.com/[secure]-automatons/[secure]-automatons/compare/v2.0.56...v2.0.57) (2026-08-24)
 
 
