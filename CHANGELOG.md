@@ -1,3 +1,10 @@
+## [2.0.63](https://github.com/[secure]-automatons/[secure]-automatons/compare/v2.0.62...v2.0.63) (2026-09-01)
+
+
+### Bug Fixes
+
+* **deps:** bump postcss-selector-parser from 7.1.1 to 7.1.5 ([#460](https://github.com/[secure]-automatons/[secure]-automatons/issues/460)) ([45be6fa](https://github.com/[secure]-automatons/[secure]-automatons/commit/45be6fa2901d2ac6662661f1cc7a4665597b50ae))
+
 ## [2.0.62](https://github.com/[secure]-automatons/[secure]-automatons/compare/v2.0.61...v2.0.62) (2026-09-01)
 
 
