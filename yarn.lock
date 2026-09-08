@@ -37,10 +37,10 @@
   dependencies:
     js-yaml "^5.4.1"
 
-"@automatons/validator@^2.2.44":
-  version "2.2.44"
-  resolved "https://registry.yarnpkg.com/@automatons/validator/-/validator-2.2.44.tgz#892ca67ed75d12c36c0422c3817f2f1c5918fca2"
-  integrity sha512-5ZuXU3XpCtTmyDlVWNmH20VzLKs6Brgu4l4gMUo0Hz/kGRSzXxltMD2U1Mkor9uprk1gxJw0+3+A3aMaEev0Ow==
+"@automatons/validator@^2.2.53":
+  version "2.2.53"
+  resolved "https://registry.yarnpkg.com/@automatons/validator/-/validator-2.2.53.tgz#e22bd9dbc055de8554822a3a28fdf965035970b4"
+  integrity sha512-vWO0auTJteQgJi3VLNWK/e2D4A3i6RbqoYi7s9/DQn3RbVOVb9hcoeBlMfzlBaV8fTZGmPOC3qycYeDImB6sAQ==
   dependencies:
     "@hyperjump/browser" "^1"
     "@hyperjump/json-schema" "^1"
