@@ -8,6 +8,7 @@ const schema = z.object({
   automatons: z.array(z.object({
     automaton: z.string(),
     outDir: z.string(),
+    options: z.record(z.string(), z.unknown()).optional(),
   })).min(1),
 });
 
@@ -16,7 +17,7 @@ const validate = (data: string): Setting => {
   try {
     parsed = JSON.parse(data);
   } catch (e) {
-    throw new Error(`Invalid schema in automatons.json.\n${e}`);
+    throw new Error(`Invalid schema in automatons.json.\n${e}`, {cause: e});
   }
   const result = schema.safeParse(parsed);
   if (!result.success) {
