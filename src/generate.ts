@@ -1,5 +1,6 @@
 import path from 'node:path';
 import {rm} from 'node:fs/promises';
+import {pathToFileURL} from 'node:url';
 import {fetch} from '@automatons/tools';
 import {validator} from '@automatons/validator';
 import {readSettings} from './settings';
@@ -17,7 +18,8 @@ export const generate = async () => {
   }
 
   return automatons.map(async (automatonSetting) => {
-    const {default: generator} = (await import(automatonSetting.automaton)) as { default: Automaton };
+    const specifier = resolveAutomaton(automatonSetting.automaton, currentPath);
+    const {default: generator} = (await import(specifier)) as { default: Automaton };
     await rm(path.resolve(currentPath, automatonSetting.outDir), {recursive: true, force: true});
     return generator(openapi, {
       outDir: automatonSetting.outDir,
@@ -26,6 +28,13 @@ export const generate = async () => {
     }, automatonSetting.options);
   });
 };
+
+// import() resolves relative specifiers against this module, not the cwd, and
+// rejects Windows absolute paths, so file paths go through a file URL.
+const resolveAutomaton = (automaton: string, currentPath: string) =>
+  /^\.\.?([\\/]|$)/.test(automaton) || path.isAbsolute(automaton)
+    ? pathToFileURL(path.resolve(currentPath, automaton)).href
+    : automaton;
 
 const validateMessages = (messages: Validate[]) =>
   messages.map(({location, rule, keyword}) =>

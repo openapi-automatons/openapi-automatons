@@ -53,8 +53,9 @@ yarn add -D openapi-automatons @automatons/typescript-client-axios
 | -------- | --- | ---- | -------- | ----------- |
 | openapi | | string | true | This is openapi path. It can be relative or absolute. Also, there is no problem with the url format.|
 | automatons | | array | true | This is the property that contains the module. |
-| automatons | automaton | string | true | This is the module name. You can embed your own module. It is also possible to include it with a relative path. |
+| automatons | automaton | string | true | This is the module name. You can embed your own module. It is also possible to include it with a file path, either relative to the current directory (starting with `./` or `../`) or absolute. |
 | automatons | outDir | string | true | This is the output directory of module. |
+| automatons | options | object | false | This is passed to the module as its options. The accepted keys depend on the module. |
 
 ## OpenAPI support
 

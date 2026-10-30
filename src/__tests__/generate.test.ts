@@ -1,6 +1,7 @@
 import {beforeEach, expect, it, vi} from 'vitest';
 import {generate} from '../generate';
 import {readSettings} from '../settings';
+import automaton from './examples/automaton';
 import settings from './examples/automatons.json';
 import openapi from './examples/v3_0/petstore.json';
 
@@ -19,6 +20,32 @@ it('should be generate', async () => {
     .toBeCalledWith(openapi, {
       openapiPath: settings.openapi,
       outDir: settings.automatons?.[0]?.outDir,
+      path: process.cwd(),
+    }, undefined);
+});
+
+it('should be pass options in automatons.json to automaton', async () => {
+  const actual = await vi.importActual<typeof import('../settings')>('../settings');
+  vi.mocked(readSettings).mockImplementation(() => actual.readSettings('src/__tests__/examples/options'));
+  await Promise.all(await generate());
+  expect(generator)
+    .toBeCalledWith(openapi, {
+      openapiPath: settings.openapi,
+      outDir: settings.automatons?.[0]?.outDir,
+      path: process.cwd(),
+    }, {foo: 'bar'});
+});
+
+it('should be import automaton by relative path from current directory', async () => {
+  vi.mocked(readSettings).mockResolvedValue({
+    ...settings,
+    automatons: [{automaton: './src/__tests__/examples/automaton.ts', outDir: 'src/apis'}],
+  } as never);
+  await Promise.all(await generate());
+  expect(automaton)
+    .toBeCalledWith(openapi, {
+      openapiPath: settings.openapi,
+      outDir: 'src/apis',
       path: process.cwd(),
     }, undefined);
 });
