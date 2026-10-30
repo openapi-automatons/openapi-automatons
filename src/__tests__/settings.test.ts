@@ -31,6 +31,39 @@ it('should be read settings', async () => {
   expect(mockReadFile).toBeCalledWith('/path/to/automaton/automatons.json', {encoding: 'utf-8'});
 });
 
+it('should be read settings with options', async () => {
+  mockReadFile.mockResolvedValue(JSON.stringify({
+    openapi: 'openapi.yml',
+    automatons: [{
+      automaton: '@automatons/typescript-axios',
+      outDir: 'src/apis',
+      options: {foo: 'bar', nested: {baz: 1}},
+    }],
+  }) as never);
+  expect(await readSettings('/path/to/automaton'))
+    .toEqual({
+      openapi: 'openapi.yml',
+      automatons: [{
+        automaton: '@automatons/typescript-axios',
+        outDir: 'src/apis',
+        options: {foo: 'bar', nested: {baz: 1}},
+      }],
+    });
+});
+
+it('should be invalid options throw error.', async () => {
+  mockReadFile.mockResolvedValue(JSON.stringify({
+    openapi: 'openapi.yml',
+    automatons: [{
+      automaton: '@automatons/typescript-axios',
+      outDir: 'src/apis',
+      options: 'foo',
+    }],
+  }) as never);
+  await expect(readSettings('/path/to/automaton')).rejects
+    .toThrow('Invalid schema in automatons.json.');
+});
+
 it('should be invalid schema throw error.', async () => {
   mockReadFile.mockResolvedValue('{}' as never);
   await expect(readSettings('/path/to/automaton')).rejects
