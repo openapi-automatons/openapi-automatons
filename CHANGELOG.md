@@ -1,3 +1,27 @@
+## [2.0.65](https://github.com/[secure]-automatons/[secure]-automatons/compare/v2.0.64...v2.0.65) (2026-10-30)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump @types/node from 26.4.0 to 26.4.1 ([#467](https://github.com/[secure]-automatons/[secure]-automatons/issues/467)) ([48fc29a](https://github.com/[secure]-automatons/[secure]-automatons/commit/48fc29a79573ef1fec50442e324ef692099c0500))
+* **deps-dev:** bump typescript-eslint from 8.68.0 to 8.69.0 ([#462](https://github.com/[secure]-automatons/[secure]-automatons/issues/462)) ([eae76ea](https://github.com/[secure]-automatons/[secure]-automatons/commit/eae76eaf862367ff1fb846fbb4c08477e62670a6))
+* **deps-dev:** bump vitest from 4.1.9 to 4.1.11 ([#468](https://github.com/[secure]-automatons/[secure]-automatons/issues/468)) ([71c16c5](https://github.com/[secure]-automatons/[secure]-automatons/commit/71c16c598cb168b80c73fb7294b8de23a267b115))
+* **deps:** bump @automatons/tools from 2.2.46 to 2.2.49 ([#465](https://github.com/[secure]-automatons/[secure]-automatons/issues/465)) ([ea11fdc](https://github.com/[secure]-automatons/[secure]-automatons/commit/ea11fdce9573436060a7af570a8fc2bee9b384a2))
+* **deps:** bump @automatons/validator from 2.2.44 to 2.2.53 ([#466](https://github.com/[secure]-automatons/[secure]-automatons/issues/466)) ([07b2d7f](https://github.com/[secure]-automatons/[secure]-automatons/commit/07b2d7f2c0a39406f320ebb5e7ea6c45db957758))
+* **deps:** bump brace-expansion from 1.1.11 to 1.1.21 ([#483](https://github.com/[secure]-automatons/[secure]-automatons/issues/483)) ([22b357f](https://github.com/[secure]-automatons/[secure]-automatons/commit/22b357ff74b24b9d032e0984eda13f8d0f4499c4))
+* **deps:** bump handlebars from 4.7.9 to 4.7.10 ([#471](https://github.com/[secure]-automatons/[secure]-automatons/issues/471)) ([4b748c8](https://github.com/[secure]-automatons/[secure]-automatons/commit/4b748c8064fcd9da1b5f2dcd178527cd28ab0f8d))
+* **deps:** bump ip-address from 10.4.0 to 10.7.2 ([#470](https://github.com/[secure]-automatons/[secure]-automatons/issues/470)) ([819a8d1](https://github.com/[secure]-automatons/[secure]-automatons/commit/819a8d1e8c0724da53c93f3684834e762962e14d))
+* **deps:** bump js-yaml from 3.14.2 to 3.15.2 ([#480](https://github.com/[secure]-automatons/[secure]-automatons/issues/480)) ([5bad05c](https://github.com/[secure]-automatons/[secure]-automatons/commit/5bad05cd3ad073b43b7e874b80eaa79cebf1dbfa))
+* **deps:** bump minimatch from 3.1.2 to 3.1.5 ([#481](https://github.com/[secure]-automatons/[secure]-automatons/issues/481)) ([c0c27d5](https://github.com/[secure]-automatons/[secure]-automatons/commit/c0c27d5e174ca402131c7899b7f66a73510ca64c))
+* **deps:** bump picomatch from 2.3.1 to 2.3.2 ([#482](https://github.com/[secure]-automatons/[secure]-automatons/issues/482)) ([1293c37](https://github.com/[secure]-automatons/[secure]-automatons/commit/1293c37fe7827ddd6cc7f5a64c30c0519e910d8e))
+* **deps:** bump postcss-selector-parser from 7.1.5 to 7.1.6 ([#472](https://github.com/[secure]-automatons/[secure]-automatons/issues/472)) ([cd7bd59](https://github.com/[secure]-automatons/[secure]-automatons/commit/cd7bd592737c17906ea074c05e62792abb1c11bb))
+* **deps:** bump source-map-js from 1.2.1 to 1.2.2 ([#473](https://github.com/[secure]-automatons/[secure]-automatons/issues/473)) ([c28e83f](https://github.com/[secure]-automatons/[secure]-automatons/commit/c28e83f8f5756388f5a2e8ab43e5aec8486ea7b9))
+* **deps:** bump undici from 6.26.0 to 6.29.1 ([#479](https://github.com/[secure]-automatons/[secure]-automatons/issues/479)) ([75e132c](https://github.com/[secure]-automatons/[secure]-automatons/commit/75e132cf8a7f53749ea834b8acbd972fb976111b))
+* **deps:** bump vite from 8.0.16 to 8.3.5 ([#474](https://github.com/[secure]-automatons/[secure]-automatons/issues/474)) ([0d9e09c](https://github.com/[secure]-automatons/[secure]-automatons/commit/0d9e09c23e86d4ccd5a70114803575dd23ea5dfe))
+* **deps:** bump zod from 4.4.3 to 4.5.4 ([#464](https://github.com/[secure]-automatons/[secure]-automatons/issues/464)) ([88b5ec9](https://github.com/[secure]-automatons/[secure]-automatons/commit/88b5ec91b17997cd66d54a9d04d3fbdd8953ebbf))
+* **deps:** bump zod from 4.5.4 to 4.6.6 ([#478](https://github.com/[secure]-automatons/[secure]-automatons/issues/478)) ([54ce2ad](https://github.com/[secure]-automatons/[secure]-automatons/commit/54ce2ad2821982a986a942e5c11f3c068e269131))
+* pass automatons.json options to automatons and resolve file paths from cwd ([#475](https://github.com/[secure]-automatons/[secure]-automatons/issues/475)) ([b6deb7f](https://github.com/[secure]-automatons/[secure]-automatons/commit/b6deb7ffbf7cbf685203f2de565d3df5e67de542))
+
 ## [2.0.64](https://github.com/[secure]-automatons/[secure]-automatons/compare/v2.0.63...v2.0.64) (2026-09-02)
 
 
